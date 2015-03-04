@@ -190,15 +190,172 @@ $prefix-for-spec:      true !default;
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
 
-@mixin respond-to($breakpoint) { 
+@mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
       @content;
     }
   }
- 
+
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Please make sure it is defined in `$breakpoints` map.";
   }
+}
+
+// Position Mixins
+
+@mixin vertical-align-abs {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin vertical-align-rel {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+@mixin center-reset{
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+// Text Cols
+
+@mixin col-text($cols:2, $gap:3em){
+    @include breakpoint(map-get($breakpoints, medium)){
+        @include columns($cols);
+        @include column-gap($gap);
+    }
+}
+
+// Mobile Nav Burger
+
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    &, &:before, &:after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+
+        -webkit-transition-property: background-color, -webkit-transform;
+        -moz-transition-property: background-color, -moz-transform;
+        -o-transition-property: background-color, -o-transform;
+        transition-property: background-color, transform;
+
+        -webkit-transition-duration: $transition-duration;
+        -moz-transition-duration: $transition-duration;
+        -o-transition-duration: $transition-duration;
+        transition-duration: $transition-duration;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: "";
+    }
+
+    &:before {
+        top: -($height + $gutter);
+    }
+
+    &:after {
+        top: $height + $gutter;
+    }
+}
+
+
+/**
+ * Select parts of the burger
+ */
+
+@mixin burger-parts {
+    &, &:before, &:after {
+        @content;
+    }
+}
+
+@mixin burger-top {
+    &:before {
+        @content;
+    }
+}
+
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+
+@mixin burger-bottom {
+    &:after {
+        @content;
+    }
+}
+
+
+/**
+ * Burger animations
+ */
+
+@mixin burger-to-cross {
+    & {
+        background-color: transparent;
+    }
+    &:before {
+        -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -moz-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -o-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &:after {
+        -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -moz-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -o-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}
+
+
+/**
+ * Background images
+ */
+
+@mixin cover-background ($image-name){
+	background: url("/assets/images/#{$image-name}") center center #fff no-repeat;
+	background-size: cover;
+}
+
+@mixin parallax-background ($image-name){
+    background: url("/assets/images/#{$image-name}") #fff no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    background-attachment:fixed;
+    .touch &{
+        background-attachment:scroll;
+        background-position: center center;
+    }
 }

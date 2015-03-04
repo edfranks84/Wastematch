@@ -19,7 +19,16 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 // User defined ------------------------------------------ //
 
+// fonts ------------------------------------------ //
 
+$primary-font-light: 'source-light',Helvetica,Arial,sans-serif;
+$primary-font: 'source-regular',Helvetica,Arial,sans-serif;
+$primary-font-semi: 'source-semibold',Helvetica,Arial,sans-serif;
+$primary-font-bold: 'source-bold',Helvetica,Arial,sans-serif;
+
+$italic-font: 'source-italic',Helvetica,Arial,sans-serif;
+
+//
 
 // Base font attributes ---- //
 
@@ -31,11 +40,25 @@ $blockquote: #e3e3e3;
 // Base colours ---- //
 
 $white: #FFFFFF;
-$black: #2f2f2f;
-$base-color: #61459b;
-$comp-color: #326e50;
-$lightGrey: #CCCCCC;
+$black: #111;
+$primary-color: #2287d3;
+$primary-color-dark: darken($primary-color, 10%);
+$secondary-color: #34a237;
+$secondary-color-dark: darken($secondary-color, 10%);
+$grey: #999;
+$light-grey: #f3f3f3;
 
 $link: blue;
 $link-hover: green;
 $link-focus: purple;
+
+
+// Brand-Colors ---- //
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$linkedin: #0976b4;
+$google: #dd4b39;
+$instagram: #3f729b;
+$tumblr: #35465c;
+$vimeo: #1ab7ea;

@@ -40,6 +40,18 @@
 	4.0. Mixins
 ----------------------------------------- */
 
+/**
+ * Select parts of the burger
+ */
+
+/**
+ * Burger animations
+ */
+
+/**
+ * Background images
+ */
+
 /* -----------------------------------------
 	5.0. Variables
 ----------------------------------------- */
@@ -223,7 +235,7 @@ html {
 }
 
 body {
-  color: #2f2f2f;
+  color: #111;
   font-size: "16px";
   line-height: 1.6;
   margin: 0;
@@ -294,7 +306,7 @@ a:active {
   outline: none;
 }
 
-/* - 2.2. - HEADER LINKS 
+/* - 2.2. - HEADER LINKS
 	------------------------------------------ */
 
 h1 a,
@@ -322,6 +334,18 @@ h6 a,
 
 .center-align {
   text-align: center;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /* -----------------------------------------
@@ -356,7 +380,7 @@ h6 a,
 \* ---------------------------------------------- */
 
 .contain {
-  max-width: 1080px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   min-width: 1080px;
@@ -389,10 +413,106 @@ h6 a,
 
 \* ---------------------------------------------- */
 
-.test {
-  width: 31.4285714286%;
-  float: left;
-  margin-right: 2.8571428571%;
+@font-face {
+  font-family: 'source-light';
+  src: url('SourceSansPro-Light.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source-italic';
+  src: url('SourceSansPro-It.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source-regular';
+  src: url('SourceSansPro-Regular.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source-semibold';
+  src: url('SourceSansPro-Semibold.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source-bold';
+  src: url('SourceSansPro-Bold.otf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.tar {
+  text-align: right;
+}
+
+.tac {
+  text-align: center;
+}
+
+.bold,
+strong,
+b {
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.italic {
+  font-family: 'source-italic', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-size: 17.9442726586em;
+}
+
+h2 {
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-size: 11.0901703293em;
+}
+
+h3 {
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-size: 6.8541021569em;
+}
+
+h4 {
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-size: 4.2360680659em;
+}
+
+h5 {
+  font-family: 'source-semibold', Helvetica, Arial, sans-serif;
+  font-size: 2.6180340252em;
+}
+
+h6 {
+  font-family: 'source-semibold', Helvetica, Arial, sans-serif;
+  font-size: 1.618034em;
+}
+
+p {
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
+  font-size: 1em;
 }
 
 /* -----------------------------------------

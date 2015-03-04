@@ -25,15 +25,20 @@
 $susy: (
   flow: ltr,
   output: float,
-  container: 1080px,
+  container: 1200px,
   container-position: center,
   columns: 12,
-  gutters: 0.50
+  gutters: 0.33
 );
 
-// set basics followed by customs 
+// set basics followed by customs
 $breakpoints: (
-  tiny: 320px
+  tiny: 320px,
+  small: 482px,
+  regular: 575px,
+  medium: 768px,  
+  large: 1025px,
+  x-large: 1100px,
 );
 
 // USEAGE:

@@ -2,6 +2,23 @@
 
   Partial: buttons
 
-  This is a work-in-progress. Please deploy your own method or use my exaple below. 
+  This is a work-in-progress. Please deploy your own method or use my exaple below.
 
 \* ---------------------------------------------- */
+.button{
+    text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0;
+    border: none;
+	font-family:$primary-font-bold;
+	line-height: 1;
+	white-space: nowrap;
+    font-weight: bold;
+	@include transition (all 0.4s ease-in-out);
+}
+.button--solid-blue{
+    @include button-variant(#fff, $primary, transparent);
+    @include button-size(1.1em, 2em, 18px, 1, 0);
+}

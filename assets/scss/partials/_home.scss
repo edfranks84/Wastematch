@@ -1,0 +1,27 @@
+.hero{
+    @include cover-background('hero.jpg');
+    position: relative;
+    padding: 13.75 0 7.5em;
+}
+.hero-text{
+    @include span(7 of 12);
+}
+.box{
+    padding: 3em;
+    @include clearfix;
+}
+.box--light{
+    background-image:linear-gradient(111deg, #fff, #ebebeb);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.25), 0 2px 5px 0 rgba(0,0,0,0.15);
+    h4{
+        font-family: $primary-font;
+        padding-bottom: 0.8em;
+        margin-bottom: 0.8em;
+        border-bottom: 1px solid #ccc;
+    }
+    p{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
