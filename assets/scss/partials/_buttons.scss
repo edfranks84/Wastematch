@@ -16,9 +16,22 @@
 	line-height: 1;
 	white-space: nowrap;
     font-weight: bold;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 	@include transition (all 0.4s ease-in-out);
 }
 .button--solid-blue{
-    @include button-variant(#fff, $primary, transparent);
-    @include button-size(1.1em, 2em, 18px, 1, 0);
+    @include button-variant(#fff, $primary-color, transparent);
+    @include button-size(0.8em, 2em, 15px, 1, 2px);
+    a{
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
+.button--solid-green{
+    @include button-variant(#fff, $secondary-color, transparent);
+    @include button-size(0.8em, 2em, 15px, 1, 2px);
+    a{
+        color: #fff;
+        text-transform: uppercase;
+    }
 }

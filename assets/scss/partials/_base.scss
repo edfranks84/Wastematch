@@ -111,4 +111,11 @@
 
 	.container{
 		@include container;
+		max-width: 1200px;
+	}
+	.band{
+		padding: 6em 0;
+	}
+	.band-white{
+		background-color: #fff;
 	}

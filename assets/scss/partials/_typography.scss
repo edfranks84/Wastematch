@@ -10,35 +10,35 @@
 
 @font-face {
     font-family: 'source-light';
-    src: url('SourceSansPro-Light.otf.woff') format('woff');
+    src: url('/assets/fonts/SourceSansPro-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'source-italic';
-    src: url('SourceSansPro-It.otf.woff') format('woff');
+    src: url('/assets/fonts/SourceSansPro-It.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'source-regular';
-    src: url('SourceSansPro-Regular.otf.woff') format('woff');
+    src: url('/assets/fonts/SourceSansPro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'source-semibold';
-    src: url('SourceSansPro-Semibold.otf.woff') format('woff');
+    src: url('/assets/fonts/SourceSansPro-Semibold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'source-bold';
-    src: url('SourceSansPro-Bold.otf.woff') format('woff');
+    src: url('/assets/fonts/SourceSansPro-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -48,38 +48,47 @@
 h1, h2, h3, h4, h5, h6, p{
     text-rendering: optimizeLegibility;
     font-weight: normal;
-    line-height: 1.5;
-    margin-bottom: 1em;
+    line-height: 1.4;
+    color: #444;
 }
 
 
 @mixin h1{
     font-family: $primary-font-bold;
     font-size: ms(6);
+    margin-bottom: 0.5em;
+    line-height: 1.1;
 }
 @mixin h2{
     font-family: $primary-font-bold;
     font-size: ms(5);
+    margin-bottom: 0.5em;
+    line-height: 1.1;
 }
 @mixin h3{
     font-family: $primary-font-bold;
     font-size: ms(4);
+    margin-bottom: 0.75em;
 }
 @mixin h4{
     font-family: $primary-font-bold;
     font-size: ms(3);
+    margin-bottom: 0.75em;
 }
 @mixin h5{
     font-family: $primary-font-semi;
     font-size: ms(2);
+    margin-bottom: 1em;
 }
 @mixin h6{
     font-family: $primary-font-semi;
     font-size: ms(1);
+    margin-bottom: 1em;
 }
 @mixin p{
     font-family: $primary-font;
     font-size: ms(0);
+    margin-bottom: 1em;
 }
 
 

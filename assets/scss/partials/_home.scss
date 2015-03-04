@@ -1,10 +1,29 @@
 .hero{
     @include cover-background('hero.jpg');
     position: relative;
-    padding: 13.75 0 7.5em;
+    padding: 13.75em 0 7.5em;
+    .box--light{
+        @include span(4 of 12 last);
+    }
 }
 .hero-text{
     @include span(7 of 12);
+    padding-top: 3em;
+    h2{
+        text-transform: uppercase;
+    }
+    h2,h6{
+        color: #fff;
+    }
+    h6{
+        font-family: $primary-font;
+    }
+    .button{
+        margin-top: 1em;
+    }
+    .button--solid-blue{
+        font-size: 18px;
+    }
 }
 .box{
     padding: 3em;
@@ -23,5 +42,94 @@
         &:last-child{
             margin-bottom: 0;
         }
+    }
+}
+.promo-wrap{
+    position: relative;
+    @include clearfix;
+}
+.promo__block{
+    @include span(4 of 12);
+    padding: 3em;
+    &:last-child{
+        @include span(4 of 12 last);
+    }
+    h5{
+        margin-bottom: 0.5em;
+        padding-left: 2.5em;
+        text-transform: uppercase;
+        position: relative;
+    }
+    .button{
+        margin-top: 0.5em;
+        position: absolute;
+        bottom: 0;
+    }
+}
+.promo-icon{
+    display: inline-block;
+    height: 2em;
+    left: 0;
+    position: absolute;
+    top: -10px;
+    width: 2em;
+}
+.services, .talk{
+    svg{
+        fill: $primary-color;
+    }
+    h5{
+        color: $primary-color;
+    }
+}
+.projects{
+    svg{
+        fill: $secondary-color;
+    }
+    h5{
+        color: $secondary-color;
+    }
+}
+
+.video-band{
+    @include cover-background("video-bg.jpg");
+    //background-attachment: fixed;
+    padding: 10em 0;
+}
+.video-band__content{
+    @include span(6 of 12);
+    h5,h3{
+        color: #fff;
+    }
+    h5{
+        text-transform: uppercase;
+    }
+    h3{
+        font-family: $primary-font-light;
+    }
+}
+.video-inner{
+    width: 100%;
+    padding-bottom: 50%;
+    position: relative;
+}
+.video-band__link{
+    text-align: center;
+    @include span(5 of 12 last);
+    position: relative;
+    a{
+        padding: 2em;
+        border-radius: 50%;
+        background-image: linear-gradient(-111deg, #4cb749, #10811c);
+        display: table;
+        @include vertical-center;
+    }
+    svg{
+        fill: #fff;
+        height: 3em;
+        width: 3em;
+        padding-left: 0.5em;
+        display: table-cell;
+        vertical-align: middle;
     }
 }
