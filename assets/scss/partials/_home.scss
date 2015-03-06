@@ -50,7 +50,7 @@
 }
 .promo__block{
     @include span(4 of 12);
-    padding: 3em;
+    padding: 0 3em 3em;
     &:last-child{
         @include span(4 of 12 last);
     }
@@ -157,7 +157,7 @@
 .dust-band{
     background: url("/assets/images/dust-pattern.jpg") repeat #f3f3f3;
 }
-.most-viewed{
+.most-viewed, .ending{
 
     h4{
         padding-bottom: 0.3em;
@@ -165,82 +165,86 @@
         text-transform: uppercase;
         margin-bottom: 0;
     }
-    .owl-wrapper{
-        padding: 1em 0;
-    }
-    .listing__item{
-        position: relative;
-        margin: 0.5em;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08);
-    }
-    .listing__image{
-        height: 0;
-        width: 100%;
-        padding-bottom: 100%;
-    }
-    .listing__info{
-        background: $white;
-        padding: 1em;
-        @include clearfix;
-    }
-    .listing__title{
-        width: 100%;
-        a{
-            text-decoration: none;
-            @include h6;
-            line-height: 1;
-            margin-bottom: 0;
-            color: $text-color;
-        }
-    }
-    .listing__location{
-        @include p;
-        color: $grey;
-        float:left;
-        width: 50%;
-        &:before{
-            content: url("/assets/images/pin.svg");
-            height: 1em;
-            width: 1em;
-            display: inline-block;
-            position: relative;
-            top: 2px;
-        }
-    }
-    .listing__quantity{
-        @include p;
-        width: 50%;
-        float: right;
-        text-align: right;
-        &-value{
-            color: $grey;
-        }
-    }
-    .listing__button{
-        width: 100%;
-        text-align: center;
-        display: inline-block;
-        a{
-            @include button-variant(#fff, $secondary-color, transparent);
-            @include button-size(0.8em, 2em, 15px, 1, 2px);
-            display: block;
-            font-family: $primary-font-bold;
-        }
-    }
-    .listing__time-remaining{
-        position: absolute;
-        top: -0.2em;
-        left: -0.2em;
-        line-height: 1;
-        font-family: $primary-font-semi;
-        padding: 0.5em 1.2em;
-        background-color: $secondary-color;
-        color: #fff;
-        box-shadow: 1px 3px 2px 0 rgba(0,0,0,0.1);
-    }
-
 }
-.most-viewed__carousel{
+.owl-wrapper{
+    padding: 1em 0;
+}
+.listing__item{
+    position: relative;
+    margin: 0.5em;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08);
+}
+.listing__image{
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+}
+.listing__info{
+    background: $white;
+    padding: 1em;
+    @include clearfix;
+}
+.listing__title{
+    width: 100%;
+    a{
+        text-decoration: none;
+        @include h6;
+        line-height: 1;
+        margin-bottom: 0;
+        color: $text-color;
+    }
+}
+.listing__location{
+    @include p;
+    color: $grey;
+    float:left;
+    width: 50%;
+    &:before{
+        content: url("/assets/images/pin.svg");
+        height: 1em;
+        width: 1em;
+        display: inline-block;
+        position: relative;
+        top: 2px;
+    }
+}
+.listing__quantity{
+    @include p;
+    width: 50%;
+    float: right;
+    text-align: right;
+    &-value{
+        color: $grey;
+    }
+}
+.listing__button{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    a{
+        @include button-variant(#fff, $secondary-color, transparent);
+        @include button-size(0.8em, 2em, 15px, 1, 2px);
+        display: block;
+        font-family: $primary-font-bold;
+        text-transform: uppercase;
+    }
+}
+.listing__time-remaining{
+    position: absolute;
+    top: -0.2em;
+    left: -0.2em;
+    line-height: 1;
+    font-family: $primary-font-semi;
+    padding: 0.5em 1.2em;
+    background-color: $secondary-color;
+    color: #fff;
+    box-shadow: 1px 3px 2px 0 rgba(0,0,0,0.1);
+    .ending__carousel &{
+        background: #ff7300;
+    }
+}
+
+.most-viewed__carousel, .ending__carousel{
     position: relative;
     .owl-controls{
         .owl-buttons{
@@ -273,4 +277,101 @@
         }
     }
 
+}
+
+.green-band{
+    background-image: linear-gradient(111deg, #4cb749, #10811c);
+}
+.stats{
+    position: relative;
+    &__wrap{
+        @include clearfix;
+    }
+    &__item{
+        text-align: center;
+        @include span(3 of 12);
+        &:last-child{
+            @include span(3 of 12 last);
+        }
+    }
+    &__icon {
+        width: 5em;
+        height: 5em;
+        display: inline-block;
+        svg{
+            fill: #fff;
+            height: 100%;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+    &__data{
+        @include h1;
+        color: #fff;
+        margin-bottom: 0;
+    }
+    &__title{
+        @include h6;
+        color: #fff;
+        font-family: $primary-font;
+    }
+}
+.testimonials{
+    background-color: $primary-color;
+    @include cover-background('testimonial-bg.jpg');
+    h4{
+        color: #fff;
+        border-bottom: 1px solid currentColor;
+        text-transform: uppercase;
+    }
+}
+.testimonials-wrapper{
+    width: span(10 of 12);
+    margin: auto;
+}
+.testimonials-carousel{
+    .owl-buttons{
+        display: none;
+    }
+    .owl-controls{
+        .owl-page{
+            span{
+                background-color: #fff;
+            }
+        }
+    }
+}
+.testimonial-item{
+    width: 100%;
+    @include clearfix;
+    position: relative;
+}
+.testimonial-content{
+    @include span(7 of 10);
+    p{
+        font-family: $italic-font;
+        color: #fff;
+        font-size: ms(1);
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+.testimonial-source{
+    @include span(3 of 10 last);
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.testimonial-source__name{
+    font-family: $primary-font-bold;
+}
+.testimonial-source__company{
+    font-family: $primary-font;
+}
+.testimonial-source__name,.testimonial-source__company{
+    color: #fff;
+    font-size: ms(1);
 }
