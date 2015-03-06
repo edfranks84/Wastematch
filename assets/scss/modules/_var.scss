@@ -19,6 +19,9 @@ $monaco: Monaco, Consolas, "Lucida Console", monospace;
 
 // User defined ------------------------------------------ //
 
+$burger-gutter: 3px;
+$burger-height: 5px;
+
 // fonts ------------------------------------------ //
 
 $primary-font-light: 'source-light',Helvetica,Arial,sans-serif;
@@ -32,7 +35,7 @@ $italic-font: 'source-italic',Helvetica,Arial,sans-serif;
 
 // Base font attributes ---- //
 
-$base-font-family: ;
+$base-font-family: $primary-font;
 $base-font-size: 16;
 $base-line-height: 1.6;
 $blockquote: #e3e3e3;
@@ -63,3 +66,19 @@ $google: #dd4b39;
 $instagram: #3f729b;
 $tumblr: #35465c;
 $vimeo: #1ab7ea;
+
+
+// set basics followed by customs
+$breakpoints: (
+  tiny: 320px,
+  small: 482px,
+  regular: 575px,
+  medium: 768px,
+  marge: 900px,
+  large: 1025px,
+  x-large: 1200px,
+
+  nav-responsive: 830px,
+  nav-change: 900px,
+  owl-controls: 1400px,
+);

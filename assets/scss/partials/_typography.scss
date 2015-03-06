@@ -87,8 +87,11 @@ h1, h2, h3, h4, h5, h6, p{
 }
 @mixin p{
     font-family: $primary-font;
-    font-size: ms(0);
+    font-size: 15px;
     margin-bottom: 1em;
+    @include respond-to(small){
+        font-size: ms(0);
+    }
 }
 
 

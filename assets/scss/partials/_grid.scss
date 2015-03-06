@@ -31,15 +31,7 @@ $susy: (
   gutters: 0.33
 );
 
-// set basics followed by customs
-$breakpoints: (
-  tiny: 320px,
-  small: 482px,
-  regular: 575px,
-  medium: 768px,  
-  large: 1025px,
-  x-large: 1100px,
-);
+
 
 // USEAGE:
 // @include respond-to(tiny) {

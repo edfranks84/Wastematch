@@ -1,14 +1,41 @@
 .hero{
     @include cover-background('hero.jpg');
     position: relative;
-    padding: 13.75em 0 7.5em;
+    padding: 10em 0 7.5em;
+    @include respond-to(marge){
+        padding: 13.75em 0 7.5em;
+    }
     .box--light{
-        @include span(4 of 12 last);
+    max-width: 40em;
+    margin: auto;
+    padding: 2em 3em;
+    display: none;
+        @include respond-to(marge){
+            @include span(5 of 12 last);
+            padding: 3em;
+            display: block;
+        }
+        @include respond-to(x-large){
+            @include span(4 of 12 last);
+        }
+    }
+    .container{
+        width: 90%;
+        @include respond-to(marge){
+            width: 94%;
+        }
     }
 }
 .hero-text{
-    @include span(7 of 12);
-    padding-top: 3em;
+    max-width: 40em;
+    margin: auto;
+    margin-bottom: 2em;
+    @include respond-to(marge){
+        @include span(7 of 12);
+        padding-top: 3em;
+        margin-bottom: 0;
+    }
+
     h2{
         text-transform: uppercase;
     }
@@ -34,8 +61,8 @@
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.25), 0 2px 5px 0 rgba(0,0,0,0.15);
     h4{
         font-family: $primary-font;
-        padding-bottom: 0.8em;
-        margin-bottom: 0.8em;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
         border-bottom: 1px solid #ccc;
     }
     p{
@@ -44,15 +71,46 @@
         }
     }
 }
+
+.band-whiteGrad{
+    background-image:linear-gradient(111deg, #fff, #ebebeb);
+}
+
+.network{
+    display: block;
+    @include respond-to(marge){
+        display: none;
+    }
+    h4{
+        font-family: $primary-font;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
+        border-bottom: 1px solid #ccc;
+    }
+    p{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+}
+
 .promo-wrap{
     position: relative;
     @include clearfix;
 }
 .promo__block{
-    @include span(4 of 12);
-    padding: 0 3em 3em;
-    &:last-child{
-        @include span(4 of 12 last);
+    padding: 0 2em 3em;
+
+    @include respond-to(marge){
+        padding: 0 1.4em 3em;
+        @include span(4 of 12);
+        &:last-child{
+            @include span(4 of 12 last);
+        }
+    }
+    @include respond-to(large){
+        padding: 0 3em 3em;
     }
     h5{
         margin-bottom: 0.5em;
@@ -97,7 +155,14 @@
     padding: 10em 0;
 }
 .video-band__content{
-    @include span(6 of 12);
+    text-align: center;
+    @include respond-to(small){
+        @include span(7 of 12);
+        text-align: left;
+    }
+    @include respond-to(marge){
+        @include span(6 of 12);
+    }
     h5,h3{
         color: #fff;
     }
@@ -106,6 +171,10 @@
     }
     h3{
         font-family: $primary-font-light;
+        font-size: ms(3);
+        @include respond-to(small){
+            font-size: ms(4);
+        }
     }
 }
 .video-inner{
@@ -115,8 +184,13 @@
 }
 .video-band__link{
     text-align: center;
-    @include span(5 of 12 last);
     position: relative;
+    @include respond-to(small){
+        @include span(4 of 12 last);
+    }
+    @include respond-to(marge){
+        @include span(5 of 12 last);
+    }
     a{
         padding: 2em;
         border-radius: 50%;
@@ -146,7 +220,10 @@
     .owl-item{
         display: inline-block;
         vertical-align: middle;
-        padding: 0 1em;
+        padding: 0;
+        @include respond-to(medium){
+            padding: 0 0.5em;
+        }
         img{
             vertical-align: middle;
         }
@@ -157,8 +234,12 @@
 .dust-band{
     background: url("/assets/images/dust-pattern.jpg") repeat #f3f3f3;
 }
-.most-viewed, .ending{
 
+
+.most-viewed, .ending{
+    .container{
+        width: 96%;
+    }
     h4{
         padding-bottom: 0.3em;
         border-bottom: 1px solid currentColor;
@@ -173,6 +254,18 @@
     position: relative;
     margin: 0.5em;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08);
+    font-size: 14px;
+    @include respond-to(medium){
+        font-size: 16px;
+    }
+    &:hover{
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08), 0 0 0 2px $secondary-color;
+    }
+    .ending__carousel &{
+        &:hover{
+            box-shadow: 0 0 0 2px #ff7300, 0 1px 3px 0 rgba(0,0,0,0.15), 0 6px 12px 0 rgba(0,0,0,0.25);
+        }
+    }
 }
 .listing__image{
     height: 0;
@@ -186,13 +279,22 @@
 }
 .listing__title{
     width: 100%;
+    margin-bottom: 5px;;
     a{
         text-decoration: none;
         @include h6;
         line-height: 1;
         margin-bottom: 0;
         color: $text-color;
+        font-size: ms(0);
+        @include respond-to(small){
+            font-size: ms(1);
+
+        }
     }
+    // @include respond-to(small){
+    //     margin-bottom: 0;
+    // }
 }
 .listing__location{
     @include p;
@@ -227,6 +329,7 @@
         display: block;
         font-family: $primary-font-bold;
         text-transform: uppercase;
+        border-radius: 0;
     }
 }
 .listing__time-remaining{
@@ -246,33 +349,71 @@
 
 .most-viewed__carousel, .ending__carousel{
     position: relative;
+    width: 94%;
+    margin: auto;
     .owl-controls{
         .owl-buttons{
             .owl-prev{
-                height: 7em;
-                width: 7em;
+                height: 2em;
+                width: 2em;
                 position: absolute;
-                left: -10em;
-                top: 50%;
-                background: url("/assets/images/previous.svg") transparent no-repeat;
+                left: 1em;
+                bottom: 1em;
+                background: url("/assets/images/previous2.svg") transparent no-repeat;
                 padding: 0;
                 margin: 0;
                 opacity: 1;
                 border-radius: 0;
-                @include vertical-align-ab;
+
+                @include respond-to(medium){
+                    @include vertical-align-ab;
+                    height: 4em;
+                    width: 4em;
+                    left: -4em;
+                    background: url("/assets/images/previous.svg") transparent no-repeat;
+                }
+                @include respond-to(x-large){
+                    height: 5em;
+                    width: 5em;
+                    left: -5em;
+
+                }
+                @include respond-to(owl-controls){
+                    height: 7em;
+                    width: 7em;
+                    left: -9em;
+                }
             }
             .owl-next{
-                height: 7em;
-                width: 7em;
+                height: 2em;
+                width: 2em;
                 position: absolute;
-                right: -10em;
-                top: 50%;
-                background: url("/assets/images/next.svg") transparent no-repeat;
+                right: 1em;
+                bottom: 1em;
+                background: url("/assets/images/next2.svg") transparent no-repeat;
                 padding: 0;
                 margin: 0;
                 opacity: 1;
                 border-radius: 0;
-                @include vertical-align-ab;
+
+                @include respond-to(medium){
+                    @include vertical-align-ab;
+                    height: 4em;
+                    width: 4em;
+                    right: -4em;
+                    background: url("/assets/images/next.svg") transparent no-repeat;
+                }
+                @include respond-to(x-large){
+                    height: 5em;
+                    width: 5em;
+                    right: -5em;
+
+                }
+                @include respond-to(owl-controls){
+                    height: 7em;
+                    width: 7em;
+                    right: -9em;
+                }
             }
         }
     }
@@ -289,9 +430,19 @@
     }
     &__item{
         text-align: center;
-        @include span(3 of 12);
-        &:last-child{
-            @include span(3 of 12 last);
+        margin: 0.7em 0;
+        @include respond-to(tiny){
+            @include span(6 of 12 0);
+            &:last-child{
+                @include span(6 of 12 last 0);
+            }
+        }
+        @include respond-to(medium){
+            margin: 0;
+            @include span(3 of 12);
+            &:last-child{
+                @include span(3 of 12 last);
+            }
         }
     }
     &__icon {
@@ -324,11 +475,16 @@
         color: #fff;
         border-bottom: 1px solid currentColor;
         text-transform: uppercase;
+        @include respond-to(small){
+
+        }
     }
 }
 .testimonials-wrapper{
-    width: span(10 of 12);
-    margin: auto;
+    @include respond-to(small){
+        width: span(10 of 12);
+        margin: auto;
+    }
 }
 .testimonials-carousel{
     .owl-buttons{
@@ -341,6 +497,12 @@
             }
         }
     }
+    .owl-controls .owl-page.active span,
+    .owl-controls.clickable .owl-page:hover span{
+    	filter: Alpha(Opacity=100);/*IE7 fix*/
+    	opacity: 1;
+    	background: $white;
+    }
 }
 .testimonial-item{
     width: 100%;
@@ -348,22 +510,31 @@
     position: relative;
 }
 .testimonial-content{
-    @include span(7 of 10);
+    margin-bottom: 2em;
+    @include respond-to(regular){
+        @include span(7 of 10);
+        margin-bottom: 0;
+    }
     p{
         font-family: $italic-font;
         color: #fff;
-        font-size: ms(1);
+        @include respond-to(regular){
+            font-size: ms(1);
+        }
         &:last-child{
             margin-bottom: 0;
         }
     }
 }
 .testimonial-source{
-    @include span(3 of 10 last);
     text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+
+    @include respond-to(regular){
+        @include span(3 of 10 last);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 .testimonial-source__name{
     font-family: $primary-font-bold;
@@ -373,5 +544,7 @@
 }
 .testimonial-source__name,.testimonial-source__company{
     color: #fff;
-    font-size: ms(1);
+    @include respond-to(regular){
+        font-size: ms(1);
+    }
 }

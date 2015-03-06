@@ -18,12 +18,15 @@
 	body {
 		color: $black;
 		font-family: $primary-font;
-		font-size: $base-font-size+"px";
+		font-size: 15px;
 		line-height: $base-line-height;
 		margin: 0;
+		@include respond-to(nav-responsive){
+			font-size: 16px;
+		}
 	}
 
-	html, body{ height: 100%; min-height: 100%; }
+	html, body{ height: 100%; min-height: 100%; position:relative;}
 
 	small {
 		font-size: 0.85em;
@@ -111,10 +114,20 @@
 
 	.container{
 		@include container;
-		max-width: 1200px;
+		max-width: 1300px;
+		width: 84%;
+		@include respond-to(small){
+			width: 88%;
+		}
+		@include respond-to(regular){
+			width: 92%;
+		}
 	}
 	.band{
-		padding: 6em 0;
+		padding: 4em 0;
+		@include respond-to(medium){
+			padding: 6em 0;
+		}
 	}
 	.band-white{
 		background-color: #fff;

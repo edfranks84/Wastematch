@@ -190,18 +190,18 @@ $prefix-for-spec:      true !default;
   @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
 
-@mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
-      @content;
-    }
-  }
-
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
-}
+// @mixin respond-to($breakpoint) {
+//   @if map-has-key($breakpoints, $breakpoint) {
+//     @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+//       @content;
+//     }
+//   }
+//
+//   @else {
+//     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+//         + "Please make sure it is defined in `$breakpoints` map.";
+//   }
+// }
 
 // Position Mixins
 
@@ -241,7 +241,19 @@ $prefix-for-spec:      true !default;
     }
 }
 
-// Mobile Nav Burger
+
+/**
+ * Burger parts
+ *
+ * (---) top    -> &:before
+ * [---] middle -> &
+ * (---) bottom -> &:after
+ */
+
+
+/**
+ * Burger
+ */
 
 @mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
     $burger-height: $height !global;
@@ -358,4 +370,39 @@ $prefix-for-spec:      true !default;
         background-attachment:scroll;
         background-position: center center;
     }
+}
+
+
+/**
+ * Link Underline
+ */
+
+@mixin animated-underline{
+  a{
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+    &:before{
+      content:"";
+      position:absolute;
+      width:100%;
+      height:2px;
+      bottom:-4px;
+      left:0;
+      background-color:#fff;
+      visibility:hidden;
+      -webkit-transform:scaleX(0);
+      transform:scaleX(0);
+      -webkit-transition:all 0.3s ease-in-out 0s;
+      transition:all 0.3s ease-in-out 0s;
+    }
+    &:hover{
+      color:#fff;
+      &:before {
+        visibility:visible;
+        -webkit-transform:scaleX(1);
+        transform:scaleX(1);
+      }
+    }
+  }
 }

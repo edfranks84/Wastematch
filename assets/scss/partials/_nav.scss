@@ -7,13 +7,24 @@
 
 \* ---------------------------------------------- */
 
-
+.hero{
+    nav{
+        display: none;
+        @include respond-to(nav-responsive){
+            display: block;
+        }
+    }
+}
 
 nav{
     @include clearfix;
     float: left;
-    margin-right: 2em;
-    ul.menu{
+    margin-right: 1em;
+
+    @include respond-to(large){
+        margin-right: 2em;
+    }
+    ul{
         list-style-type: none;
         padding: 0;
         display: inline-block;
@@ -27,13 +38,19 @@ nav{
             position: relative;
             margin:0;
             margin-left: 0px;
-            margin-right: 3em;
+            margin-right: 1em;
             background-color: transparent;
             text-transform: uppercase;
             //font-size: 1em;
             line-height: 1;
             border-bottom: 2px solid transparent;
             @include clearfix;
+            @include respond-to(large){
+                margin-right: 1.5em;
+            }
+            @include respond-to(x-large){
+                margin-right: 3em;
+            }
 
             // &.parent{
             //     >a:after {
@@ -51,7 +68,7 @@ nav{
             a{
                 color: $white;
                 font-family: $primary-font-semi;
-                font-size: 15px;
+                font-size: ms(0);
                 text-decoration: none;
                 line-height: 1;
                 padding: 0.75em 0.2em;
@@ -121,4 +138,222 @@ nav{
             }
         }
     }
+}
+
+
+
+/* ---------------------------------------------- *\
+
+  Mobile Navigation Styles
+
+\* ---------------------------------------------- */
+
+.mobile-nav{
+    nav{
+        display: block;
+        margin-right: 0;
+        @include respond-to(nav-responsive){
+            display: none;
+        }
+        ul{
+            li{
+                width: 100%;
+                text-align: left;
+                padding: 0.5em 0.5em 0.5em 1em;
+                border-bottom: 1px solid #3e464f;
+                margin-right: 0;
+                &:hover{
+                    background-color: #3e464f;
+                    a{
+                        color: #fff;
+                    }
+                }
+                a{
+                    text-align: left;
+                    display: block;
+                    font-size: ms(0);
+                }
+
+                &.liLinkActive{
+                    border-bottom: 1px solid #282e35;
+                    border-left: 3px solid $secondary-color;
+                    background-color: #3e464f;
+                    a{
+                        color: lighten(saturate($secondary-color, 10%),10%);
+
+                    }
+                }
+            }
+        }
+
+    }
+}
+.menu-wrap{
+
+    display: block;
+    @include respond-to(nav-responsive){
+        display: none;
+    }
+
+}
+
+
+//.content-wrap,
+// html,
+// body{
+// 	overflow: hidden;
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+
+// .container {
+// 	background: #373a47;
+// }
+
+// .menu-wrap a {
+// 	color: #b8b7ad;
+// }
+//
+// .menu-wrap a:hover,
+// .menu-wrap a:focus {
+// 	color: #c94e50;
+// }
+
+// .content-wrap {
+// 	overflow-y: scroll;
+// 	-webkit-overflow-scrolling: touch;
+// }
+
+.content {
+	position: relative;
+	background: #b4bad2;
+}
+
+.mobile-nav{
+
+}
+
+/* Menu Button */
+.menu-button {
+
+
+    position: absolute;
+	z-index: 1000;
+	padding: 0;
+    display: inline-block;
+	border: none;
+	font-size: 0;
+    height: 30px;
+	color: transparent;
+	background: transparent;
+    right: 30px;
+    top: 35px;
+    outline: none;
+    cursor: pointer;
+    //@include vertical-align;
+}
+
+.menu-button-icon{
+    @include burger(25px, 3px, 5px, $white);
+    .stuck &{
+        @include burger(25px, 3px, 5px, $white);
+    }
+}
+.show-menu .menu-button-icon {
+  @include burger-to-cross;
+}
+
+
+/* Close Button */
+.close-button {
+
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+    overflow: hidden;
+    text-indent: 1em;
+    font-size: 0.5em;
+    border: none;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.close-button::before,
+.close-button::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	background: #bdc3c7;
+}
+
+.close-button::before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.close-button::after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/* Menu */
+.menu-wrap {
+	position: absolute;
+	z-index: 1001;
+	width: 13em;
+	height: auto;
+	background: #282e35;
+	padding: 3em 0 0;
+	font-size: 1em;
+	-webkit-transform: translate3d(-320px,0,0);
+	transform: translate3d(-320px,0,0);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+
+
+
+/* Shown menu */
+.show-menu .menu-wrap {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transition: -webkit-transform 0.8s;
+	transition: transform 0.8s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.show-menu .icon-list,
+.show-menu .icon-list a {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transition: -webkit-transform 0.8s;
+	transition: transform 0.8s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.show-menu .icon-list a {
+	-webkit-transition-duration: 0.9s;
+	transition-duration: 0.9s;
+}
+
+.show-menu .content::before {
+	opacity: 1;
+	-webkit-transition: opacity 0.8s;
+	transition: opacity 0.8s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
 }
