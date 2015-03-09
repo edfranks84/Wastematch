@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <div class="menu-wrap">
+    <!-- <div class="menu-wrap">
         <div class="mobile-nav">
             <nav>
 
@@ -19,26 +19,6 @@
                         <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
                         <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
                         <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li>
-
-
-                        <li id="menu1"><a href="/about/" title="About">About</a></li>
-                        <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                        <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                        <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li><li id="menu1"><a href="/about/" title="About">About</a></li>
-                        <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                        <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                        <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li><li id="menu1"><a href="/about/" title="About">About</a></li>
-                        <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                        <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                        <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li><li id="menu1"><a href="/about/" title="About">About</a></li>
-                        <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                        <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                        <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li><li id="menu1"><a href="/about/" title="About">About</a></li>
-                        <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                        <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                        <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li>
-
-
                     </ul>
                 </div>
 
@@ -46,45 +26,48 @@
 
         </div>
         <button class="close-button" id="close-button">Close Menu</button>
-    </div>
+    </div> -->
 
     <div class="content-wrap">
         <section class="hero">
 
             <header>
-                <div class="logo">
-                    <a href="#">
-                        <svg class="logo-icon">
-                            <use xlink:href="/assets/images/svgcomp.svg#logo-white"></use>
-                        </svg>
-                    </a>
-                </div>
-                <div class="header-links">
-                    <nav>
-                        <div class="nav" id="navInsmenu">
-                            <ul id="menu" class="menu">
-                                <li class="liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
-                                <li id="menu1"><a href="/about/" title="About">About</a></li>
-                                <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
-                                <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
-                                <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="login-buttons">
-
-                        <div class="signup-button button button--solid-blue">
-                            <a href="#">Sign Up</a>
-                        </div>
-                        <div class="signin-button button button--solid-green">
-                            <a href="#">Sign In</a>
-                        </div>
-
+                <div class="header-container">
+                    <div class="logo">
+                        <a href="#">
+                            <svg class="logo-icon">
+                                <use xlink:href="/assets/images/svgcomp.svg#logo-white"></use>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="menu-button-wrap">
-                        <button class="menu-button" id="open-button">
-                            <div class="menu-button-icon"> </div>
-                        </button>
+                    <div class="header-links">
+                        <nav>
+                            <div class="nav" id="navInsmenu">
+                                <ul id="menu" class="menu">
+                                    <li class="liLinkActive" id="menu0"><a class="linkActive" href="/" title="Home">Home</a></li>
+                                    <li id="menu1"><a href="/about/" title="About">About</a></li>
+                                    <li id="menu2"><a href="/Services/" title="Services">Services</a></li>
+                                    <li id="menu3"><a href="/Projects/" title="Projects">Projects</a></li>
+                                    <li id="menu4"><a href="/contact/" title="Contact">Contact</a></li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="login-buttons">
+
+                            <div class="signup-button button button--solid-blue">
+                                <a href="#">Sign Up</a>
+                            </div>
+                            <div class="signin-button button button--solid-green">
+                                <a href="#">Sign In</a>
+                            </div>
+
+                        </div>
+                        <div class="menu-button-wrap">
+                            <button class="menu-button" id="open-button">
+                                <div class="menu-button-icon"> </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -623,7 +606,7 @@
 
                     </div>
                     <div class="footer-text">
-                        <p>Waste Match © 2015 | Privacy Policy | Terms & Conditions | Cookies<br/>Website designed by The Smarter Web Company</p>
+                        <p>Waste Match © 2015 | Privacy Policy | Terms & Conditions | Cookies | Website designed by The Smarter Web Company</p>
                     </div>
                 </div>
                 <div class="footer-nav">
@@ -701,7 +684,7 @@
     <script src="/assets/js/nav.js"></script>
     <script src="/assets/js/classie.js"></script>
     <script src="/assets/js/waypoint.js"></script>
-
+    <script src="/assets/js/svg4everybody.min.js"></script>
     <script>
 
         $(document).ready(function() {
@@ -722,7 +705,7 @@
           owl.owlCarousel({
               itemsCustom : [
                 [0, 1],
-                [320, 2],
+                [390, 2],
                 [650, 3],
                 [1100, 4]
               ],
@@ -771,6 +754,20 @@
               numAnim.start();
           };
       }, { offset: '80%' });
+
+      jQuery(function($) {
+
+            var $nav = $('header');
+            var $win = $(window);
+            var winH = $win.height();   // Get the window height.
+
+            $win.on("scroll", function () {
+                $nav.toggleClass("scrolled", $(this).scrollTop() > winH/3 );
+            }).on("resize", function(){ // If the user resizes the window
+               winH = $(this).height(); // you'll need the new height value
+            });
+
+        });
 
 
 

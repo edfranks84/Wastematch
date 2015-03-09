@@ -69,11 +69,13 @@ h1, h2, h3, h4, h5, h6, p{
     font-family: $primary-font-bold;
     font-size: ms(4);
     margin-bottom: 0.75em;
+    line-height: 1.1;
 }
 @mixin h4{
     font-family: $primary-font-bold;
     font-size: ms(3);
     margin-bottom: 0.75em;
+    line-height: 1.1;
 }
 @mixin h5{
     font-family: $primary-font-semi;
