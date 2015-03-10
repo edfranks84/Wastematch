@@ -40,10 +40,15 @@
         margin-bottom: 0;
     }
 
-    h2{
+    h1{
         text-transform: uppercase;
+        @include h2;
+        font-size: ms(4);
+        @include respond-to(marge){
+            font-size: ms(5);
+        }
     }
-    h2,h6{
+    h1,h6{
         color: #fff;
     }
     h6{
@@ -214,12 +219,15 @@
         background-image: linear-gradient(-111deg, #4cb749, #10811c);
         display: table;
         @include vertical-center;
+        text-align: center;
     }
     svg{
         fill: #fff;
         height: 3em;
         width: 3em;
-        padding-left: 0.5em;
+        //padding-left: 0.5em;
+        position: relative;
+        left: 4px;
         display: table-cell;
         vertical-align: middle;
     }
@@ -262,8 +270,14 @@
         border-bottom: 1px solid currentColor;
         text-transform: uppercase;
         margin-bottom: 0;
-        margin: 0 0.5em;
+        margin: 0 1.5em;
         //padding: 0 0.5em 0.3em;
+    }
+}
+.most-viewed__wrapper, .ending__wrapper{
+    padding: 0 2em;
+    @include respond-to(carousel-padding){
+        padding: 0;
     }
 }
 .owl-wrapper{

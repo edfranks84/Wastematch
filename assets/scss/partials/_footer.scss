@@ -105,34 +105,42 @@ footer{
 }
 .footer-social__item{
     @include clearfix;
-    margin-bottom: 0.5em;
+    @include span (4 of 12 0);
+    text-align: center;
     @include respond-to(small){
-        @include span (4 of 12 0);
-        margin-bottom: 0;
+        text-align: left;
     }
     @include respond-to(marge){
         width: 100%;
         margin-bottom: 0.5em;
-        text-align: left;
+        //text-align: left;
     }
 }
 .footer-social__icon{
     display: inline-block;
-    width: 2em;
-    height: 2em;
+    width: 3.5em;
+    height: 3.5em;
     margin-right: 0.7em;
     vertical-align: middle;
-
+    text-align: center;
     svg{
         fill: #666;
+    }
+    @include respond-to(small){
+        width: 2em;
+        height: 2em;
+        text-align: left;
     }
 
 }
 .footer-social__text{
-    display: inline-block;
-    vertical-align: middle;
-    a{
-        color: #666;
+    display: none;
+    @include respond-to(small){
+        display: inline-block;
+        vertical-align: middle;
+        a{
+            color: #666;
+        }
     }
 }
 

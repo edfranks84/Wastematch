@@ -5,6 +5,8 @@
   <title>{%= name %}</title>
   <meta name="description" content="{%= description %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" /> <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -73,7 +75,7 @@
             </header>
             <div class="container">
                 <div class="hero-text">
-                    <h2>Waste Match Linking Resources</h2>
+                    <h1>Waste Match Linking Resources</h1>
                     <h6>Waste Match is a social enterprise helping organisations find cost effective ethical and environmental disposal routes for surplus assets. We work with organisations large and small to put surplus assets into the hands of those that can make best use of them.</h6>
                     <div class="button button--solid-blue">
                         <a href="#">Learn More</a>
@@ -705,7 +707,7 @@
           owl.owlCarousel({
               itemsCustom : [
                 [0, 1],
-                [390, 2],
+                [400, 2],
                 [650, 3],
                 [1100, 4]
               ],
@@ -718,6 +720,7 @@
               navigation : true, // Show next and prev buttons
               slideSpeed : 300,
               paginationSpeed : 400,
+              autoPlay : 20000,
               singleItem:true
 
           });
