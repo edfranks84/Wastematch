@@ -454,16 +454,18 @@ nav{
 	border: none;
 	font-size: 0;
     height: 30px;
+    height: 44px;
+    width: 44px;
 	color: transparent;
 	background: transparent;
-    right: 30px;
-    top: 29px;
+    right: 10px;
+    top: 18px;
     outline: none;
     cursor: pointer;
     overflow: hidden;
     //@include vertical-align;
     .scrolled &{
-        top: 18px;
+        top: 10px;
     }
 }
 

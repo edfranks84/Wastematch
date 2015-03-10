@@ -965,17 +965,19 @@ nav ul > li:hover > ul {
   border: none;
   font-size: 0;
   height: 30px;
+  height: 44px;
+  width: 44px;
   color: transparent;
   background: transparent;
-  right: 30px;
-  top: 29px;
+  right: 10px;
+  top: 18px;
   outline: none;
   cursor: pointer;
   overflow: hidden;
 }
 
 .scrolled .menu-button {
-  top: 18px;
+  top: 10px;
 }
 
 .menu-button-icon {
@@ -2070,9 +2072,8 @@ img.mfp-img {
 
 .mfp-fade.mfp-wrap .mfp-content {
   opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: scale(0) rotate(-90deg) translate(100%);
+  -ms-transform: scale(0) rotate(-90deg) translate(100%);
   transform: scale(0) rotate(-90deg) translate(100%);
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
