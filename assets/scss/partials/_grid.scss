@@ -47,7 +47,8 @@ $grid-namespace: "contain";
 $grid-column-namespace: "g-";
 $grid-width: $max-width;
 
-$breakpoint-to-ems: true;
+@include bkpt-set('to ems', true);
+@include bkpt-set('no query fallbacks', true);
 
 .contain{
   @include container;

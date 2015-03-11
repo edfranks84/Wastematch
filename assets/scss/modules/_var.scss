@@ -52,9 +52,9 @@ $grey: #999;
 $light-grey: #f3f3f3;
 $text-color: #444;
 
-$link: blue;
-$link-hover: green;
-$link-focus: $primary-color;
+$link: $primary-color;
+$link-hover: $secondary-color;
+$link-focus: $secondary-color;
 
 
 // Brand-Colors ---- //
@@ -69,7 +69,7 @@ $vimeo: #1ab7ea;
 
 
 // set basics followed by customs
-$breakpoints: (
+$BREAKPOINTS: (
   tiny: 320px,
   small: 482px,
   regular: 575px,
