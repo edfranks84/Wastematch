@@ -471,35 +471,35 @@ h6 a,
 
 @font-face {
   font-family: 'source-light';
-  src: url('/assets/fonts/SourceSansPro-Light.woff') format('woff');
+  src: url('http://192.168.88.33/fonts/SourceSansPro-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'source-italic';
-  src: url('/assets/fonts/SourceSansPro-It.woff') format('woff');
+  src: url('http://192.168.88.33/fonts/SourceSansPro-It.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'source-regular';
-  src: url('/assets/fonts/SourceSansPro-Regular.woff') format('woff');
+  src: url('http://192.168.88.33/fonts/SourceSansPro-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'source-semibold';
-  src: url('/assets/fonts/SourceSansPro-Semibold.woff') format('woff');
+  src: url('http://192.168.88.33/fonts/SourceSansPro-Semibold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'source-bold';
-  src: url('/assets/fonts/SourceSansPro-Bold.woff') format('woff');
+  src: url('http://192.168.88.33/fonts/SourceSansPro-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -1359,9 +1359,8 @@ header.scrolled {
 }
 
 @media (min-width: 51.875em) {
-  .login-buttons .signup-button .signup-button,
-  .login-buttons .signin-button .signup-button {
-    margin-right: 1em;
+  .login-buttons .signup-button {
+    margin-right: 0.5em;
   }
 }
 
@@ -2375,7 +2374,7 @@ footer:after {
 }
 
 .hero {
-  background: url("/assets/images/hero.jpg") center center #fff no-repeat;
+  background: url("../../assets/images/hero.jpg") center center #fff no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   position: relative;
@@ -2620,7 +2619,7 @@ footer:after {
 }
 
 .video-band {
-  background: url("/assets/images/video-bg.jpg") center center #fff no-repeat;
+  background: url("../../assets/images/video-bg.jpg") center center #fff no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   padding: 10em 0;
@@ -2767,7 +2766,7 @@ footer:after {
 }
 
 .dust-band {
-  background: url("/assets/images/dust-pattern.jpg") repeat #f3f3f3;
+  background: url("../../assets/images/dust-pattern.jpg") repeat #f3f3f3;
 }
 
 .most-viewed .container,
@@ -2883,7 +2882,7 @@ footer:after {
 }
 
 .listing__location:before {
-  content: url("/assets/images/pin.svg");
+  content: url("../../assets/images/pin.svg");
   height: 1em;
   width: 1em;
   display: inline-block;
@@ -3001,7 +3000,7 @@ fieldset[disabled] .listing__button a.active {
   position: absolute;
   left: 1em;
   bottom: 1em;
-  background: url("/assets/images/previous2.svg") transparent no-repeat;
+  background: url("../../assets/images/previous2.svg") transparent no-repeat;
   padding: 0;
   margin: 0;
   opacity: 1;
@@ -3019,7 +3018,7 @@ fieldset[disabled] .listing__button a.active {
     height: 4em;
     width: 4em;
     left: -4em;
-    background: url("/assets/images/previous.svg") transparent no-repeat;
+    background: url("../../assets/images/previous.svg") transparent no-repeat;
   }
 }
 
@@ -3048,7 +3047,7 @@ fieldset[disabled] .listing__button a.active {
   position: absolute;
   right: 1em;
   bottom: 1em;
-  background: url("/assets/images/next2.svg") transparent no-repeat;
+  background: url("../../assets/images/next2.svg") transparent no-repeat;
   padding: 0;
   margin: 0;
   opacity: 1;
@@ -3066,7 +3065,7 @@ fieldset[disabled] .listing__button a.active {
     height: 4em;
     width: 4em;
     right: -4em;
-    background: url("/assets/images/next.svg") transparent no-repeat;
+    background: url("../../assets/images/next.svg") transparent no-repeat;
   }
 }
 
@@ -3173,7 +3172,7 @@ fieldset[disabled] .listing__button a.active {
 
 .testimonials {
   background-color: #2287d3;
-  background: url("/assets/images/testimonial-bg.jpg") center center #fff no-repeat;
+  background: url("../../assets/images/testimonial-bg.jpg") center center #fff no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -3322,6 +3321,9 @@ fieldset[disabled] .listing__button a.active {
   font-size: 15px;
   line-height: 1;
   border-radius: 2px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3ca0ec), to(#2287d3));
+  background-image: -webkit-linear-gradient(#3ca0ec, #2287d3);
+  background-image: linear-gradient(#3ca0ec, #2287d3);
 }
 
 .button--solid-blue:hover,
@@ -3369,6 +3371,12 @@ fieldset[disabled] .button--solid-blue.active {
   text-transform: uppercase;
 }
 
+.button--solid-blue:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2287d3), to(#1b6ba7));
+  background-image: -webkit-linear-gradient(#2287d3, #1b6ba7);
+  background-image: linear-gradient(#2287d3, #1b6ba7);
+}
+
 .button--solid-green {
   color: #fff;
   background-color: #34a237;
@@ -3377,6 +3385,9 @@ fieldset[disabled] .button--solid-blue.active {
   font-size: 15px;
   line-height: 1;
   border-radius: 2px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#39d03d), to(#34a237));
+  background-image: -webkit-linear-gradient(#39d03d, #34a237);
+  background-image: linear-gradient(#39d03d, #34a237);
 }
 
 .button--solid-green:hover,
@@ -3422,4 +3433,10 @@ fieldset[disabled] .button--solid-green.active {
 .button--solid-green a {
   color: #fff;
   text-transform: uppercase;
+}
+
+.button--solid-green:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#34a237), to(#287b2a));
+  background-image: -webkit-linear-gradient(#34a237, #287b2a);
+  background-image: linear-gradient(#34a237, #287b2a);
 }

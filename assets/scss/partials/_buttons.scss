@@ -22,16 +22,24 @@
 .button--solid-blue{
     @include button-variant(#fff, $primary-color, transparent);
     @include button-size(0.8em, 2em, 15px, 1, 2px);
+    background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
     a{
         color: #fff;
         text-transform: uppercase;
+    }
+    &:hover{
+        background-image: linear-gradient($primary-color, darken($primary-color, 10%));
     }
 }
 .button--solid-green{
     @include button-variant(#fff, $secondary-color, transparent);
     @include button-size(0.8em, 2em, 15px, 1, 2px);
+    background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
     a{
         color: #fff;
         text-transform: uppercase;
+    }
+    &:hover{
+        background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
     }
 }

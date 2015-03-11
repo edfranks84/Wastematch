@@ -144,10 +144,11 @@ header{
         @include respond-to(large){
             font-size: 15px;
         }
-        .signup-button{
-            @include respond-to(nav-responsive){
-                margin-right: 1em;
-            }
+
+    }
+    .signup-button{
+        @include respond-to(nav-responsive){
+            margin-right: 0.5em;
         }
     }
 }

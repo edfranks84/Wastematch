@@ -18,6 +18,7 @@
   background-color: $background;
   border-color: $border;
 
+
   &:hover,
   &:focus,
   &:active,
@@ -357,12 +358,12 @@ $prefix-for-spec:      true !default;
  */
 
 @mixin cover-background ($image-name){
-	background: url("/assets/images/#{$image-name}") center center #fff no-repeat;
+	background: url("../../assets/images/#{$image-name}") center center #fff no-repeat;
 	background-size: cover;
 }
 
 @mixin parallax-background ($image-name){
-    background: url("/assets/images/#{$image-name}") #fff no-repeat;
+    background: url("../../images/#{$image-name}") #fff no-repeat;
     background-size: cover;
     background-position: 0 0;
     background-attachment:fixed;

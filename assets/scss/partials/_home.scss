@@ -257,7 +257,7 @@
 }
 
 .dust-band{
-    background: url("/assets/images/dust-pattern.jpg") repeat #f3f3f3;
+    background: url("../../assets/images/dust-pattern.jpg") repeat #f3f3f3;
 }
 
 
@@ -335,7 +335,7 @@
     float:left;
     width: 50%;
     &:before{
-        content: url("/assets/images/pin.svg");
+        content: url("../../assets/images/pin.svg");
         height: 1em;
         width: 1em;
         display: inline-block;
@@ -392,7 +392,7 @@
                 position: absolute;
                 left: 1em;
                 bottom: 1em;
-                background: url("/assets/images/previous2.svg") transparent no-repeat;
+                background: url("../../assets/images/previous2.svg") transparent no-repeat;
                 padding: 0;
                 margin: 0;
                 opacity: 1;
@@ -403,7 +403,7 @@
                     height: 4em;
                     width: 4em;
                     left: -4em;
-                    background: url("/assets/images/previous.svg") transparent no-repeat;
+                    background: url("../../assets/images/previous.svg") transparent no-repeat;
                 }
                 @include respond-to(x-large){
                     height: 5em;
@@ -423,7 +423,7 @@
                 position: absolute;
                 right: 1em;
                 bottom: 1em;
-                background: url("/assets/images/next2.svg") transparent no-repeat;
+                background: url("../../assets/images/next2.svg") transparent no-repeat;
                 padding: 0;
                 margin: 0;
                 opacity: 1;
@@ -434,7 +434,7 @@
                     height: 4em;
                     width: 4em;
                     right: -4em;
-                    background: url("/assets/images/next.svg") transparent no-repeat;
+                    background: url("../../assets/images/next.svg") transparent no-repeat;
                 }
                 @include respond-to(x-large){
                     height: 5em;
