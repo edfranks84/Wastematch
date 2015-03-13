@@ -55,10 +55,12 @@
         font-family: $primary-font;
     }
     .button{
-        margin-top: 1em;
+        margin-top: 2em;
     }
     .button--solid-blue{
-        font-size: 18px;
+        a{
+            font-size: 18px;
+        }
     }
 }
 .box{

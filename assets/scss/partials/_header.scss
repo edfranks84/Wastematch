@@ -28,11 +28,11 @@ header{
     @include respond-to(nav-responsive){
         background-color: rgba(0,0,0,0.2);
         padding: 1em;
-        .bdy-login- &, .bdy-register- &{
-            background-color: darken(saturate($primary-color, 10%),10%);
-            background-color: rgba($primary-color, 0.9);
-            background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
-        }
+        // .bdy-login- &, .bdy-register- &{
+        //     background-color: darken(saturate($primary-color, 10%),10%);
+        //     background-color: rgba($primary-color, 0.9);
+        //     background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
+        // }
     }
     @include respond-to(large){
         padding: 1em 2em;
@@ -44,13 +44,13 @@ header{
         background-color: rgba(0,0,0,0.85);
         transition: all 300ms ease-in-out;
     }
-    .bdy-login- &, .bdy-register- &{
+    .bdy-login- &, .bdy-register- &, .bdy-password-reminder- &{
         height: 62px;
         //padding: 0.2em 1em;
         padding: 0;
-        background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
+        //background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
         background-color: darken(saturate($primary-color, 10%),10%);
-        background-color: rgba($primary-color, 0.9);
+        background-color: rgba(0,0,0, 0.9);
         transition: all 300ms ease-in-out;
     }
 }
@@ -86,7 +86,7 @@ header{
         max-width: 11.5em;
         height:4.1em;
     }
-    .scrolled &, .bdy-login- &, .bdy-register- &{
+    .scrolled &, .bdy-login- &, .bdy-register- &, .bdy-password-reminder- &{
         height: auto;
         max-height: 100%;
         max-width: 8em;
@@ -132,8 +132,16 @@ header{
             transition: all 500ms ease-in-out;
         }
     }
-    .bdy-login- &, .bdy-register- &{
-        display: none;
+    .bdy-login- &, .bdy-register- &, .bdy-password-reminder- &{
+        bottom: -34px;
+        @include respond-to(nav-responsive){
+            display: block;
+            float: right;
+            position: relative;
+            top: 3px;
+            width: auto;
+            margin-right: 5px;
+        }
     }
     @include respond-to(nav-responsive){
         display: block;
@@ -153,7 +161,9 @@ header{
         float: left;
         width: 50%;
         margin-right: 0;
-        border-radius: 0;
+        a{
+            border-radius: 0;
+        }
         @include respond-to(nav-responsive){
             border-radius: 2px;
             width: auto;

@@ -1,0 +1,109 @@
+.form__wrap{
+    margin-top: 2em;
+}
+.form__field{
+    width: 100%;
+    position: relative;
+    max-width: 35em;
+    margin: 0 auto 0.4em;
+    @include respond-to(marge){
+        margin: 0 0 0.4em;
+    }
+    label{
+        width: 100%;
+        font-family: $primary-font;
+        font-size: ms(0);
+        //text-transform: uppercase;
+        color: #222;
+
+
+
+    }
+    input{
+        width: 100%;
+        padding: 1em;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        border-radius: 3px;
+        box-shadow: none;
+        font-family: $primary-font;
+        color: #444;
+        font-size: ms(0);
+        &:hover{
+            border-color: $grey;
+        }
+        &:focus{
+            color: $primary-color;
+            border-color: $primary-color;
+            box-shadow: none;
+            outline: 0;
+        }
+        &.form__field__error{
+            transition: all linear 300ms;
+            border-color: #e60000;
+            animation: shake 1s;
+            a{
+                color: #fff;
+                text-decoration: underline;
+            }
+            &:focus{
+                color: $primary-color;
+                border-color: $primary-color;
+                box-shadow: none;
+                outline: 0;
+            }
+        }
+    }
+}
+.form__button{
+    width: 100%;
+    margin-top: 1em ;
+    @include respond-to(regular){
+        width: auto;
+        float: left;
+    }
+    input{
+        box-shadow: none;
+        font-family: $primary-font-semi;
+        border: none;
+        cursor: pointer;
+        font-size: ms(1);
+        padding: 0.8em 3em;
+        width: 100%;
+        @include respond-to(regular){
+            width: auto;
+        }
+    }
+}
+.reminder-link{
+    margin-top: 1em;
+    @include respond-to(regular){
+        float:left;
+
+        margin-left: 2em;
+        padding: 0.8em 0;
+    }
+}
+.form__error{
+    padding: 0.2em 0.5em;
+    margin: 0.2em 0;
+    width: 100%;
+    background-color: #e60000;
+    color: #fff;
+    &:last-of-type{
+        margin-bottom: 2em;
+    }
+    a{
+        color: #fff;
+        text-decoration: underline;
+        font-family: $primary-font-semi;
+    }
+}
+.form__success{
+    padding: 0.4em 0.6em;
+    margin: 0.2em 0;
+    width: 100%;
+    background-color: $secondary-color;
+    color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25), 0 3px 10px 0 rgba(0,0,0,0.1);
+}

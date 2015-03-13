@@ -20,26 +20,44 @@
 	@include transition (all 0.4s ease-in-out);
 }
 .button--solid-blue{
-    @include button-variant(#fff, $primary-color, transparent);
-    @include button-size(0.8em, 2em, 15px, 1, 2px);
-    background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
     a{
+        @include button-variant(#fff, $primary-color, transparent);
+        @include button-size(0.7em, 2em, 15px, 1, 3px);
+        background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
         color: #fff;
         text-transform: uppercase;
-    }
-    &:hover{
-        background-image: linear-gradient($primary-color, darken($primary-color, 10%));
+        display: block;
+        &:hover{
+            background-image: linear-gradient($primary-color, darken($primary-color, 10%));
+        }
     }
 }
-.button--solid-green, .form__button input{
-    @include button-variant(#fff, $secondary-color, transparent);
-    @include button-size(0.8em, 2em, 15px, 1, 2px);
-    background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
+.button--solid-green{
     a{
+        @include button-variant(#fff, $secondary-color, transparent);
+        @include button-size(0.7em, 2em, 15px, 1, 3px);
+        background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
         color: #fff;
         text-transform: uppercase;
+        display: block;
+
+        &:hover{
+            background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
+        }
     }
-    &:hover{
-        background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
+}
+
+.form__button{
+    input{
+        @include button-variant(#fff, $secondary-color, transparent);
+        @include button-size(0.7em, 2em, 15px, 1, 3px);
+        background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+
+        &:hover{
+            background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
+        }
     }
 }

@@ -1,194 +1,39 @@
-#Form1{
-    .bdy-login- &, .bdy-password-reminder- &{
-        height: 100%;
+@keyframes shake {
+    0%, 100% {
+    transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-3px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+    transform: translate3d(3px, 0, 0);
     }
 }
-.content-wrap{
-    .bdy-login- &, .bdy-register- &, .bdy-password-reminder- &{
+
+
+#Form1{
+    .bdy-login- &, .bdy-password-reminder- &{
+
         @include respond-to(marge){
             height: 100%;
         }
     }
-}
-#login-wrap{
-    position: relative;
-    @include clearfix;
-    min-height: 100%;
-    height: 100%;
     @include respond-to(marge){
-        display: flex;
-    }
-}
-.login-hero{
-    font-size: 14px;
-    width: 100%;
-    position: relative;
-    @include cover-background('video-bg.jpg');
-
-    h1,h3,h6,p{
-        color: #fff;
-    }
-    h1{
-        margin-bottom: 0;
-        font-family: $primary-font-semi;
-        margin-top: 1em;
-        font-size: ms(5);
-    }
-    h3{
-        font-family: $primary-font;
-        font-size: ms(3);
-    }
-    h6{
-        font-family: $primary-font;
-        margin-bottom: 0;
-    }
-    @include respond-to(marge){
-        padding: 6em 2em;
-        float: left;
         height: 100%;
-        width: 40%;
-        font-size: 16px;
-        .bdy-register- &{
-            height: auto;
-        }
-
-    }
-    @include respond-to(x-large){
-        padding: 6em 4em;
-        h1{
-            margin-top: 0;
-            font-size: ms(6);
-        }
-        h3{
-            font-size: ms(4);
-        }
+        min-height: 100%;
     }
 }
-.login-hero__content, .login-form__content{
-    padding: 6em 2em;
-    @include respond-to(regular){
-        padding: 6em 4em;
-    }
+.content-wrap{
     @include clearfix;
-    @include respond-to(marge){
-        .bdy-login- &{
-            @include vertical-center;
-        }
-        width: 100%;
-        // display: table-cell;
-        // vertical-align: middle;
-        padding: 6em 4em;
-    }
-}
-.login-hero__content{
-    .bdy-register- &{
-
-        @include respond-to(marge){
-            padding: 6em 0em;
-            margin-top: 3em;
-        }
-        @include respond-to(large){
-            margin-top: 3em;
-            padding: 6em 2em;
-        }
-    }
-}
-.login-form__wrap{
-    width: 100%;
     position: relative;
-    background: #f8f8f8;
-    //display: table;
-
-    @include respond-to(marge){
-        padding: 6em 4em;
-        float: left;
-        width: 60%;
-        height: 100%;
-    }
-}
-.login-form__content{
-    padding: 4em 2em;
-    width: 100%;
-    max-width: 44em;
-    margin: auto;
-    h2,h5{
-        font-family: $primary-font-semi;
-        text-align: center;
+    .bdy-login- &, .bdy-password-reminder- &{
         @include respond-to(marge){
-            text-align: left;
+            height: 100%;
+            min-height: 100vh;
         }
     }
-    h3{
-        font-family: $primary-font-semi;
-        margin-bottom: 0;
-        text-align: center;
-        @include respond-to(marge){
-            text-align: left;
-        }
-    }
-    .form__field{
-        width: 100%;
-        position: relative;
-        max-width: 44em;
-        margin: 0 auto 0.3em;
-        @include respond-to(marge){
-            margin: 0 0 0.3em;
-        }
-        label{
-            width: 100%;
-            font-family: $primary-font;
-            font-size: ms(0);
-            //text-transform: uppercase;
-            color: #444;
-
-
-        }
-        input{
-            width: 100%;
-            padding: 1em;
-            background-color: #fff;
-            border: 2px solid #ddd;
-            border-radius: 3px;
-            box-shadow: none;
-            font-family: $primary-font;
-            color: #222;
-            font-size: ms(0);
-            &:hover{
-                border-color: $grey;
-            }
-            &:focus{
-                border-color: $primary-color;
-                box-shadow: none;
-            }
-        }
-    }
-    .form__button{
-        width: 100%;
-        margin-top: 1em ;
-        @include respond-to(regular){
-            width: auto;
-            float: left;
-        }
-        input{
-            box-shadow: none;
-            font-family: $primary-font-semi;
-            border: none;
-            cursor: pointer;
-            font-size: ms(1);
-            padding: 0.8em 3em;
-            width: 100%;
-            @include respond-to(regular){
-                width: auto;
-            }
-        }
-    }
-    .reminder-link{
-        margin-top: 1em;
-        @include respond-to(regular){
-            float:left;
-
-            margin-left: 2em;
-            padding: 0.8em 0;
-        }
-    }
+    // @include respond-to(marge){
+    //     height: 100%;
+    //     min-height: 100vh;
+    // }
 }

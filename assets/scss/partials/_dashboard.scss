@@ -1,0 +1,14 @@
+.main-wrapper{
+	float:right;
+	width: calc(100% - 12.5em);
+	header{
+		position: relative;
+	}
+}
+.dashboard-header{
+	.logo{
+		img{
+			width: 5em;
+		}
+	}
+}

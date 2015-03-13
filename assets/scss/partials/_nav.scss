@@ -161,7 +161,7 @@
 
 
 
-nav{
+.header-links nav{
     position: absolute;
     top: 105px;
     width: 100%;
@@ -173,7 +173,7 @@ nav{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15),0 5px 12px rgba(0,0,0,0.1);
     @include clearfix;
     .bdy-login- &, .bdy-register- &{
-        top: 62px;
+        top: 93px;
         @include respond-to(nav-responsive){
             top: auto;
         }
@@ -183,12 +183,12 @@ nav{
         @include respond-to(nav-responsive){
             top: auto;
         }
-        .bdy-login- &, .bdy-register- &{
-            top: 62px;
-            @include respond-to(nav-responsive){
-                top: auto;
-            }
-        }
+        // .bdy-login- &, .bdy-register- &{
+        //     top: 62px;
+        //     @include respond-to(nav-responsive){
+        //         top: auto;
+        //     }
+        // }
     }
     @include respond-to(nav-responsive){
         float: left;
