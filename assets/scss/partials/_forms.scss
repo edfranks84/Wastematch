@@ -7,32 +7,42 @@
     max-width: 35em;
     margin: 0 auto 0.4em;
     @include respond-to(marge){
-        margin: 0 0 0.4em;
+        margin: 0 0 0.8em;
     }
     label{
         width: 100%;
-        font-family: $primary-font;
-        font-size: ms(0);
+        font-family: $primary-font-semi;
+        font-size: 1em;
         //text-transform: uppercase;
-        color: #222;
-
-
+        color: #333;
+        display: inline-block;
+        margin-bottom: 4px;
 
     }
-    input{
+    textarea{
+        min-height: 10em;
+    }
+    input,textarea,select{
         width: 100%;
         padding: 1em;
-        background-color: #fff;
-        border: 2px solid #ddd;
+        background-color: #fafafa;
+        border: 1px solid #ccc;
         border-radius: 3px;
         box-shadow: none;
         font-family: $primary-font;
         color: #444;
         font-size: ms(0);
+        &[type="checkbox"]{
+            text-align: left;
+            width: auto;
+            position: relative;
+            top: 2px;
+        }
         &:hover{
             border-color: $grey;
         }
         &:focus{
+            background-color: #fff;
             color: $primary-color;
             border-color: $primary-color;
             box-shadow: none;
@@ -55,7 +65,7 @@
         }
     }
 }
-.form__button{
+.form__button, .edit__button{
     width: 100%;
     margin-top: 1em ;
     @include respond-to(regular){
@@ -63,7 +73,7 @@
         float: left;
     }
     input{
-        box-shadow: none;
+        //box-shadow: none;
         font-family: $primary-font-semi;
         border: none;
         cursor: pointer;

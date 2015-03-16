@@ -188,3 +188,18 @@ footer{
         }
     }
 }
+
+
+
+
+footer.dashboard-footer{
+    padding: 0.5em;
+    text-align: center;
+    background-color: #282e35;
+    border-top: none;
+    p,a{
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}

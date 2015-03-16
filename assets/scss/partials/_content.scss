@@ -11,27 +11,27 @@
 }
 
 
-#Form1{
-    .bdy-login- &, .bdy-password-reminder- &{
-
-        @include respond-to(marge){
-            height: 100%;
-        }
-    }
-    @include respond-to(marge){
-        height: 100%;
-        min-height: 100%;
-    }
-}
+// #Form1{
+//     .bdy-login- &, .bdy-password-reminder- &{
+//
+//         @include respond-to(marge){
+//             height: 100%;
+//         }
+//     }
+//     @include respond-to(marge){
+//         height: 100%;
+//         min-height: 100%;
+//     }
+// }
 .content-wrap{
     @include clearfix;
     position: relative;
-    .bdy-login- &, .bdy-password-reminder- &{
-        @include respond-to(marge){
-            height: 100%;
-            min-height: 100vh;
-        }
-    }
+    // .bdy-login- &, .bdy-password-reminder- &{
+    //     @include respond-to(marge){
+    //         height: 100%;
+    //         min-height: 100vh;
+    //     }
+    // }
     // @include respond-to(marge){
     //     height: 100%;
     //     min-height: 100vh;

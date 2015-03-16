@@ -16,19 +16,21 @@
 	line-height: 1;
 	white-space: nowrap;
     font-weight: bold;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+    // box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 	@include transition (all 0.4s ease-in-out);
 }
 .button--solid-blue{
     a{
         @include button-variant(#fff, $primary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
-        background-image: linear-gradient(lighten(saturate($primary-color, 10%),10%), $primary-color);
+        background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
         color: #fff;
         text-transform: uppercase;
         display: block;
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
         &:hover{
-            background-image: linear-gradient($primary-color, darken($primary-color, 10%));
+            background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
         }
     }
 }
@@ -36,28 +38,30 @@
     a{
         @include button-variant(#fff, $secondary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
-        background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
+        background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
         color: #fff;
         text-transform: uppercase;
         display: block;
-
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
         &:hover{
-            background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
+            background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
         }
     }
 }
 
-.form__button{
+.form__button, .edit__button{
     input{
         @include button-variant(#fff, $secondary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
-        background-image: linear-gradient(lighten(saturate($secondary-color, 10%),10%), $secondary-color);
+        background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
         color: #fff;
         text-transform: uppercase;
         display: block;
-
+        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
         &:hover{
-            background-image: linear-gradient($secondary-color, darken($secondary-color, 10%));
+            background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
         }
     }
 }
