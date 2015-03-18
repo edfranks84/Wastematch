@@ -6,6 +6,7 @@
     position: relative;
     max-width: 35em;
     margin: 0 auto 0.4em;
+    @include clearfix;
     @include respond-to(marge){
         margin: 0 0 0.8em;
     }

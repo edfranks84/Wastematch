@@ -34,7 +34,7 @@
         padding: 6em 2em;
         float: left;
         height: 100%;
-        width: 40%;
+        width: 45%;
         font-size: 16px;
         .bdy-register- &{
             height: auto;
@@ -53,7 +53,7 @@
     }
 }
 .login-hero__content, .login-form__content{
-    padding: 7em 2em 6em;
+    padding: 7em 2em 4em;
     @include respond-to(regular){
         padding: 7em 4em 6em;
     }
@@ -95,19 +95,25 @@
     //display: table;
 
     @include respond-to(marge){
-        padding: 6em 4em;
+        padding: 6em 2.5em;
         float: left;
-        width: 60%;
+        width: 55%;
         height: 100%;
+    }
+    @include respond-to(large){
+        padding: 6em 4em;
     }
 
 }
 
 .login-form__content{
-    padding: 6em 2em;
+    padding: 3em 2em;
     width: 100%;
     max-width: 35em;
     margin: auto;
+    @include respond-to(regular){
+        padding: 6em 2em;
+    }
     h2,h5{
         font-family: $primary-font-semi;
         text-align: center;

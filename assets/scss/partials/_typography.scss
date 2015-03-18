@@ -48,7 +48,7 @@
 h1, h2, h3, h4, h5, h6, p{
     text-rendering: optimizeLegibility;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.2;
     color: $text-color;
 }
 
@@ -91,6 +91,7 @@ h1, h2, h3, h4, h5, h6, p{
     font-family: $primary-font;
     font-size: 15px;
     margin-bottom: 1em;
+    line-height: 1.4;
     @include respond-to(small){
         font-size: ms(0);
     }

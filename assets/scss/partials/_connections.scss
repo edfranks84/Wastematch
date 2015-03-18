@@ -1,0 +1,43 @@
+.connections-tabs{
+    width: 100%;
+    z-index: 2;
+    @include clearfix;
+}
+.tab{
+    float: left;
+    border: 1px solid #ddd;
+    position: relative;
+    a{
+        padding: 1em 2em;
+        background-color: #f1f1f1;
+        font-size: ms(1);
+        font-family: $primary-font-semi;
+        color: $text-color;
+        display: inline-block;
+    }
+    &.active-tab{
+        border-bottom-color: #fff;
+
+        a{
+            color: $secondary-color;
+            background-color: #fff;
+        }
+        &:after{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            display: block;
+            background: $secondary-color;
+        }
+    }
+}
+.connections-content{
+    padding: 2em 1.5em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 12px 0 rgba(0, 0, 0, 0.06);
+    margin-top: -1px;
+}

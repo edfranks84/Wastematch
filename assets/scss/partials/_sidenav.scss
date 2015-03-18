@@ -2,12 +2,50 @@
 	//min-height: 100%;
 	display: block;
 	background-color: #282e35;
-	width: 12.5em;
+	width: 0;
 	float: left;
 	position: absolute;
 	top: 0;
 	bottom: 0;
+	transition: all 300ms linear;
 	@include clearfix;
+	@include respond-to(regular){
+		width: 4em;
+	}
+	@include respond-to(large){
+		width: 12.5em;
+	}
+	.menu-button-wrap{
+		height: 0em;
+		width: 100%;
+		// display: none;
+		position: relative;
+		.menu-button-icon, .menu-button-icon::before, .menu-button-icon::after {
+			background: $secondary-color;
+		}
+		@include respond-to(regular){
+			// display: block;
+			.menu-button-icon, .menu-button-icon::before, .menu-button-icon::after {
+				background: #fff;
+			}
+			height: 4em;
+		}
+		@include respond-to(large){
+			display: none;
+		}
+	}
+	.menu-button{
+		right: -50px;
+		@include respond-to(regular){
+			right: 16px;
+		}
+	}
+	.show-menu &{
+		width: 12.5em;
+		.menu-button-icon{
+			background: transparent;
+		}
+	}
 }
 .organisation-info{
 	padding: 1.5em;
@@ -15,6 +53,14 @@
 	text-align: center;
 	display: block;
 	border-bottom: 1px solid #3e464f;
+	display: none;
+	@include respond-to(large){
+		display: block;
+	}
+	.show-menu &{
+		display: block;
+	}
+
 }
 .organisation-image{
 	width: 100%;
@@ -39,6 +85,13 @@
 	}
 }
 .side-nav__menu{
+	opacity: 0;
+	@include respond-to(regular){
+		opacity: 1;
+	}
+	.show-menu &{
+		opacity: 1;
+	}
 	nav{
 		width: 100%;
 	}
@@ -49,6 +102,10 @@
 		width: 100%;
 		position: relative;
 		border-bottom: 1px solid #3e464f;
+		height: 4em;
+		@include respond-to(large){
+			height: auto;
+		}
 		&:hover{
 			background-color: #3e464f;
 			a{
@@ -72,8 +129,11 @@
 				position: absolute;
 				left: 0;
 				height: 100%;
-				width: 4px;
+				width: 2px;
 				background-image: linear-gradient(180deg, #4cb749, $secondary-color);
+				@include respond-to(large){
+					width: 4px;
+				}
 			}
 		}
 		a{
@@ -83,6 +143,13 @@
 			text-transform: uppercase;
 			font-family: $primary-font-semi;
 			font-size: em(15);
+			display: none;
+			@include respond-to(large){
+				display: block;
+			}
+			.show-menu &{
+				display: block;
+			}
 		}
 	}
 }
@@ -97,8 +164,15 @@
 	fill: #c5c5c5;
 	display: inline-block;
     height: 1.3em;
-    left: 1.3em;
+    left: 0.8em;
     position: absolute;
     top: 1.4em;
     width: 1.3em;
+	transition: left 300ms ease;
+	@include respond-to(regular){
+		left: 1.3em;
+	}
+	.show-menu &{
+		left: 1.3em;
+	}
 }

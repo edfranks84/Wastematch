@@ -19,7 +19,7 @@
     // box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 	@include transition (all 0.4s ease-in-out);
 }
-.button--solid-blue{
+.button--solid-blue,.profile-btn{
     a{
         @include button-variant(#fff, $primary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
@@ -43,6 +43,7 @@
         text-transform: uppercase;
         display: block;
         box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+        text-decoration: none;
         &:hover{
             background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
             box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);

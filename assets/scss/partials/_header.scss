@@ -180,9 +180,11 @@ header.main-site{
         }
     }
 }
-.menu-button-wrap{
-    @include respond-to(nav-responsive){
-        display: none;
+.main-site{
+    .menu-button-wrap{
+        @include respond-to(nav-responsive){
+            display: none;
+        }
     }
 }
 // @keyframes fadeOut {

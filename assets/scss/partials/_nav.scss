@@ -7,7 +7,7 @@
 
 \* ---------------------------------------------- */
 
-
+.main-site{
     nav{
         // display: none;
         // max-height: 0;
@@ -32,7 +32,7 @@
             transform: none;
         }
     }
-
+}
 
 // nav{
 //     @include clearfix;
@@ -501,9 +501,7 @@
 .menu-button-icon{
     display: inline-block;
     @include burger(30px, 3px, 5px, $white);
-    .stuck &{
-        @include burger(30px, 3px, 5px, $white);
-    }
+
 }
 .show-menu .menu-button-icon {
   @include burger-to-cross;
