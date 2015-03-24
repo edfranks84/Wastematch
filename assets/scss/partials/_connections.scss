@@ -1,19 +1,50 @@
-.connections-tabs{
+.connections-body{
     width: 100%;
+	padding: 1.5em 1em;
+
+	@include clearfix;
+	@include respond-to(small){
+		padding: 1em;
+	}
+
+    @include respond-to(side-col-change){
+        width: calc(100% - 19em);
+        float: left;
+    }
+}
+
+.connections-tabs{
+
     z-index: 2;
     @include clearfix;
 }
 .tab{
     float: left;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     position: relative;
+    width: 49%;
+    text-align: center;
+    @include respond-to(small){
+        width: auto
+    }
     a{
-        padding: 1em 2em;
-        background-color: #f1f1f1;
-        font-size: ms(1);
+        padding: 0.75em 0;
+        background-color: #fbfbfb;
+        font-size: ms(0);
         font-family: $primary-font-semi;
-        color: $text-color;
-        display: inline-block;
+        color: #555;
+        display: block;
+        &:hover{
+            //color: $secondary-color;
+            background-color: #fff;
+        }
+        @include respond-to(small){
+            padding: 0.8em 2em;
+            font-size: ms(1);
+        }
+    }
+    &:first-child{
+        border-right: none;;
     }
     &.active-tab{
         border-bottom-color: #fff;
@@ -25,19 +56,145 @@
         &:after{
             content:"";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
             height: 3px;
             display: block;
             background: $secondary-color;
         }
+        &:before{
+            content:"";
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            margin-left: -7px;
+            width: 7px;
+            height: 7px;
+            display: inline-block;
+            background: transparent;
+            border: 7px solid transparent;
+            border-top-color: $secondary-color;
+        }
     }
+
 }
 .connections-content{
-    padding: 2em 1.5em;
+    padding: 1em;
     background-color: #fff;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 12px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.16), 0 4px 10px 0 rgba(0, 0, 0, 0.06);
     margin-top: -1px;
+    @include clearfix;
+    //width: calc(100% - 20em);
+    @include respond-to(small){
+        padding: 2em 1.5em;
+    }
+    h3{
+        font-family: $primary-font-semi;
+        margin-bottom: 0.2em;
+    }
+    .small-only{
+        display: table;
+        td{
+            border: 1px solid #e1e1e1;
+        }
+        tr{
+            //border-top: 1px solid #e1e1e1;
+            //border: 1px solid #e1e1e1;
+            //border-bottom: 1px solid #e1e1e1;
+            &:first-child{
+                border-top: none;
+            }
+            &:nth-child(even){
+                background-color: #ffffff;
+            }
+            &:nth-child(odd){
+                background-color: #ffffff;
+            }
+        }
+        .st-head-row{
+            padding-top: 2em;
+            font-size: ms(1);
+            font-family: $primary-font-semi;
+        }
+        .st-key{
+            border-right: 1px solid #d5d5d5;
+            background-color: #f7f7f7;
+            a{
+                font-family: $primary-font-semi
+            }
+        }
+        @include respond-to(connections-table){
+            display: none;
+        }
+    }
+    .large-only{
+        display: none;
+        @include respond-to(connections-table){
+            display: table;
+        }
+    }
+    .tableheading{
+        display: none;
+        @include respond-to(connections-table){
+            display: table-row;
+        }
+    }
+    .dualBtn{
+        a{
+            padding: 0.3em 0.6em;
+            border-radius: 2px;
+            color: #fff;
+            background-color: $primary-color;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            &.btn-connect{
+                background-color: $secondary-color;
+                &:hover{
+                    background-color: lighten(saturate($secondary-color, 10%),10%);
+                }
+            }
+            &.btn-disconnect,.btn-reject{
+                background-color: firebrick;
+                &:hover{
+                    background-color: lighten(saturate(firebrick, 10%),10%);
+                }
+            }
+        }
+    }
+}
+.connections-info h6{
+    font-family: $primary-font;
+    color: #666;
+}
+
+.search-connections{
+    @include clearfix;
+    margin-bottom: 2em;
+    .form__field{
+        max-width: none;
+    	@include respond-to(medium){
+    		width: 48%;
+    		margin-bottom: 0.4em;
+    		float: left;
+    		margin-right: 2%;
+    		&:last-child{
+    			margin-right: 0;
+    		}
+    	}
+    	@include respond-to(x-large){
+    		width: 23%;
+    		float: left;
+    		margin-right: 2%;
+    		&:last-child{
+    			margin-right: 0;
+    		}
+    	}
+    }
+    .form__button{
+		width: 100%;
+	}
+
 }

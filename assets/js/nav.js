@@ -20,7 +20,15 @@
 		initEvents();
 	}
 
-
+	function toggleMenu() {
+		if( isOpen ) {
+			classie.remove( bodyEl, 'show-menu' );
+		}
+		else {
+			classie.add( bodyEl, 'show-menu' );
+		}
+		isOpen = !isOpen;
+	}
 
 	function initEvents() {
 		openbtn.addEventListener( 'click', toggleMenu );
@@ -39,15 +47,7 @@
 		} );
 	}
 
-	function toggleMenu() {
-		if( isOpen ) {
-			classie.remove( bodyEl, 'show-menu' );
-		}
-		else {
-			classie.add( bodyEl, 'show-menu' );
-		}
-		isOpen = !isOpen;
-	}
+
 
 	init();
 

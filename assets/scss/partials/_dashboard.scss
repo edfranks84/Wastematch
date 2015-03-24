@@ -183,6 +183,12 @@
 			margin-bottom: 12px;
 		}
 	}
+	h5,p{
+		display: none;
+		@include respond-to(small){
+			display: block;
+		}
+	}
 
 
 }
@@ -202,15 +208,16 @@
 }
 
 .main-body{
-	padding: 1.5em 1em;
+	//padding: 1.5em 1em;
+	position: relative;
 	background-color: #ebeff1;
 	background-color: #f4f4f4;
 	@include clearfix;
 	@include respond-to(small){
-		padding: 1.5em;
+		//padding: 1.5em;
 	}
 	@include respond-to(medium){
-		padding: 2em 2em 2em 2.5em;
+		//padding: 2em 2em 2em 2.5em;
 	}
 	h2{
 		font-size: ms(3);

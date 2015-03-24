@@ -112,6 +112,10 @@
 		text-align: center;
 	}
 
+	.no-marg{
+		margin: 0;
+	}
+
 	.container{
 		@include container;
 		max-width: 1300px;
