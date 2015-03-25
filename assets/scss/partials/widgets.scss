@@ -43,6 +43,7 @@
         background-color: #51575e;
         padding: 1.5em;
         border: none;
+        margin: 0;
         box-shadow: none;
         &:nth-child(even){
             background-color: #444a52;
@@ -131,14 +132,78 @@
     width: 100%;
     a{
         display: inline-block;
-        //color: #333;
+        color: lighten(saturate($primary-color,10%),10%);
         font-size: 0.8em;
         &:first-child{
             margin-right: 0.5em;
         }
-        // &:hover{
-        //     color: $primary-color;
-        // }
+        &:hover{
+            color: lighten(saturate($secondary-color,10%),10%);
+        }
     }
 
+}
+.connections-items{
+    @include respond-to(side-col-change){
+        font-family: $primary-font;
+        color: #fff;
+    }
+}
+.all-widgets{
+    .your-summary{
+        background: $secondary-color;
+        border-top: none;
+        margin-bottom: 2em;
+        .widget-title{
+            color: #fff;
+            border-bottom-color: lighten($secondary-color,50%);
+        }
+        .viewed-number{
+            color: #fff;
+        }
+        .viewed-text{
+            color: #fff;
+        }
+        .widget-info__list li{
+            border-bottom-color: lighten($secondary-color,50%);
+        }
+        @include respond-to(medium){
+            width: 98%;
+            ul{
+                @include clearfix;
+                margin-top: 1em;
+                padding-bottom: 1em;
+            }
+            .widget-info__list li{
+                float: left;
+                width: 32%;
+                margin-right: 1%;
+                border: none;
+                border-right: 1px solid lighten($secondary-color,20%);
+                padding: 0 1em;
+                &:last-child{
+                    border: none;
+                }
+            }
+        }
+        @include respond-to(side-col-change){
+            margin: 0;
+            width: 100%;
+            background-color: #51575e;
+            margin: 0;
+            ul{
+                @include clearfix;
+                margin-top: 0;
+                padding-bottom: 0;
+            }
+            .widget-info__list li{
+                width: auto;
+                float: none;
+                margin: 0;
+                border: none;
+                border-bottom: 1px solid #6f7278;
+                padding: 0.75em 0;
+            }
+        }
+    }
 }

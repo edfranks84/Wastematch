@@ -7,6 +7,62 @@
     //     display: flex;
     // }
 }
+#login-wrap.alt-login{
+    min-height: 75vh;
+    width: 100%;
+    position: relative;
+    background: #f4f4f4;
+    padding: 6em 0.5em 3em;
+
+    @include respond-to(small){
+        padding: 6em 1.5em 3em;
+    }
+
+    @include respond-to(marge){
+        padding: 6em 2.5em;
+
+    }
+    @include respond-to(large){
+        padding: 6em 4em;
+    }
+}
+
+.alt-login__message{
+    margin-top: 1em;
+
+    font-family: $italic-font;
+}
+.alt-login{
+    padding: 2em 1em;
+    @include respond-to(small){
+        padding: 2em;
+    }
+    @include respond-to(marge){
+        padding: 0;
+    }
+}
+
+.login-content{
+    margin: 5em auto;
+    text-align: center;
+    max-width: 55em;
+    padding: 2em 1.5em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 12px 0 rgba(0, 0, 0, 0.06);
+    h1{
+        font-size: ms(5);
+        font-family: $primary-font;
+        margin-bottom: 0.3em;
+    }
+    .button{
+        margin: 0.3em;
+        @include respond-to(small){
+            margin: 1em;
+        }
+
+    }
+}
 .login-hero{
     font-size: 14px;
     width: 100%;
@@ -29,6 +85,10 @@
     h6{
         font-family: $primary-font;
         margin-bottom: 0;
+        display: none;
+        @include respond-to(small){
+            display: block;
+        }
     }
     @include respond-to(marge){
         padding: 6em 2em;

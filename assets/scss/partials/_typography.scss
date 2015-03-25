@@ -58,18 +58,21 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: ms(6);
     margin-bottom: 0.5em;
     line-height: 1.1;
+    color: #222;
 }
 @mixin h2{
     font-family: $primary-font-bold;
     font-size: ms(5);
     margin-bottom: 0.5em;
     line-height: 1.1;
+    color: #222;
 }
 @mixin h3{
     font-family: $primary-font-bold;
     font-size: ms(4);
     margin-bottom: 0.75em;
     line-height: 1.1;
+    color: #222;
 }
 @mixin h4{
     font-family: $primary-font-bold;

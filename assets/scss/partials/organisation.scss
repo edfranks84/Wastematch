@@ -166,6 +166,11 @@ ul.progress-bar{
 		}
 	}
 }
+.profile-logo{
+	img{
+		max-height: 15em;
+	}
+}
 .profile-btn{
 	width: 100%;
 	@include respond-to(small){
@@ -377,7 +382,7 @@ input#txtProfileLocation{
 		}
 	}
 	.organisation__profile__section__group{
-		margin: 0.75em 0;
+		margin: 0.95em 0;
 		&:last-child{
 			margin: 0;
 		}
@@ -522,4 +527,24 @@ input#txtProfileLocation{
 
 .search-results{
 	margin: 2em 0;
+}
+
+.users-table, .admin-table{
+	margin-bottom: 2em;
+}
+.st-val{
+	span{
+		word-wrap: break-word;
+	}
+}
+
+.bdy-login-organisation-manage-users-{
+	.dualBtn{
+		a{
+			background: firebrick;
+			&:hover{
+				background: lighten(saturate(firebrick, 10%),10%);
+			}
+		}
+	}
 }

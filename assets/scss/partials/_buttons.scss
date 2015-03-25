@@ -26,7 +26,7 @@
         background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
         color: #fff;
         text-transform: uppercase;
-        display: block;
+        display: inline-block;
         box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
         &:hover{
             background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
@@ -34,14 +34,14 @@
         }
     }
 }
-.button--solid-green{
+.button--solid-green, .add-data__submit, .form__button{
     a{
         @include button-variant(#fff, $secondary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
         background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
         color: #fff;
         text-transform: uppercase;
-        display: block;
+        display: inline-block;
         box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
         text-decoration: none;
         &:hover{

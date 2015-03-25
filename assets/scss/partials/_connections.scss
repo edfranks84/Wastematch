@@ -125,19 +125,19 @@
                 font-family: $primary-font-semi
             }
         }
-        @include respond-to(connections-table){
+        @include respond-to(table){
             display: none;
         }
     }
     .large-only{
         display: none;
-        @include respond-to(connections-table){
+        @include respond-to(table){
             display: table;
         }
     }
     .tableheading{
         display: none;
-        @include respond-to(connections-table){
+        @include respond-to(table){
             display: table-row;
         }
     }
@@ -147,7 +147,7 @@
             border-radius: 2px;
             color: #fff;
             background-color: $primary-color;
-            width: 100%;
+            //width: 100%;
             display: inline-block;
             text-align: center;
             &.btn-connect{
