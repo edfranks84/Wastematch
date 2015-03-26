@@ -234,6 +234,124 @@
 	}
 }
 
+.dashboard-tiles{
+	@include respond-to(large){
+		padding: 1em;
+	}
+	@include clearfix;
+}
+
+.dash-tile{
+	padding: 1em;
+	background-color: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05), 0 2px 6px 0 rgba(0,0,0,0.15);
+	margin-bottom: 1em;
+	border-top: 3px solid $secondary-color;
+	transition: all 200ms ease-in-out;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	&.active{
+		box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18824);
+		z-index: 5;
+		margin: 1em -0.35em;
+	}
+	@include respond-to(tiny){
+		padding: 1.5em;
+	}
+	@include respond-to(dashboard-tiles2){
+		@include span (6 of 12 split);
+		margin-bottom: gutter();
+		border-top: none;
+	}
+	@include respond-to(dashboard-tiles1){
+		@include span (4 of 12 split);
+	}
+
+	.dash-item{
+		color: #666;
+		width: 100%;
+		font-size: ms(0);
+		margin-bottom: 0.5em;
+		@include clearfix;
+		p{
+			color: #666;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&__link{
+			float: right;
+			font-family: $primary-font-semi;
+			color: $primary-color;
+			a{
+				color: $primary-color;
+				&:hover{
+					color: $secondary-color;
+				}
+			}
+		}
+		&__title{
+			float: left;
+		}
+	}
+}
+.dash-tile__title{
+	cursor: pointer;
+	h2{
+		font-size: ms(1);
+		font-family: $primary-font-semi;
+		color: rgb(52,162,55);
+		letter-spacing: -0.5px;
+		margin-bottom: 0;
+		.active &{
+			border-bottom: 1px solid #d1d1d1;
+			padding-bottom: 0.3em;
+			margin-bottom: 0.6em;
+		}
+	}
+	@include respond-to(dashboard-tiles2){
+		cursor: default;
+		h2{
+			font-size: ms(1);
+			font-family: $primary-font-semi;
+			color: $secondary-color-dark;
+			letter-spacing: -0.5px;
+			border-bottom: 1px solid #d1d1d1;
+			padding-bottom: 0.3em;
+			margin-bottom: 0.6em;
+		}
+	}
+}
+.dash-tile__content{
+	display: none;
+	@include respond-to(dashboard-tiles2){
+		display: block;
+	}
+}
+
+
+.dash-item__button{
+	margin: auto;
+	display: block;
+	a{
+		font-family: $primary-font-semi;
+		width: 100%;
+		@include respond-to(regular){
+			width: auto;
+		}
+		&:after{
+	        content: url("../../assets/images/chevron.svg");
+	        height: 0.6em;
+	        width: 0.6em;
+	        display: inline-block;
+	        position: relative;
+			left: 6px;
+	    }
+	}
+}
+
+
 
 
 .inner-dash-body{
@@ -244,7 +362,9 @@
 	@include respond-to(small){
 		padding: 1em;
 	}
-
+	@include respond-to(medium){
+		padding: 1.5em;
+	}
     @include respond-to(side-col-change){
         width: calc(100% - 19em);
         float: left;
@@ -264,7 +384,7 @@
         padding: 2em 1.5em;
     }
     h3{
-        font-family: $primary-font-semi;
+        font-family: $primary-font;
         margin-bottom: 0.2em;
     }
     .small-only{

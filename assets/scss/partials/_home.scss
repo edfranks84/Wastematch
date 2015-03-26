@@ -147,20 +147,22 @@
     top: -10px;
     width: 2em;
 }
-.services, .talk{
-    svg{
-        fill: $primary-color;
+.promo-wrap{
+    .services, .talk{
+        svg{
+            fill: $primary-color;
+        }
+        h5{
+            color: $primary-color;
+        }
     }
-    h5{
-        color: $primary-color;
-    }
-}
-.projects{
-    svg{
-        fill: $secondary-color;
-    }
-    h5{
-        color: $secondary-color;
+    .projects{
+        svg{
+            fill: $secondary-color;
+        }
+        h5{
+            color: $secondary-color;
+        }
     }
 }
 

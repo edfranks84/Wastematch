@@ -150,10 +150,19 @@
     }
 }
 .all-widgets{
+    .widget{
+        margin-bottom: 1em;
+        @include respond-to(regular){
+            margin-bottom: 2em;
+        }
+        @include respond-to(side-col-change){
+            margin-bottom: 0;
+        }
+    }
     .your-summary{
         background: $secondary-color;
         border-top: none;
-        margin-bottom: 2em;
+
         .widget-title{
             color: #fff;
             border-bottom-color: lighten($secondary-color,50%);

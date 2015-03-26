@@ -70,20 +70,21 @@ $vimeo: #1ab7ea;
 
 // set basics followed by customs
 $BREAKPOINTS: (
-  tiny: 320px,
-  small: 482px,
-  regular: 575px,
-  medium: 768px,
-  marge: 900px,
-  large: 1025px,
-  x-large: 1200px,
+    tiny: 320px,
+    small: 482px,
+    regular: 575px,
+    medium: 768px,
+    marge: 900px,
+    large: 1025px,
+    x-large: 1200px,
 
-  nav-responsive: 830px,
-  nav-change: 900px,
-  owl-controls: 1400px,
-  table: 880px,
-  carousel-padding: 400px,
-  side-col-change: 1320px,
-  table-fixed: 400px,
-
+    nav-responsive: 830px,
+    nav-change: 900px,
+    owl-controls: 1400px,
+    table: 880px,
+    carousel-padding: 400px,
+    side-col-change: 1320px,
+    table-fixed: 400px,
+    dashboard-tiles1: 1450px,
+    dashboard-tiles2: 690px,
 );

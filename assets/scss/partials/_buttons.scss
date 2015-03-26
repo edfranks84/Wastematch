@@ -34,7 +34,7 @@
         }
     }
 }
-.button--solid-green, .add-data__submit, .form__button{
+.button--solid-green, .add-data__submit, .form__button, .dash-item__button{
     a{
         @include button-variant(#fff, $secondary-color, transparent);
         @include button-size(0.7em, 2em, 15px, 1, 3px);
