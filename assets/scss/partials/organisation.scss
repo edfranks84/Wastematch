@@ -1,15 +1,15 @@
 
-.organisation-wrap{
+.organisation-body{
 	.form__wrap{
 		max-width: 55em;
-		padding: 2em 1.5em;
+		padding: 2em 1em;
 		background-color: #fff;
 		border: 1px solid #ccc;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 12px 0 rgba(0, 0, 0, 0.06);
 		//box-shadow: 0 0 4px rgba(0,0,0,.14),0px 4px 8px rgba(0,0,0,.28);
 		@include clearfix;
 		@include respond-to(tiny){
-			padding: 2em;
+			padding: 2em 1.5em;
 		}
 		@include respond-to(small){
 			padding: 3em;
@@ -260,14 +260,15 @@ ul.progress-bar{
 		margin-bottom: 0;
 	}
 }
-
-#pnlStepOne{
-	.form__wrap{
-		@include respond-to(marge){
-			width: 49%;
-			margin-right: 2%;
-			float: left;
-			padding: 2em;
+.organisation-wrap{
+	#pnlStepOne{
+		.form__wrap{
+			@include respond-to(marge){
+				width: 49%;
+				margin-right: 2%;
+				float: left;
+				padding: 2em;
+			}
 		}
 	}
 }
@@ -425,7 +426,7 @@ input#txtProfileLocation{
         width: auto;
         float: left;
     }
-    a{
+    input{
         @include button-variant(#fff, $primary-color, transparent);
         @include button-size(0.8em, 3em, 15px, 1, 3px);
         background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
@@ -547,4 +548,31 @@ input#txtProfileLocation{
 			}
 		}
 	}
+}
+
+#lblConfirmSubscription{
+	font-size: ms(2);
+	font-family: $primary-font-semi;
+	margin-bottom: 0.5em;
+	color: $primary-color;
+	display: block;
+}
+
+.join-intro{
+		max-width: 55em;
+		h2{
+			font-size: ms(4);
+			font-family: $primary-font-semi;
+			margin-bottom: 0;
+		}
+		h3{
+			font-size: ms(3);
+			font-family: $primary-font-semi;
+			color: #666;
+			margin-bottom: 0.25em;
+		}
+		p{
+			margin-bottom: 1.5em;
+		}
+
 }

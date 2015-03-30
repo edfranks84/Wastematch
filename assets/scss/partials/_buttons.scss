@@ -66,3 +66,13 @@
         }
     }
 }
+
+.form__button__half{
+	width: 100%;
+    margin-top: 1em ;
+    @include respond-to(regular){
+        width: auto;
+        float: left;
+    }
+
+}

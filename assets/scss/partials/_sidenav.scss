@@ -106,6 +106,7 @@
 		position: relative;
 		border-bottom: 1px solid #3e464f;
 		height: 4em;
+		cursor: pointer;
 		@include respond-to(large){
 			height: auto;
 		}
@@ -119,7 +120,7 @@
 			}
 		}
 		&.active{
-			background-color: #3e464f;
+			background-color: lighten(#3e464f, 7%);
 			border-color: #353c45;
 			a{
 				color: #fff;

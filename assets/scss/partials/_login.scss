@@ -68,7 +68,11 @@
     width: 100%;
     position: relative;
     @include cover-background('video-bg.jpg');
-
+    background-position: center right;
+    .bdy-login- &{
+        @include cover-background('login-bg.jpg');
+        background-position: center right;
+    }
     h1,h3,h6,p{
         color: #fff;
     }

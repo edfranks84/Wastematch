@@ -161,14 +161,15 @@ th{
     padding: 0.8em 0.65em;
     a{
         font-family: $primary-font-bold;
+        position: relative;
         &:after{
             content: url("../../assets/images/sort.svg");
             height: 12px;
             width: 12px;
-            display: inline-block;
-            position: relative;
-            margin-left: 5px;
-            top: 1px;
+            display: block;
+            top: -2px;
+            right: -15px;
+            position: absolute;
         }
     }
 }
@@ -188,4 +189,98 @@ tr{
 td{
     font-size: 14px;
     padding: 0.5em 0.65em;
+}
+
+
+/*************************************************************
+
+TABS
+
+*************************************************************/
+
+.tab{
+    float: left;
+    border: 1px solid #ccc;
+    position: relative;
+    //width: 49%;
+    width: auto;
+    text-align: center;
+    @include respond-to(small){
+        width: auto;
+    }
+    a{
+        padding: 0.75em 0.2em;
+        background-color: #fbfbfb;
+        font-size: ms(0);
+        font-family: $primary-font-semi;
+        color: #555;
+        display: block;
+        &:hover{
+            //color: $secondary-color;
+            background-color: #fff;
+        }
+        @include respond-to(small){
+            padding: 0.8em 2em;
+            font-size: ms(1);
+        }
+    }
+    &:first-child{
+        border-right: none;;
+    }
+    &.active-tab{
+        border-bottom-color: #fff;
+
+        a{
+            color: $secondary-color;
+            background-color: #fff;
+        }
+        &:after{
+            content:"";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: 3px;
+            display: block;
+            background: $secondary-color;
+        }
+        &:before{
+            content:"";
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            margin-left: -7px;
+            width: 7px;
+            height: 7px;
+            display: inline-block;
+            background: transparent;
+            border: 7px solid transparent;
+            border-top-color: $secondary-color;
+        }
+    }
+
+}
+.large-tabs{
+    .tab{
+        a{
+            padding: 0.75em 0em;
+            font-size: ms(0);
+            @include respond-to(small){
+                padding: 0.8em 2em;
+                font-size: ms(1);
+            }
+        }
+    }
+}
+
+.small-tabs{
+    .tab{
+        a{
+            padding: 0.5em 0em;
+            font-size: ms(0);
+            @include respond-to(small){
+                padding: 0.3em 1em;
+            }
+        }
+    }
 }
