@@ -104,11 +104,18 @@
 	li{
 		width: 100%;
 		position: relative;
-		border-bottom: 1px solid #3e464f;
+		border-bottom: 1px solid #222;
+		border-top: 1px solid #3e464f;
 		height: 4em;
 		cursor: pointer;
 		@include respond-to(large){
 			height: auto;
+		}
+		&:last-child{
+			border-bottom-color: #3e464f;
+		}
+		&:first-child{
+			border-top: none;
 		}
 		&:hover{
 			background-color: #3e464f;

@@ -170,7 +170,7 @@
 		max-width: 50em;
 
 	}
-	h1,h2,h3,h4,h5,p{
+	h1,h2,h3,h4,h5,h6,p{
 		color: #fff;
 	}
 	h1{
@@ -252,9 +252,10 @@
 	padding: 1em;
 	background-color: #fff;
 	//box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04), 0 2px 7px 0 rgba(0,0,0,0.1);
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.06), 0 2px 4px 0 rgba(0,0,0,0.05);
-	margin-bottom: 0.5em;
-	border: 1px solid #ccc;
+	// background-image: linear-gradient(0deg, #f3f3f3, #ffffff);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.06), 0 2px 7px 0 rgba(0,0,0,0.05);
+	margin-bottom: 0.65em;
+	border: 1px solid #ddd;
 	border-top: 2px solid $secondary-color;
 	transition: all 200ms ease-in-out;
 	float: none;
@@ -272,19 +273,22 @@
 		padding: 1.5em;
 	}
 	@include respond-to(dashboard-tiles2){
-		@include span (6 of 12 split);
-		margin-bottom: gutter();
-		border-top: 1px solid #ccc;
+		@include span (6 of 12 split 0.33);
+		margin-bottom: gutter(12);
+		border-top: 1px solid #ddd;
+		background-color: #fff;
+		background-image: none;
 	}
 	@include respond-to(dashboard-tiles1){
-		@include span (4 of 12 split);
+		@include span (4 of 12 split 0.15);
+		margin-bottom: gutter(24);
 	}
 
 	.dash-item{
 		color: #666;
 		width: 100%;
 		//font-size: ms(0);
-		font-size: em(15);
+		font-size: em(14);
 		margin-bottom: 0.5em;
 		@include clearfix;
 		p{
@@ -316,12 +320,14 @@
 		font-size: ms(1);
 		font-family: $primary-font-semi;
 		color: rgb(52,162,55);
+		color: #666;
 		letter-spacing: -0.5px;
 		margin-bottom: 0;
 		.active &{
 			border-bottom: 1px solid #d1d1d1;
 			padding-bottom: 0.3em;
 			margin-bottom: 0.6em;
+			color: rgb(52,162,55);
 		}
 	}
 	@include respond-to(dashboard-tiles2){
@@ -374,6 +380,7 @@
 .dash-item__button{
 	margin: auto;
 	display: block;
+	@include clearfix;
 	a{
 		font-family: $primary-font-semi;
 		width: 100%;

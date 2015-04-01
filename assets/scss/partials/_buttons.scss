@@ -17,7 +17,7 @@
 	white-space: nowrap;
     font-weight: bold;
     // box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
-	@include transition (all 0.4s ease-in-out);
+	transition: all 0.4s ease-in-out;
 }
 .button--solid-blue,.profile-btn{
     a{
