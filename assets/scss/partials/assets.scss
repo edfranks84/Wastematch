@@ -11,22 +11,55 @@
 	@include respond-to(medium){
 		padding: 2em 2em 2em 2.5em;
 	}
-
+	.widget.your-basket{
+		float: none;
+		margin: 0;
+		margin-bottom: 1em;
+		background-color: #fff;
+		border-top: 3px solid $secondary-color;
+		box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
+		padding: 1.5em;
+		width: 100%;
+		// @include respond-to(medium){
+		// 	margin: 0;
+		// 	@include span(4 of 12 last);
+		// }
+		@include respond-to(dashboard-tiles1){
+			width: 100%;
+			float: none;
+			margin-right: 0;
+		}
+	}
+	.widget-title{
+		color: $secondary-color;
+		font-size: ms(1);
+		padding-bottom: 0.6em;
+		margin-bottom: 0.6em;
+		line-height: 1;
+		border-bottom: 1px solid #ddd;
+		font-family: $primary-font-semi;
+	}
 }
-.asset-categories{
-    width: 100%;
+.category-side{
+	width: 100%;
     float: none;
-    background-color: #363E47;
-    // border: 1px solid #222;
-    //padding: 0em 1em 1.5em;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    background-color: #fff;
 	overflow: hidden;
-    // border: 1px solid #ccc;
-    // border-top: 3px solid $secondary-color;
+
 	@include respond-to(dashboard-tiles1){
 		width: 17em;
 		float: right;
+	}
+}
+.asset-categories{
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+	overflow: hidden;
+	// @include respond-to(medium){
+	// 	@include span(8 of 12);
+	// }
+	@include respond-to(dashboard-tiles1){
+		width: 100%;
 	}
 }
 
@@ -87,12 +120,14 @@
 	background: #fdfdfd;
 	border: 1px solid #ddd;
     input{
-        margin-left: 0.5em;
+        margin: 0 0.5em;
         // vertical-align: middle;
         position: relative;
-        top: 1px;
+        top: 6px;
+
 		@include respond-to(small){
 			margin-left: 1em;
+			top: 7px;
 		}
     }
     label{
@@ -475,23 +510,56 @@
 		padding: 2em 2em 2em 2.5em;
 	}
 	.form__wrap{
-		padding: 3em;
+		padding: 1.5em;
 		background-color: #fff;
 		border: 1px solid #ccc;
 		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16), 0 5px 12px 0 rgba(0, 0, 0, 0.06);
 		@include clearfix;
+		@include respond-to(regular){
+			padding: 3em;
+		}
 	}
+
 	.asset-listing__actions{
-		@include span(3 of 12 last);
+		@include respond-to(assets-layout){
+			@include span(3 of 12 last);
+		}
 		@include clearfix;
+	}
+	.widget.your-basket{
+		margin: 0;
+		margin-bottom: 1em;
+		@include respond-to(small){
+			margin-bottom: 0;
+			@include span(6 of 12);
+			min-height: 195px;
+		}
+		@include respond-to(assets-layout){
+			width: 100%;
+			float: none;
+			margin-bottom: 1em;
+			min-height: 0;
+		}
+	}
+
+	.match-buttons{
+		margin-bottom: 0;
+		@include respond-to(small){
+			@include span(6 of 12 last);
+			min-height: 195px;
+		}
+		@include respond-to(assets-layout){
+			width: 100%;
+			float: none;
+			margin-bottom: 1em;
+			min-height: 0;
+		}
 	}
 	.widget, .match-buttons{
 		background-color: #fff;
-		margin-bottom: 1em;
 		border: 1px solid #ddd;
 		box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
-		padding: 1em;
-		float: none;
+		padding: 1.5em;
 		border-top: 3px solid $secondary-color;
 
 	}
@@ -507,8 +575,12 @@
 }
 
 .asset-listing__details{
-	@include span(9 of 12);
-	margin-top: 0;
+	margin-bottom: 2em;
+	@include respond-to(assets-layout){
+		@include span(9 of 12);
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 	.form__field{
 		max-width: none;
 	}
@@ -532,15 +604,47 @@
 	}
 
 }
-
+.edit-buttons{
+	@include respond-to(small){
+		@include span(6 of 12);
+	}
+}
+.report-buttons{
+	@include respond-to(small){
+		@include span(6 of 12 last);
+	}
+}
 .edit-buttons, .report-buttons{
-	@include span(3 of 12 last);
+	@include respond-to(small){
+		min-height: 207px;
+	}
+	@include respond-to(assets-layout){
+		@include span(3 of 12 last);
+		min-height: 0;
+	}
 	background-color: #fff;
 	margin-bottom: 1em;
 	border: 1px solid #ddd;
 	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
-	padding: 1em;
+	padding: 1.5em;
 	border-top: 3px solid $secondary-color;
+}
+.match-buttons{
+	input,label{
+		width: auto;
+	}
+	label{
+		margin-right: 2em;
+	}
+	input{
+		padding: 0.3em;
+		max-width: 100%;
+	}
+}
+.report-buttons{
+	.asset-listing__button{
+		margin-top: 1em;
+	}
 }
 
 .asset-listing__button{
@@ -548,19 +652,32 @@
 	text-decoration: none;
 	display: inline-block;
 	cursor: pointer;
-	margin: 0;
+	margin: 0.25em 0;
+	margin-left: 0;
     border: none;
-	font-family:$primary-font-bold;
+	font-family:$primary-font-semi;
 	line-height: 1;
 	white-space: nowrap;
     font-weight: bold;
 	transition: all 0.4s ease-in-out;
+	width: 100%;
 	input{
 		background: green;
 		cursor: pointer;
 		color: #fff;
-		padding: 0.3em 0.75em;
+		padding: 0.5em 1em;
+		border-radius: 3px;
+		background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
+		width: 100%;
+		&:hover{
+            background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
+        }
 	}
+
+    @include respond-to(regular){
+        width: auto;
+    }
 }
 
 
@@ -576,7 +693,7 @@
 	margin-bottom: 0.6em;
 }
 .side-info{
-	font-size: em(14);
+	font-size: em(15);
 	color: #444;
 	line-height: 1.2;
 }
@@ -619,8 +736,11 @@
 }
 .listing-image{
 	margin-bottom: 0.8em;
-	float: left;
+
 	margin-right: 2em;
+	@include respond-to(marge){
+		float: left;
+	}
 }
 .listing-label{
 	text-transform: uppercase;
@@ -631,19 +751,22 @@
 	margin-right: 1em;
 }
 .listing-info{
-	font-size: em(14);
+	font-size: em(15);
+	font-size: 15px;
 	font-family: $primary-font;
 	color: #666;
 	line-height: 1.4;
 	//min-height: 1.125em;
 }
 .listing-half{
-	width: 47%;
-	margin-right: 3%;
 	border-bottom: 1px solid #ddd;
-	//display: table-row;
-	float: left;
+	@include respond-to(marge){
+		width: 47%;
+		margin-right: 3%;
+		float: left;
+	}
 }
+
 .asset-listing__list{
 	display: block;
 	width: 100%;

@@ -4282,7 +4282,7 @@ fieldset[disabled] .edit__button input.active {
   height: 20px;
   display: inline-block;
   position: absolute;
-  bottom: 16px;
+  bottom: 22px;
   left: 15px;
 }
 
@@ -4459,6 +4459,12 @@ fieldset[disabled] .edit__button input.active {
   width: 100%;
   border: 2px solid #e60000;
   color: #e60000;
+}
+
+@media (min-width: 768px) {
+  .form__error {
+    max-width: 55em;
+  }
 }
 
 .form__error:last-of-type {
@@ -5317,8 +5323,6 @@ TABS
   margin-bottom: 0.65em;
   border: 1px solid #ddd;
   border-top: 2px solid #34a237;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
   float: none;
   display: block;
 }
@@ -7101,6 +7105,18 @@ fieldset[disabled] .invoice-btn input.active {
   }
 }
 
+@media (min-width: 768px) {
+  .widget.your-basket {
+    width: 98%;
+  }
+}
+
+@media (min-width: 1320px) {
+  .widget.your-basket {
+    width: 100%;
+  }
+}
+
 .assets-page {
   min-height: 100%;
 }
@@ -7131,10 +7147,51 @@ fieldset[disabled] .invoice-btn input.active {
   }
 }
 
-.asset-categories {
+.assets-body .widget.your-basket {
+  float: none;
+  margin: 0;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border-top: 3px solid #34a237;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.5em;
+  width: 100%;
+}
+
+@media (min-width: 1450px) {
+  .assets-body .widget.your-basket {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
+
+.assets-body .widget-title {
+  color: #34a237;
+  font-size: 1.171875em;
+  padding-bottom: 0.6em;
+  margin-bottom: 0.6em;
+  line-height: 1;
+  border-bottom: 1px solid #ddd;
+  font-family: 'source-semibold', Helvetica, Arial, sans-serif;
+}
+
+.category-side {
   width: 100%;
   float: none;
-  background-color: #363E47;
+  overflow: hidden;
+}
+
+@media (min-width: 1450px) {
+  .category-side {
+    width: 17em;
+    float: right;
+  }
+}
+
+.asset-categories {
+  width: 100%;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
@@ -7143,8 +7200,7 @@ fieldset[disabled] .invoice-btn input.active {
 
 @media (min-width: 1450px) {
   .asset-categories {
-    width: 17em;
-    float: right;
+    width: 100%;
   }
 }
 
@@ -7227,14 +7283,15 @@ fieldset[disabled] .invoice-btn input.active {
 }
 
 .asset-includes input {
-  margin-left: 0.5em;
+  margin: 0 0.5em;
   position: relative;
-  top: 1px;
+  top: 6px;
 }
 
 @media (min-width: 482px) {
   .asset-includes input {
     margin-left: 1em;
+    top: 7px;
   }
 }
 
@@ -7817,7 +7874,7 @@ fieldset[disabled] .invoice-btn input.active {
 }
 
 .assets-listing__body .form__wrap {
-  padding: 3em;
+  padding: 1.5em;
   background-color: #fff;
   border: 1px solid #ccc;
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16), 0 5px 12px 0 rgba(0, 0, 0, 0.06);
@@ -7834,10 +7891,18 @@ fieldset[disabled] .invoice-btn input.active {
   clear: both;
 }
 
-.assets-listing__body .asset-listing__actions {
-  width: 23.4165067179%;
-  float: right;
-  margin-right: 0;
+@media (min-width: 575px) {
+  .assets-listing__body .form__wrap {
+    padding: 3em;
+  }
+}
+
+@media (min-width: 1350px) {
+  .assets-listing__body .asset-listing__actions {
+    width: 23.4165067179%;
+    float: right;
+    margin-right: 0;
+  }
 }
 
 .assets-listing__body .asset-listing__actions:before,
@@ -7850,15 +7915,59 @@ fieldset[disabled] .invoice-btn input.active {
   clear: both;
 }
 
+.assets-listing__body .widget.your-basket {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 482px) {
+  .assets-listing__body .widget.your-basket {
+    margin-bottom: 0;
+    width: 48.9443378119%;
+    float: left;
+    margin-right: 2.1113243762%;
+    min-height: 195px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .assets-listing__body .widget.your-basket {
+    width: 100%;
+    float: none;
+    margin-bottom: 1em;
+    min-height: 0;
+  }
+}
+
+.assets-listing__body .match-buttons {
+  margin-bottom: 0;
+}
+
+@media (min-width: 482px) {
+  .assets-listing__body .match-buttons {
+    width: 48.9443378119%;
+    float: right;
+    margin-right: 0;
+    min-height: 195px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .assets-listing__body .match-buttons {
+    width: 100%;
+    float: none;
+    margin-bottom: 1em;
+    min-height: 0;
+  }
+}
+
 .assets-listing__body .widget,
 .assets-listing__body .match-buttons {
   background-color: #fff;
-  margin-bottom: 1em;
   border: 1px solid #ddd;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  padding: 1em;
-  float: none;
+  padding: 1.5em;
   border-top: 3px solid #34a237;
 }
 
@@ -7873,10 +7982,17 @@ fieldset[disabled] .invoice-btn input.active {
 }
 
 .asset-listing__details {
-  width: 74.472168906%;
-  float: left;
-  margin-right: 2.1113243762%;
-  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 1350px) {
+  .asset-listing__details {
+    width: 74.472168906%;
+    float: left;
+    margin-right: 2.1113243762%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .asset-listing__details .form__field {
@@ -7905,18 +8021,66 @@ fieldset[disabled] .invoice-btn input.active {
   margin-bottom: 0;
 }
 
+@media (min-width: 482px) {
+  .edit-buttons {
+    width: 48.9443378119%;
+    float: left;
+    margin-right: 2.1113243762%;
+  }
+}
+
+@media (min-width: 482px) {
+  .report-buttons {
+    width: 48.9443378119%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
 .edit-buttons,
 .report-buttons {
-  width: 23.4165067179%;
-  float: right;
-  margin-right: 0;
   background-color: #fff;
   margin-bottom: 1em;
   border: 1px solid #ddd;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  padding: 1em;
+  padding: 1.5em;
   border-top: 3px solid #34a237;
+}
+
+@media (min-width: 482px) {
+  .edit-buttons,
+  .report-buttons {
+    min-height: 207px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .edit-buttons,
+  .report-buttons {
+    width: 23.4165067179%;
+    float: right;
+    margin-right: 0;
+    min-height: 0;
+  }
+}
+
+.match-buttons input,
+.match-buttons label {
+  width: auto;
+}
+
+.match-buttons label {
+  margin-right: 2em;
+}
+
+.match-buttons input {
+  padding: 0.3em;
+  max-width: 100%;
+}
+
+.report-buttons .asset-listing__button {
+  margin-top: 1em;
 }
 
 .asset-listing__button {
@@ -7924,21 +8088,42 @@ fieldset[disabled] .invoice-btn input.active {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  margin: 0;
+  margin: 0.25em 0;
+  margin-left: 0;
   border: none;
-  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+  font-family: 'source-semibold', Helvetica, Arial, sans-serif;
   line-height: 1;
   white-space: nowrap;
   font-weight: bold;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  width: 100%;
 }
 
 .asset-listing__button input {
   background: green;
   cursor: pointer;
   color: #fff;
-  padding: 0.3em 0.75em;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#34c138), to(#34a237));
+  background-image: -webkit-linear-gradient(#34c138, #34a237);
+  background-image: linear-gradient(#34c138, #34a237);
+  width: 100%;
+}
+
+.asset-listing__button input:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3fd443), to(#34c138));
+  background-image: -webkit-linear-gradient(#3fd443, #34c138);
+  background-image: linear-gradient(#3fd443, #34c138);
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 575px) {
+  .asset-listing__button {
+    width: auto;
+  }
 }
 
 .side-title {
@@ -7954,7 +8139,7 @@ fieldset[disabled] .invoice-btn input.active {
 }
 
 .side-info {
-  font-size: 0.875em;
+  font-size: 0.9375em;
   color: #444;
   line-height: 1.2;
 }
@@ -7996,8 +8181,13 @@ fieldset[disabled] .invoice-btn input.active {
 
 .listing-image {
   margin-bottom: 0.8em;
-  float: left;
   margin-right: 2em;
+}
+
+@media (min-width: 900px) {
+  .listing-image {
+    float: left;
+  }
 }
 
 .listing-label {
@@ -8010,17 +8200,23 @@ fieldset[disabled] .invoice-btn input.active {
 }
 
 .listing-info {
-  font-size: 0.875em;
+  font-size: 0.9375em;
+  font-size: 15px;
   font-family: 'source-regular', Helvetica, Arial, sans-serif;
   color: #666;
   line-height: 1.4;
 }
 
 .listing-half {
-  width: 47%;
-  margin-right: 3%;
   border-bottom: 1px solid #ddd;
-  float: left;
+}
+
+@media (min-width: 900px) {
+  .listing-half {
+    width: 47%;
+    margin-right: 3%;
+    float: left;
+  }
 }
 
 .asset-listing__list {

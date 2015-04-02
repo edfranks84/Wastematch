@@ -101,6 +101,9 @@
     width: 100%;
     border: 2px solid #e60000;
     color: #e60000;
+    @include respond-to(medium){
+        max-width: 55em;
+    }
     &:last-of-type{
         margin-bottom: 2em;
     }

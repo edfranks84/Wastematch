@@ -216,3 +216,11 @@
         }
     }
 }
+.widget.your-basket{
+    @include respond-to(medium){
+        width: 98%;
+    }
+    @include respond-to(side-col-change){
+        width: 100%;
+    }
+}
