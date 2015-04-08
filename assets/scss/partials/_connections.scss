@@ -1,17 +1,18 @@
-.connections-body{
-    width: 100%;
-	padding: 1.5em 1em;
-
-	@include clearfix;
-	@include respond-to(small){
-		padding: 1em;
-	}
-
-    @include respond-to(side-col-change){
-        width: calc(100% - 19em);
-        float: left;
-    }
-}
+// .connections-body{
+//     width: 100%;
+// 	padding: 1.5em 1em;
+//     display: inline-block;
+//     vertical-align: top;
+//     height: 100%;
+// 	@include clearfix;
+// 	@include respond-to(small){
+// 		padding: 1em;
+// 	}
+//     @include respond-to(side-col-change){
+//         width: calc(100% - 19em);
+//         float: left;
+//     }
+// }
 
 .connections-tabs{
 
@@ -26,16 +27,16 @@
 }
 
 .connections-content{
-    padding: 1em;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.16), 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-    margin-top: -1px;
-    @include clearfix;
-    //width: calc(100% - 20em);
-    @include respond-to(small){
-        padding: 2em 1.5em;
-    }
+    // padding: 1em;
+    // background-color: #fff;
+    // border: 1px solid #ccc;
+    // box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.16), 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+    // margin-top: -1px;
+    // @include clearfix;
+    // //width: calc(100% - 20em);
+    // @include respond-to(small){
+    //     padding: 2em 1.5em;
+    // }
     h3{
         font-family: $primary-font-semi;
         margin-bottom: 0.2em;
