@@ -96,7 +96,7 @@
     }
     >.matchWrap{
         background-color: #ececec;
-        background-color: #eee;
+        background-color: #e8e8e8;
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #fff;
         border-left: 1px solid #ccc;
@@ -222,4 +222,277 @@
     display: table-row-group;
     width: 100%;
     table-layout: fixed;
+}
+
+
+
+////////////////////////////////////
+
+/* iframe pop up styling */
+
+///////////////////////////////////
+
+
+.bdy-login-matches-index-{
+    .mfp-bg{
+        background: #222;
+        //opacity: 1;
+    }
+    .mfp-iframe-scaler{
+
+        padding-top: 95%;
+        @include respond-to(regular){
+            padding-top: 80%;
+        }
+        iframe{
+            background-color: #e8e8e8;
+        }
+    }
+    .mfp-container{
+        height: 90%;
+    }
+
+}
+.bdy-login-matches-message-{
+
+    .iframe-wrapper{
+        //padding: 1.5em;
+    }
+
+}
+.iframe-content{
+    overflow-y: scroll;
+    @include clearfix;
+    padding: 0.75em;
+    @include respond-to(regular){
+        padding: 1.5em;
+    }
+}
+.message-asset{
+    background-color: #fdfdfd;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+    font-size: 15px;
+    @include clearfix;
+    .asset-head{
+        width: 100%;
+        background: $secondary-color;
+        background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
+        padding: 0.5em 1em;
+        &__item{
+            display: inline-block;
+            width: 100%;
+            color: #fff;
+            font-family: $primary-font;
+            line-height: 1.1;
+            @include respond-to(tiny){
+                width: 48%;
+            }
+            @include respond-to(regular){
+                width: 23%;
+            }
+        }
+        &__name, &__title{
+            font-family: $primary-font-bold;
+            text-shadow: 0 1px 1px solid rgba(0,0,0,0.1);
+        }
+    }
+    .asset-info{
+        width: 100%;
+        background-color: #fff;
+        padding: 1em;
+        color: #666;
+        border: 1px solid #ccc;
+        border-top: 0;
+        @include clearfix;
+        @include respond-to(regular){
+            padding: 1.5em;
+        }
+        &__list{
+            @include respond-to(regular){
+                float: left;
+                width: 70%;
+            }
+        }
+        &__name{
+            font-family: $primary-font-bold;
+            color: $text-color;
+            margin-right: 5px;
+        }
+        ul{
+            @include clearfix;
+            margin-bottom: 1em;
+        }
+        li{
+            width: 100%;
+            float: left;
+            margin-bottom: 0.3em;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            @include respond-to(regular){
+                width: 50%;
+            }
+        }
+    }
+    .asset-image{
+        margin-bottom: 1em;
+        line-height: 0;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+        @include respond-to(regular){
+            float: right;
+            width: 27%;
+            margin-bottom: 0;
+        }
+    }
+}
+.message-wrapper, .update-wrapper{
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06),0 1px 1px 0 rgba(0, 0, 0, 0.16);
+    font-size: 15px;
+    padding: 1em;
+    margin-top: 1em;
+    @include clearfix;
+    @include respond-to(regular){
+        padding: 1.5em;
+    }
+    h1{
+        font-size: ms(3);
+        font-family: $primary-font-semi;
+        margin-bottom: 1em;
+    }
+
+}
+.messagesWrap{
+    margin: 1em 0;
+    width: 100%;
+    @include clearfix;
+}
+.messagesItem{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.messagesItemRight{
+    //border-right: 3px solid $primary-color;
+    float: right;
+    text-align: right;
+    .messagesHead{
+        float: right;
+    }
+    .messagesContent{
+        float: right;
+        &:after{
+            content: "";
+            height: 0;
+            width: 0;
+            border: 7px solid transparent;
+            border-left-color: $primary-color;
+            display: block;
+            position: absolute;
+            top: 8%;
+            right: -14px;
+        }
+        &:before{
+            content: "";
+            height: 100%;
+            width: 4px;
+            background-color: $primary-color;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -1px;
+        }
+    }
+}
+.messagesItemLeft{
+    //border-right: 3px solid $primary-color;
+    float: left;
+    text-align: left;
+    .messagesHead{
+        float: left;
+    }
+    .messagesContent{
+        float: left;
+        &:after{
+            content: "";
+            height: 0;
+            width: 0;
+            border: 7px solid transparent;
+            border-right-color: $secondary-color;
+            display: block;
+            position: absolute;
+            top: 8%;
+            left: -14px;
+        }
+        &:before{
+            content: "";
+            height: 100%;
+            width: 4px;
+            background-color: $secondary-color;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -1px;
+        }
+    }
+}
+.messagesHead{
+    width: 100%;
+
+    span{
+        width: 100%;
+        display: block;
+    }
+}
+.messagesContent{
+    padding: 1em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10), 0 3px 4px 0 rgba(0,0,0,0.05) ;
+    position: relative;
+    max-width: 90%;
+    @include respond-to(regular){
+        max-width: 80%;
+    }
+}
+.messagesHeadFrom{
+    font-size: 0.9em;
+}
+.messagesHeadDate{
+    font-size: 0.85em;
+    color: #666;
+}
+.message-input,.feedback-form{
+    width: 100%;
+    display: block;
+    @include clearfix;
+    .form__field{
+        max-width: none;
+        textarea{
+            background: #fefefe;
+        }
+    }
+    .form__button{
+        margin-top: 0;
+    }
+}
+.update-wrapper{
+    background: #fff;
+}
+.feedback-received{
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #ddd;
+    p{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+.feedback-form{
+    .form__wrap{
+        margin-top: 0;
+    }
 }

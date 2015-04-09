@@ -50,6 +50,7 @@
             //border-top: 1px solid #e1e1e1;
             //border: 1px solid #e1e1e1;
             //border-bottom: 1px solid #e1e1e1;
+
             &:first-child{
                 border-top: none;
             }
@@ -81,12 +82,26 @@
         @include respond-to(table){
             display: table;
         }
+        tr{
+            border: 1px solid #e1e1e1;
+        }
 
     }
     .tableheading{
         display: none;
         @include respond-to(table){
             display: table-row;
+            background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
+            th{
+                border-right: 1px solid lighten($secondary-color, 12%);
+                a{
+                    color: white;
+                    font-family: $primary-font-semi;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
     }
     .dualBtn{
