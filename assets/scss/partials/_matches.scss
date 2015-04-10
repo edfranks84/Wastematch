@@ -66,22 +66,7 @@
         border-right: none;
     }
 }
-.table-cell{
-    display: table-cell;
-}
-.table-heading{
-    border-bottom: 1px solid #ccc;
-}
-.table-column{
-    display: table-column;
-}
-.table-row{
-    display: table-row;
-}
-.table-caption{
-    display: table-caption;
-    @include clearfix;
-}
+
 
 .matches-table{
     margin-bottom: 2em;
@@ -218,11 +203,7 @@
     table-layout: fixed;
 
 }
-.table-row-group{
-    display: table-row-group;
-    width: 100%;
-    table-layout: fixed;
-}
+
 
 
 
@@ -236,16 +217,14 @@
 .bdy-login-matches-index-{
     .mfp-bg{
         background: #222;
-        //opacity: 1;
     }
     .mfp-iframe-scaler{
-
         padding-top: 95%;
         @include respond-to(regular){
             padding-top: 80%;
         }
         iframe{
-            background-color: #e8e8e8;
+            background-color: #e4e4e4;
         }
     }
     .mfp-container{
@@ -260,8 +239,17 @@
     }
 
 }
+.touch{
+    .bdy-login-matches-message-, .bdy-login-matches-update-{
+        #Form1{
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
 .iframe-content{
-    overflow-y: scroll;
     @include clearfix;
     padding: 0.75em;
     @include respond-to(regular){
@@ -270,25 +258,30 @@
 }
 .message-asset{
     background-color: #fdfdfd;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.08);
     font-size: 15px;
     @include clearfix;
     .asset-head{
         width: 100%;
         background: $secondary-color;
         background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
-        padding: 0.5em 1em;
+        padding: 0em 1.5em;
         &__item{
             display: inline-block;
             width: 100%;
             color: #fff;
             font-family: $primary-font;
             line-height: 1.1;
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding: 0.65em 0 0.65em 0.25em;
             @include respond-to(tiny){
                 width: 48%;
             }
             @include respond-to(regular){
                 width: 23%;
+            }
+            &:first-child{
+                border: none;
             }
         }
         &__name, &__title{
@@ -314,7 +307,7 @@
             }
         }
         &__name{
-            font-family: $primary-font-bold;
+            font-family: $primary-font-semi;
             color: $text-color;
             margin-right: 5px;
         }
@@ -346,26 +339,32 @@
     }
 }
 .message-wrapper, .update-wrapper{
-    background-color: #fdfdfd;
+    background-color: #f6f6f6;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06),0 1px 1px 0 rgba(0, 0, 0, 0.16);
+    border-top: 3px solid $secondary-color;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1),0 1px 1px 0 rgba(0, 0, 0, 0.16);
     font-size: 15px;
-    padding: 1em;
+    //padding: 1em;
     margin-top: 1em;
     @include clearfix;
     @include respond-to(regular){
-        padding: 1.5em;
+        //padding: 1.5em;
     }
     h1{
         font-size: ms(3);
-        font-family: $primary-font-semi;
-        margin-bottom: 1em;
+        font-family: $primary-font;
+        margin-bottom: 0;
+        padding: 0.75em 1em;
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
     }
 
 }
 .messagesWrap{
-    margin: 1em 0;
+    margin: 0 0 1em 0;
     width: 100%;
+    padding: 1.5em;
     @include clearfix;
 }
 .messagesItem{
@@ -389,7 +388,7 @@
             border-left-color: $primary-color;
             display: block;
             position: absolute;
-            top: 8%;
+            top: 0.85em;
             right: -14px;
         }
         &:before{
@@ -422,7 +421,7 @@
             border-right-color: $secondary-color;
             display: block;
             position: absolute;
-            top: 8%;
+            top: 0.85em;
             left: -14px;
         }
         &:before{
@@ -447,10 +446,11 @@
     }
 }
 .messagesContent{
-    padding: 1em;
+    padding: 0.75em 1em;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10), 0 3px 4px 0 rgba(0,0,0,0.05) ;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.08);
     position: relative;
     max-width: 90%;
     @include respond-to(regular){
@@ -467,6 +467,10 @@
 .message-input,.feedback-form{
     width: 100%;
     display: block;
+    padding: 1.5em;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.1);
     @include clearfix;
     .form__field{
         max-width: none;
@@ -482,9 +486,12 @@
     background: #fff;
 }
 .feedback-received{
-    padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
-    border-bottom: 1px solid #ddd;
+    // padding-bottom: 1.5em;
+    // margin-bottom: 1.5em;
+    // border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    padding: 2em 1.5em;
+    background-color: #f8f8f8;
     p{
         &:last-child{
             margin-bottom: 0;

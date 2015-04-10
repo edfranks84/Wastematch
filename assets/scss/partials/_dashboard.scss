@@ -254,7 +254,8 @@
 	background-color: #fff;
 	//box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04), 0 2px 7px 0 rgba(0,0,0,0.1);
 	// background-image: linear-gradient(0deg, #f3f3f3, #ffffff);
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.06), 0 2px 7px 0 rgba(0,0,0,0.05);
+	//box-shadow: 0 2px 2px 0 rgba(0,0,0,0.06), 0 2px 7px 0 rgba(0,0,0,0.05);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 2px 7px 0 rgba(0,0,0,0.05);
 	margin-bottom: 0.65em;
 	border: 1px solid #ddd;
 	border-top: 2px solid $secondary-color;
@@ -379,7 +380,7 @@
 }
 
 .dash-item__button{
-	margin: auto;
+	margin: 0.75em auto 0;
 	display: block;
 	@include clearfix;
 	a{
