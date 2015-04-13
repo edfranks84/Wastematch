@@ -284,10 +284,11 @@
             border: none;
             color: #fff;
             color: #444;
-            font-size: ms(1);
+            //font-size: ms(1);
 			line-height: 1.1;
-            font-family: $primary-font;
-			letter-spacing: -0.1px;
+            font-family: $primary-font-semi;
+			//letter-spacing: -0.1px;
+			text-transform: uppercase;
 			&:hover{
 				color: $primary-color;
 			}
@@ -299,13 +300,13 @@
 
     .subCategoryNavName{
         >input{
-            padding: 0.45em 0.1em 0.45em 0.18em;
+            padding: 0.45em 0.1em 0.45em 0.25em;
             background-color: transparent;
             border: none;
             color: #fff;
             color: #888;
             font-size: ms(0);
-            font-family: $primary-font-semi;
+            font-family: $primary-font;
 			line-height: 1;
 			&:hover{
 				color: $primary-color;
@@ -321,12 +322,12 @@
 				padding-bottom: 1em;
 			}
 		}
-		&:before{
-			content: "-";
-			display: inline;
-			padding-left: 0.35em;
-			color: #888;
-		}
+		// &:before{
+		// 	content: "-";
+		// 	display: inline;
+		// 	padding-left: 0.35em;
+		// 	color: #888;
+		// }
     }
     .categoryNavWrap{
         //padding-bottom: 0.5em;
@@ -750,10 +751,12 @@
 }
 .listing-image{
 	margin-bottom: 0.8em;
-
 	margin-right: 2em;
 	@include respond-to(marge){
 		float: left;
+	}
+	img{
+		max-height: 32em;
 	}
 }
 .listing-label{
@@ -844,14 +847,14 @@
 .basket-outer{
 	margin-bottom: 1.5em;
 	h4{
-		font-family: $primary-font-semi;
-		margin-bottom: 0.25em;
+		font-family: $primary-font;
+		margin-bottom: 0.5em;
 	}
 }
 .basketOutput{
 	display: table;
 	width: 100%;
-	//table-layout: fixed;
+	table-layout: fixed;
 	.tableRow{
 	    &:first-child{
 	        border-top: none;
@@ -865,9 +868,9 @@
 		>div{
 			display: table-cell;
 			vertical-align: middle;
-			padding: 0.65em 0.65em;
-			border-right: 1px solid #e1e1e1;
-		    border-bottom: 1px solid #e1e1e1;
+			padding: 0.85em 0.65em;
+			border-right: 1px solid #e5e5e5;
+		    border-bottom: 1px solid #e5e5e5;
 			text-align: center;
 			font-family: $primary-font-semi;
 			color: #333;
@@ -879,79 +882,152 @@
 		}
 		.col1{
 			text-align:left;
-			border-left: 1px solid #e1e1e1;
+			border-left: 1px solid #e5e5e5;
+			width: 40%;
+			@include respond-to(large){
+				width: 50%;
+			}
+		}
+		.col3{
+			font-family: $primary-font-bold;
 		}
 	}
 	.basketHead{
 		>div{
-			border-right: 1px solid lighten($secondary-color, 15%);
+			border-right: 1px solid lighten($secondary-color, 8%);
 			color: #fff;
 		}
 	}
 	.col2,.col4{
+		position: relative;
 		a{
-			//height:30px;
-			// width: 100%;
+			height:30px;
+			width: 100%;
 			display: block;
-			// text-indent: 100%;
-			// overflow: hidden;
-			// white-space: nowrap;
+			text-indent: 100%;
+			overflow: hidden;
+			white-space: nowrap;
 			visibility: hidden;
 			position: relative;
+			// @include visuallyhidden;
+
+			&:after{
+				height: 22px;
+				width: 22px;
+				display: inline-block;
+				@include vertical-center;
+				visibility: visible;
+				text-indent: 0;
+			}
 		}
 	}
 	.col2{
 		a{
-			//background: url("../../assets/images/svg/minus.svg") no-repeat center center;
 			&:after{
 				content: url("../../assets/images/svg/minus.svg");
-				height: 22px;
-				width: 22px;
-				display: inline-block;
-				visibility: visible;
-				@include vertical-center;
 			}
 		}
+
 	}
 	.col4{
 		a{
-			//background: url("../../assets/images/svg/add.svg") no-repeat center center;
 			&:after{
 				content: url("../../assets/images/svg/add.svg");
+			}
+		}
+	}
+	.col5,.col6{
+		a{
+			position: relative;
+			&:before{
+				display: block;
 				height: 22px;
 				width: 22px;
 				display: inline-block;
-				visibility: visible;
 				@include vertical-center;
 			}
 		}
 	}
 	.col5{
 		a{
-			position: relative;
 			&:before{
-
-				display: block;
 				content: url("../../assets/images/svg/view.svg");
-				height: 26px;
-				width: 26px;
-				display: inline-block;
-				@include vertical-center;
 			}
-			// &:before{
-			// 	content: url("../../assets/images/svg/add.svg");
-			// 	height:1.5em;
-			// 	width: 1.5em;
-			// 	display: inline-block;
-			// }
+		}
+	}
+	.col6{
+		a{
+			&:before{
+				content: url("../../assets/images/svg/close.svg");
+			}
 		}
 	}
 }
-.basketHead{
-	background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
-	>div{
-		color: white;
-		font-family: $primary-font-semi;
-		text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+.basketOutput{
+	.basketHead{
+		background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
+		box-shadow: 0 4px 2px -1px rgba(0, 0, 0, 0.13);
+		border-bottom: none;
+		>div{
+			color: white;
+			font-family: $primary-font-bold;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 0 rgba(0,0,0,0.06);
+			border-bottom: none;
+		}
 	}
+}
+
+
+
+////////////////////////////////////////////////
+
+/////*   ADD ASSETS    */////
+
+///////////////////////////////////////////////
+
+
+
+.add-assets-wrap{
+	.form__wrap{
+		border-top: 3px solid $secondary-color;
+	}
+	.form__success{
+		max-width: 55em;
+	}
+	#pnlStepTwo{
+
+		.form__field{
+			padding-bottom: 0.75em;
+			margin-bottom: 0.75em;
+			border-bottom: 1px solid #ddd;
+			>div{
+				font-family: $primary-font-bold;
+				color: $text-color;
+				//font-size: ms(1);
+			}
+			span{
+				font-family: $primary-font;
+				color: $grey;
+				//font-size: ms(1);
+			}
+		}
+	}
+	.form__button__half{
+        input{
+			@include button-variant(#fff, $secondary-color, transparent);
+	        @include button-size(0.7em, 2em, 15px, 1, 3px);
+	        background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
+	        color: #fff;
+	        text-transform: uppercase;
+	        display: block;
+	        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+			font-family: $primary-font-bold;
+			font-size: ms(1);
+	        &:hover{
+	            background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
+	            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
+	        }
+        }
+    }
 }
