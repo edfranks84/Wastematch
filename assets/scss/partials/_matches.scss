@@ -49,22 +49,45 @@
     background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
 }
 .match-cell{
-    float: left;
-    display: block;
-    width: 12.5%;
+    //float: left;
+    display: table-cell;
+    width: 25%;
+    font-size: em(13);
+    word-wrap: break-word;
+    @include respond-to(hide-cells){
+        width: 14.28%;
+        font-size: ms(0);
+    }
+    @include respond-to(marge){
+        width: 12.5%;
+    }
+    span{
+        word-wrap: break-word;
+    }
 }
 .match-head{
     display: table-cell;
-    width: 12.5%;
+    //width: 12.5%;
     line-height: 1.2;
     vertical-align: middle;
     color: #fff;
     font-family: $primary-font-semi;
     padding: 0.8em 0.5em;
     border-right: 1px solid lighten($secondary-color, 12%);
+    width: 25%;
+    font-size: em(13);
     &:last-child{
         border-right: none;
+        width:
     }
+    @include respond-to(hide-cells){
+        width: 14.28%;
+        font-size: ms(0);
+    }
+    @include respond-to(marge){
+        width: 12.5%;
+    }
+
 }
 
 
@@ -81,24 +104,47 @@
     }
     >.matchWrap{
         background-color: #ececec;
-        background-color: #ebebeb;
+        background-color: #f4f4f4;
         border-bottom: 1px solid #ddd;
         //border-top: 1px solid rgba(255,255,255,0.35);
         border-left: 1px solid #ddd;
         border-right: 1px solid #ddd;
         cursor: pointer;
+        display: table;
+        table-layout: fixed;
         z-index: 1;
         &:nth-of-type(4n+4){
-            background-color: #f7f7f7;
+            background-color: #fdfdfd;
         }
 
         &:last-child{
             border-bottom: none;
         }
         &:hover{
-            background-color: #fdfdfd;
-            box-shadow: inset 2px 0px 0px 0px rgba($secondary-color, 1);
+            background-color: lighten($primary-color, 6%);
+            //box-shadow: inset 2px 0px 0px 0px rgba($secondary-color, 1);
             z-index: 2;
+            .match-cell{
+                color: #fff;
+                a{
+                    color: #fff;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .mc3{
+                a{
+                    color: #FD1C18;
+                    color: #fff;
+                }
+                span{
+                    color: #fff;
+                    &:first-child{
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
 }
@@ -107,45 +153,78 @@
         border-top: none;
     }
 }
+
+.mh5,.mc5{
+    display: none;
+    @include respond-to(marge){
+        display: table-cell;
+    }
+}
+.mh2,.mc2,.mh6,.mc6,.mh7,.mc7{
+    display: none;
+    @include respond-to(hide-cells){
+        display: table-cell;
+    }
+}
+.mc3{
+    a{
+        color: #FD1C18;
+    }
+    span{
+        color: #FD1C18;
+        &:first-child{
+            color: $primary-color;
+        }
+        //&:last-child{
+         //   color: #FD1C18;
+        //}
+    }
+}
+
 .matchItemsWrap{
     background-color: #fff;
-    padding: 0.8em 0.8em 1.2em;
+    padding: 1.2em 0.8em 1.6em;
     border: 1px solid #ccc;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 2px solid #999;
     border-top: none;
     >.table-cell{
         padding: 0.2em;
         width: 100%;
     }
 }
-.subNote{
-    width: 100%;
-    display: block;
-    font-size: 13px;
-    line-height: 1.3;
-}
+
 .sub-table-wrapper{
     overflow: auto;
     .title{
         font-family: $primary-font-bold;
+        display: block;
+    }
+    >span{
+        width: 100%;
+        display: block;
+        font-size: 13px;
+        line-height: 1.3;
     }
 }
 .matches-sub-table{
     display: table;
     width: 100%;
     table-layout: fixed;
-    border: 1px solid #ccc;
+    //border: 1px solid #ccc;
     border-bottom: none;
     font-size: 14px;
     margin-bottom: 0.5em;
+    //box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     // position: absolute;
     // @include clearfix;
     @include respond-to(x-large){
         table-layout: auto;
+        border: 1px solid #ccc;
     }
     &:last-child{
         margin-bottom: 0;
     }
+
     .table-heading{
         display: table-cell;
         font-family: $primary-font-semi;
@@ -155,7 +234,7 @@
         vertical-align: middle;
         line-height: 1;
         border-bottom: 1px solid #ccc;
-        border-right: 1px solid #bbb;
+        border-right: 1px solid #aaa;
         width: 8em;
         @include respond-to(x-large){
             width: auto;
@@ -165,34 +244,67 @@
         }
     }
     .table-cell{
-        padding: 0.75em 0.35em;
+        padding: 0.75em;
         border-bottom: 1px solid #d5d5d5;
-        border-right: 1px solid #d5d5d5;
         vertical-align: middle;
         line-height: 1.2;
-        width: 8em;
-        @include respond-to(x-large){
-            width: auto;
-        }
+        width: 100%;
+        padding-left: 50%;
+        display: block;
+        text-align: left;
+        font-size: 13px;
+        position: relative;
         &:last-child{
             border-right: none;
+        }
+        &:before {
+            content: attr(data-label);
+            //float: left;
+            text-transform: uppercase;
+            font-family: $primary-font-bold;
+            display: inline-block;
+            width: 50%;
+            position: absolute;
+            left: 0.5em;
+        }
+        @include respond-to(x-large){
+            width: auto;
+            display: table-cell;
+            text-align: left;
+            padding: 0.75em 0.35em;
+            border-right: 1px solid #d5d5d5;
+            &:before{
+                content: none;
+                float: none;
+            }
         }
     }
     .table-row{
         background-color: #fff;
+        border: 1px solid #c5c5c5;
+        display: block;
+        margin-bottom: 1em;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        @include respond-to(x-large){
+            display: table-row;
+            border: none;
+            margin-bottom: 0;
+            box-shadow: none;
+        }
         &:nth-child(even){
             background-color: #f6f6f6;
+        }
+        &:last-child{
+            border-bottom: none;
         }
         &.headings{
             background-color: #999;
         }
     }
-
-
-    .tc4,.th4{
+    .headings{
         display: none;
         @include respond-to(x-large){
-            display: table-cell;
+            display: table-row;
         }
     }
 }
@@ -225,6 +337,7 @@
         }
         iframe{
             background-color: #e4e4e4;
+            background-color: #fcfcfc;
         }
     }
     .mfp-container{
@@ -265,21 +378,25 @@
         width: 100%;
         background: $secondary-color;
         background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
-        padding: 0em 1.5em;
+        @include respond-to(regular){
+            padding: 0em 1em;
+        }
         &__item{
             display: inline-block;
             width: 100%;
             color: #fff;
             font-family: $primary-font;
             line-height: 1.1;
-            border-left: 1px solid rgba(255,255,255,0.15);
-            padding: 0.65em 0 0.65em 0.25em;
+            padding: 0.55em;
             vertical-align: middle;
             @include respond-to(tiny){
                 width: 48%;
             }
             @include respond-to(regular){
                 width: 23%;
+                border-left: 1px solid rgba(255,255,255,0.15);
+                padding: 0.65em 0 0.65em 0.25em;
+                display: table-cell;
             }
             &:first-child{
                 border: none;
@@ -331,7 +448,9 @@
     .asset-image{
         margin-bottom: 1em;
         line-height: 0;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+        img{
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+        }
         @include respond-to(regular){
             float: right;
             width: 27%;
@@ -340,7 +459,7 @@
     }
 }
 .message-wrapper, .update-wrapper{
-    background-color: #f6f6f6;
+    background-color: #f1f1f1;
     border: 1px solid #ccc;
     border-top: 3px solid $secondary-color;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1),0 1px 1px 0 rgba(0, 0, 0, 0.16);
@@ -358,15 +477,18 @@
         padding: 0.75em 1em;
         border-bottom: 1px solid #ddd;
         background: #fff;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08);
     }
 
 }
 .messagesWrap{
     margin: 0 0 1em 0;
     width: 100%;
-    padding: 1.5em;
+    padding: 1em;
     @include clearfix;
+    @include respond-to(regular){
+        padding: 1.5em;
+    }
 }
 .messagesItem{
     width: 100%;
@@ -389,7 +511,7 @@
             border-left-color: $primary-color;
             display: block;
             position: absolute;
-            top: 0.85em;
+            top: 1.1em;
             right: -14px;
         }
         &:before{
@@ -422,7 +544,7 @@
             border-right-color: $secondary-color;
             display: block;
             position: absolute;
-            top: 0.85em;
+            top: 1.1em;
             left: -14px;
         }
         &:before{
@@ -451,7 +573,7 @@
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10), 0 3px 4px 0 rgba(0,0,0,0.05) ;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.08);
     position: relative;
     max-width: 90%;
     @include respond-to(regular){
@@ -465,7 +587,7 @@
     font-size: 0.85em;
     color: #666;
 }
-.message-input,.feedback-form{
+.message-input{
     width: 100%;
     display: block;
     padding: 1.5em;
@@ -484,7 +606,28 @@
     }
 }
 .update-wrapper{
-    background: #fff;
+    background: #f0f0f0;
+    .form__button{
+        margin-top: 0;
+    }
+}
+.feedback-message, .feedback-stars{
+    width: 100%;
+    display: block;
+    padding: 1.5em;
+    border-bottom: 1px solid #ddd;
+    @include clearfix;
+    p{
+        color: #111;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+.stars{
+    font-family: $primary-font-semi;
+    color: $primary-color;
+    font-size: ms(2);
 }
 .feedback-received{
     // padding-bottom: 1.5em;
@@ -492,7 +635,7 @@
     // border-bottom: 1px solid #ddd;
     font-size: 16px;
     padding: 2em 1.5em;
-    background-color: #f8f8f8;
+    background-color: #fff;
     p{
         &:last-child{
             margin-bottom: 0;

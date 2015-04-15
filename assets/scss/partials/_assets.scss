@@ -71,6 +71,35 @@
 		float: left;
 		width: calc( 100% - 17em );
 		padding-right: 2em;
+		.bdy-login-assets-requirements-missing-images- &{
+			width: 100%;
+		}
+	}
+	.form-wrap{
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+		display: table;
+		h2{
+			font-size: ms(2);
+			display: table-caption;
+		}
+		.form__field{
+			//float: left;
+			display: table-cell;
+			width: 32%;
+			//margin-right: 2%;
+			padding: 0 0.35em 0 0;
+			vertical-align: bottom;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+		.form__button{
+			display: table-cell;
+			vertical-align: bottom;
+			padding: 0 0.35em 0 0;
+			width: 19%;
+		}
 	}
 }
 .asset-search__options{
@@ -377,7 +406,7 @@
 		font-family: $primary-font-semi;
 		padding: 0.1em 0em 0.5em;
 		text-transform: uppercase;
-		letter-spacing: -0.35px;
+		//letter-spacing: -0.35px;
 		display: inline-block;
 	    vertical-align: top;
 		@include respond-to(tiny){
@@ -415,7 +444,6 @@
 	border: 1px solid #ccc;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
 	background-color: #fff;
-	cursor: pointer;
 	@include respond-to(assets-layout3){
 		@include span(6 of 12 split 0.4);
 		margin-bottom: gutter();
@@ -426,6 +454,11 @@
 	}
 	@include respond-to(assets-layout){
 		@include span(3 of 12 split 0.25);
+	}
+	@include respond-to(dashboard-tiles1){
+		.bdy-login-assets-requirements-missing-images- &{
+			@include span(3 of 15 split 0.25);
+		}
 	}
     &:hover{
         box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08), 0 0 0 2px $primary-color;
@@ -459,7 +492,7 @@
 	}
 	&__location{
 	    @include p;
-	    color: $grey;
+	    color: #777;
 	    float:left;
 	    width: 50%;
 	    &:before{
@@ -476,8 +509,8 @@
 	    width: 50%;
 	    float: right;
 	    text-align: right;
-	    &-value{
-	        color: $grey;
+	    span{
+	        color: #777;
 	    }
 	}
 	&__button{
@@ -496,6 +529,7 @@
 			text-transform: uppercase;
 			font-size: ms(0);
 			cursor: pointer;
+			margin-bottom: 3px;
 			&:hover{
 				background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
 			}
@@ -524,9 +558,11 @@
 		padding: 2em 2em 2em 2.5em;
 	}
 	.form__wrap{
-		padding: 1.5em;
+		padding: 3.3em 1.5em 1.5em;
+		position: relative;
 		background-color: #fff;
 		border: 1px solid #ccc;
+		border-top: 3px solid $secondary-color;
 		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16), 0 5px 12px 0 rgba(0, 0, 0, 0.06);
 		@include clearfix;
 		@include respond-to(regular){
@@ -619,6 +655,11 @@
 	}
 
 }
+.listing-back{
+	position: absolute;
+	top: 0.75em;
+	right: 0.5em;
+}
 .edit-buttons{
 	@include respond-to(small){
 		@include span(6 of 12);
@@ -662,7 +703,7 @@
 	}
 }
 
-.asset-listing__button{
+.asset-listing__button, .listing-back{
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -693,6 +734,21 @@
     @include respond-to(regular){
         width: auto;
     }
+}
+.listing-back{
+	a{
+		background: green;
+		cursor: pointer;
+		color: #fff;
+		padding: 0.5em 1em;
+		border-radius: 3px;
+		background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
+		width: 100%;
+		&:hover{
+            background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
+        }
+	}
 }
 
 

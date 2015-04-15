@@ -16,18 +16,15 @@
         background-color: #51575e;
         .basket-items{
             padding-top: 0.35em;
+            color: #fff;
             a{
                 text-decoration: underline;
-            }
-            @include respond-to(side-col-change){
                 color: #fff;
-                a{
-                    color: #fff;
-                    &:hover{
-                        color: lighten(saturate($primary-color, 10%),10%);
-                    }
+                &:hover{
+                    color: lighten(saturate($primary-color, 10%),10%);
                 }
             }
+   
         }
     }
 }

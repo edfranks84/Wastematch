@@ -140,7 +140,8 @@
     background-color: $secondary-color;
 }
 .alert-info{
-    background-color: #f1f1f1;
+    border: 2px solid firebrick;
+    //background-color: #f1f1f1;
     color: firebrick;
     p{
         color: firebrick;
