@@ -28,6 +28,10 @@
 .site-content{
 	min-height: calc(100vh - 30px);
 	overflow: hidden;
+	.admin-wrapper &{
+		background: #f4f4f4;
+		min-height: calc(100vh - 115px);
+	}
 }
 .dashboard-header{
 	.header-container{
@@ -157,7 +161,8 @@
 
 
 .main-head{
-	background-image: linear-gradient(90deg, #3fc53c, #10811c);
+	//background-image: linear-gradient(90deg, #3fc53c, #10811c);
+	background-image: linear-gradient(90deg, #21B031, #10811c);
 	padding: 1.75em 1.5em;
 	font-size: 13px;
 	@include respond-to(small){
@@ -177,7 +182,10 @@
 		font-family: $primary-font;
 		margin-bottom: 5px;
 		letter-spacing: -1px;
-		font-size: ms(5);
+		font-size: ms(4);
+		@include respond-to(regular){
+			font-size: ms(5);
+		}
 	}
 	h5{
 		font-family: $primary-font-semi;
@@ -240,6 +248,7 @@
 		}
 	}
 }
+
 
 .dashboard-tiles{
 	@include respond-to(large){
@@ -432,6 +441,13 @@
         float: left;
     }
 }
+.admin-dash-body{
+    width: 100%;
+	padding: 1.5em 1em;
+	display: inline-block;
+    vertical-align: top;
+	@include clearfix;
+}
 
 .inner-dash-content{
     padding: 1em;
@@ -553,9 +569,13 @@
     border: 1px solid #ccc;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.16), 0 4px 10px 0 rgba(0, 0, 0, 0.06);
     margin-top: -1px;
+    border-top: 3px solid $secondary-color;
     @include clearfix;
     //width: calc(100% - 20em);
     @include respond-to(small){
         padding: 2em 1.5em;
+    }
+    &.tabbed{
+    	border: 1px solid #ccc;
     }
 }

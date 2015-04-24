@@ -1,0 +1,161 @@
+.admin-cat__body{
+	padding: 1em;
+	@include respond-to(regular){
+		padding: 2em;
+	}
+}
+.admin-content{
+	padding: 1.5em;
+	@include respond-to(regular){
+		padding: 3em;
+	}
+	h3{
+		font-family: $primary-font-semi;
+		margin-bottom: 0.4em;
+	}
+	h5{
+		margin: 2em 0 0.65em;
+		border-bottom: 1px solid #bbb;
+		padding-bottom: 0.2em;
+		text-transform: uppercase;
+		font-size: ms(1);
+		&:first-of-type{
+			margin-top: 1.2em;
+		}
+	}
+	.dualBtn{
+		a{
+			padding: 0.35em 1em;
+			display: block;
+			@include respond-to(small){
+				display: inline-block;
+			}
+			&:first-child{
+				background-color: firebrick;
+				margin-bottom: 0.5em;
+                &:hover{
+                    background-color: lighten(saturate(firebrick, 10%),10%);
+                }
+                @include respond-to(small){
+					margin-bottom: 0;
+                }
+			}
+		}
+	}
+	.form__field{
+		max-width: none;
+		margin-bottom: 1em;
+		@include respond-to(small){
+			margin-bottom: 1em;
+		}
+	}
+}
+
+.admin-cat__content, .admin-codes__body, .admin-projects__body{
+	.small-only{
+		// .st-key{
+		// 	display: none;
+		// }
+		// .st-head-row{
+		// 	padding-bottom: 0.25em;
+		// }
+		display: none;
+	}
+	.large-only{
+		display: table;
+		margin-bottom: 2em;
+		tr.tableheading{
+			border: none;
+		}
+		tr{
+			border-top: 0;
+		}
+		td{
+			border-right: 1px solid #ddd;
+			&:last-child{
+				border-right: none;
+			}
+		}
+	}
+	.tableheading{
+		display: table-row;
+		background-image: linear-gradient(#34c138, #34a237);
+		th{
+			a{
+				color: #fff;
+			}
+		}
+	}
+
+}
+
+
+.add-data__submit{
+	a{
+		font-family: $primary-font-semi;
+		text-align: center;
+		display: block;
+		margin-bottom: 0.3em;
+		@include respond-to(small){
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	}
+	a.red-btn{
+	    background-image: linear-gradient(lighten(saturate(firebrick, 6%),6%), firebrick);
+	    &:hover{
+	        background-image: linear-gradient(lighten(saturate(firebrick, 12%),12%), lighten(saturate(firebrick, 6%),6%));
+	    }
+	}
+}
+
+.admin-cat__photos, .admin-codes__photos, .admin-project__photos{
+	table-layout: fixed;
+	td,th{
+		img{
+			max-height: 8em;
+			width: auto;
+			height: auto;
+		}
+		&:first-child{
+			width: 60%;
+		}
+		&:nth-child(2){
+			width: 40%;
+			text-align: right;
+			text-align: center;
+		}
+		@include respond-to(small){
+			&:first-child{
+				width: 70%;		
+			}
+			&:nth-child(2){
+				width: 30%;
+				text-align: left;
+			}
+		}
+	}
+	
+	tr{
+		border: 1px solid #e1e1e1;
+		border-top: none;;
+	}
+	td{
+		border-right: 1px solid #ddd;
+		&:last-child{
+			border-right: none;
+		}
+	}
+	a{	
+		color: #fff;
+		border-radius: 2px;
+		padding: 0.5em	1em;
+		background-image: linear-gradient(lighten(saturate(firebrick, 6%),6%), firebrick);
+	    &:hover{
+	        background-image: linear-gradient(lighten(saturate(firebrick, 12%),12%), lighten(saturate(firebrick, 6%),6%));
+	    }
+	    @include respond-to(medium){
+	    	font-size: 16px;
+	    }
+	}
+}

@@ -25,7 +25,7 @@
     }
     input,textarea,select{
         width: 100%;
-        padding: 1em;
+        padding: 0.5em 1em;
         background-color: #fafafa;
         border: 1px solid #ccc;
         border-radius: 3px;
@@ -38,6 +38,9 @@
             width: auto;
             position: relative;
             top: 2px;
+        }
+        @include respond-to(small){
+            padding: 0.7em 1em;
         }
         &:hover{
             border-color: $grey;
@@ -162,7 +165,8 @@ table,tbody{
 }
 th{
     font-family: $primary-font-bold;
-    padding: 0.8em 0.65em;
+    padding: 0.65em;
+    font-size: ms(0);
     a{
         font-family: $primary-font-bold;
         position: relative;

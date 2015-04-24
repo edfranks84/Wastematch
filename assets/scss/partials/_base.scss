@@ -120,6 +120,9 @@
 	.no-marg{
 		margin: 0;
 	}
+	.marg-top{
+		margin-top: 2em;
+	}
 
 	.container{
 		@include container;

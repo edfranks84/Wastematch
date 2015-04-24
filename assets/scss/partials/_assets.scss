@@ -19,27 +19,43 @@
 		border: 1px solid #ddd;
 		border-top: 3px solid $secondary-color;
 		box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05);
-		padding: 1.5em;
+		padding: 1em;
 		width: 100%;
-		// @include respond-to(medium){
-		// 	margin: 0;
-		// 	@include span(4 of 12 last);
-		// }
+		@include respond-to(search-layout2){
+			padding: 0.75em;
+		}
 		@include respond-to(dashboard-tiles1){
 			width: 100%;
 			float: none;
 			margin-right: 0;
-
+			padding: 1.5em;
 		}
 	}
 	.widget-title{
 		color: $secondary-color;
 		font-size: ms(1);
 		padding-bottom: 0.6em;
-		margin-bottom: 0.6em;
 		line-height: 1;
-		border-bottom: 1px solid #ddd;
 		font-family: $primary-font-semi;
+		border-bottom: 1px solid #ddd;
+		@include respond-to(search-layout2){
+			display: inline-block;
+			margin-right: 1em;
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+		@include respond-to(dashboard-tiles1){
+			border-bottom: 1px solid #ddd;
+			display: block;
+		}
+	}
+	.basket-items{
+		@include respond-to(search-layout2){
+			display: inline-block;
+		}
+		@include respond-to(dashboard-tiles1){
+			display: block;
+		}
 	}
 }
 .category-side{
@@ -75,30 +91,69 @@
 			width: 100%;
 		}
 	}
-	.form-wrap{
-		margin-top: 1em;
-		margin-bottom: 0.5em;
+	.form__wrap{
+		@include clearfix;
+		margin: -1em 0 1em;
 		display: table;
 		h2{
 			font-size: ms(2);
 			display: table-caption;
+			margin-bottom: 0.25em;
+			text-transform: uppercase;
 		}
 		.form__field{
-			//float: left;
-			display: table-cell;
-			width: 32%;
-			//margin-right: 2%;
+			float: left;
+			display: inline-block;;
+			width: 100%;
 			padding: 0 0.35em 0 0;
 			vertical-align: bottom;
+			margin: 0;
+			margin-bottom: 1px;
 			&:last-child{
 				margin-right: 0;
 			}
+			label{
+				font-size: ms(-1);
+			}
+			input,select{
+				padding: 0.4em;
+				height: 39px;
+			}
+			@include respond-to(search-layout2){
+				display: inline-block;
+				float: left;
+				width: 49%;
+				margin-bottom: 5px;
+			}
+			@include respond-to(search-layout){
+				display: table-cell;
+				padding: 0 0.35em 0 0;
+				float: none;
+				width: 32%;
+			}
 		}
 		.form__button{
-			display: table-cell;
+			display: block;
 			vertical-align: bottom;
-			padding: 0 0.35em 0 0;
-			width: 19%;
+			padding: 0;
+			float: left;
+			width: 100%;
+			margin: 0;
+			margin-top: 1em;
+			input{
+				padding: 0.55em 1em;
+				height: 39px;
+			}
+			@include respond-to(search-layout2){
+				display: inline-block;
+				float: left;
+				width: 49%;
+				margin-top: 28px;
+			}
+			@include respond-to(search-layout){
+				display: table-cell;
+				float: none;
+			}
 		}
 	}
 }
@@ -118,7 +173,7 @@
         float: left;
         position: relative;
         text-align: center;
-        padding: 0.9em 1.2em 0.7em;
+        padding: 0.25em;
         margin: 0;
         color: #555;
         display: block;
@@ -177,14 +232,14 @@
 
 .asset-items-wrapper{
     background-color: #fdfdfd;
-    padding: 1.5em;
+    padding: 0.5em;
     margin-top: -1px;
     border: 1px solid #ddd;
 	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.06);
-	font-size: 15px;
+	font-size: 14px;
 	@include respond-to(tiny){
-		font-size: 16px;
-		padding: 2em;
+		font-size: 15px;
+		padding: 1em;
 	}
 	@include respond-to(assets-layout3){
 		padding: 1em;
@@ -255,8 +310,15 @@
 		z-index: 2;
 		position: relative;
 		cursor: pointer;
+		// border-bottom: 1px solid #4D5966;
+        // border-bottom: 1px solid #ddd;
+		border-top: 3px solid #3fc53c;
+        padding: 0.9em 0em 1.1em;
+        //margin-bottom: 1em;
+		text-align: center;
 		@include respond-to(dashboard-tiles1){
 			cursor: default;
+			padding: 0.9em 0em 1.1em;
 		}
         h5{
             color: #fff;
@@ -267,6 +329,10 @@
 			line-height: 1;
 			letter-spacing: -0.3px;
 			text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+			font-size: ms(1);
+			@include respond-to(dashboard-tiles1){
+				font-size: ms(2);	
+			}
 			&:after{
 				content: url("../../assets/images/add-white.svg");
 				position: absolute;
@@ -282,12 +348,6 @@
 				}
 			}
         }
-        // border-bottom: 1px solid #4D5966;
-        // border-bottom: 1px solid #ddd;
-		border-top: 3px solid #3fc53c;
-        padding: 0.9em 0em 1.1em;
-        //margin-bottom: 1em;
-		text-align: center;
     }
 	&.active{
 		h5:after{
@@ -370,11 +430,11 @@
 	@include clearfix;
 }
 .category-tile, .sub-category-tile{
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 	border: 1px solid #ccc;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
 	background-color: #fff;
-	@include respond-to(assets-layout3){
+	@include respond-to(assets-layout4){
 		@include span(6 of 12 split 0.4);
 		margin-bottom: gutter();
 	}
@@ -395,13 +455,16 @@
 		height: 0;
 	}
 	&__info{
-		padding: 0.75em;
+		padding: 0.5em;
 		background-color: #fff;
 		text-align: center;
 		@include clearfix;
+		@include respond-to(small){
+			padding: 0.75em;
+		}
 	}
 	&__name{
-		font-size: ms(0);
+		font-size: 0.85em;
 		line-height: 1.2;
 		font-family: $primary-font-semi;
 		padding: 0.1em 0em 0.5em;
@@ -418,7 +481,7 @@
 		width: 100%;
 		input{
 			width: 100%;
-			padding: 0.5em 0.2em;
+			padding: 0.35em 0.2em;
 			background-color: $secondary-color;
 			background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
 			color: #fff;
@@ -433,21 +496,27 @@
 				//background-color: lighten(saturate($secondary-color, 6%),6%));
 				background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
 			}
+			@include respond-to(small){
+				padding: 0.5em 0.2em;
+			}
 		}
 	}
 }
 
 
 .item-tile{
+	@include clearfix;
     position: relative;
 	margin-bottom: 1em;
 	border: 1px solid #ccc;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
 	background-color: #fff;
+	line-height: 1.1;
 	@include respond-to(assets-layout3){
 		@include span(6 of 12 split 0.4);
 		margin-bottom: gutter();
 		border-color: #ddd;
+		line-height: 1.2;
 	}
 	@include respond-to(assets-layout2){
 		@include span(4 of 12 split 0.25);
@@ -466,23 +535,39 @@
     }
 
 	&__image{
-	    height: 0;
-	    width: 100%;
-	    padding-bottom: 100%;
+		height: 0;
+	   	width: 40%;
+	    padding-bottom: 40%;
+	    float: left;
+		@include respond-to(assets-layout3){
+	    	height: 0;
+	   		width: 100%;
+	    	padding-bottom: 100%;
+	    	float: none;
+		}
 	}
 	&__info{
     	background: $white;
-    	padding: 0.75em;
+    	padding: 0.25em 0.5em;
+    	width: 60%;
+    	float: left;
     	@include clearfix;
+    	@include respond-to(assets-layout3){
+			padding: 0.75em;
+			width: 100%;
+			float: none;
+    	}
 	}
 	&__name{
 	    width: 100%;
-	    margin-bottom: 5px;
+	    margin-bottom: 0.3em;
 		font-size: ms(0);
 		line-height: 1.2;
 		font-family: $primary-font-semi;
-		padding: 0.5em 0 1em;
 		text-transform: uppercase;
+		@include respond-to(assets-layout3){
+			padding: 0.5em 0 1em;
+		}
 	}
 	&__info-wrap{
 		@include clearfix;
@@ -492,9 +577,13 @@
 	}
 	&__location{
 	    @include p;
-	    color: #777;
-	    float:left;
-	    width: 50%;
+	    margin-bottom: 0.3em;
+	    @include respond-to(assets-layout3){
+		    color: #777;
+		    float:left;
+	    	width: 50%;
+	    	margin-bottom: 1em;
+	    }
 	    &:before{
 	        content: url("../../assets/images/pin.svg");
 	        height: 1em;
@@ -503,12 +592,19 @@
 	        position: relative;
 	        top: 2px;
 	    }
+	    span{
+	        color: #777;
+	    }
 	}
 	&__quantity{
 	    @include p;
-	    width: 50%;
-	    float: right;
-	    text-align: right;
+	    margin-bottom: 0.3em;
+	    @include respond-to(assets-layout3){
+		    width: 50%;
+		    float: right;
+	    	text-align: right;
+	    	margin-bottom: 1em;
+	    }
 	    span{
 	        color: #777;
 	    }
@@ -519,7 +615,7 @@
 	    display: inline-block;
 	    a{
 			width: 100%;
-			padding: 0.5em 0.2em;
+			padding: 0.2em;
 			background-color: $secondary-color;
 			background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
 			color: #fff;
@@ -533,18 +629,37 @@
 			&:hover{
 				background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
 			}
+			@include respond-to(assets-layout3){
+				padding: 0.5em 0.2em;
+			}
+			&.red-btn{
+			    background-image: linear-gradient(lighten(saturate(firebrick, 6%),6%), firebrick);
+			    &:hover{
+			        background-image: linear-gradient(lighten(saturate(firebrick, 12%),12%), lighten(saturate(firebrick, 6%),6%));
+			    }
+			}
+			&.blue-btn{
+			    background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
+			    &:hover{
+			        background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
+			    }
+			}
 	    }
 	}
 	&__expires{
-		position: absolute;
-	    top: -0.2em;
-	    left: -0.2em;
-	    line-height: 1;
-	    font-family: $primary-font-semi;
-	    padding: 0.5em 1.2em;
-	    background-color: #ff7300;
-	    color: #fff;
-	    box-shadow: 1px 3px 2px 0 rgba(0,0,0,0.1);
+		color: #ff7300;
+		margin-bottom: 0.3em;
+		@include respond-to(assets-layout3){
+			position: absolute;
+		    top: -0.2em;
+		    left: -0.2em;
+		    line-height: 1;
+		    font-family: $primary-font-semi;
+		    padding: 0.5em 1.2em;
+		    background-color: #ff7300;
+		    color: #fff;
+		    box-shadow: 1px 3px 2px 0 rgba(0,0,0,0.1);
+		}
 	}
 }
 
@@ -580,6 +695,7 @@
 		margin: 0;
 		margin-bottom: 1em;
 		border: 1px solid #ddd;
+		border-top: 3px solid $secondary-color;
 		@include respond-to(small){
 			margin-bottom: 0;
 			@include span(6 of 12);
@@ -729,10 +845,28 @@
             background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
             box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
         }
+        &.red-btn{
+		    background-image: linear-gradient(lighten(saturate(firebrick, 6%),6%), firebrick);
+		    &:hover{
+		        background-image: linear-gradient(lighten(saturate(firebrick, 12%),12%), lighten(saturate(firebrick, 6%),6%));
+		    }
+		}
+		&.blue-btn{
+		    background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
+		    &:hover{
+		        background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
+		    }
+		}
 	}
 
     @include respond-to(regular){
         width: auto;
+    }
+    
+}
+.asset-listing__button{
+	@include respond-to(assets-layout){
+        width: 100%;
     }
 }
 .listing-back{
@@ -1044,7 +1178,7 @@
 
 
 
-.add-assets-wrap{
+.add-assets-wrap, .add-requirements-wrap{
 	.form__wrap{
 		border-top: 3px solid $secondary-color;
 	}
@@ -1070,7 +1204,10 @@
 		}
 	}
 	.form__button__half{
+		margin-right: 1em;
+		cursor: pointer;
         input{
+        	cursor: pointer;
 			@include button-variant(#fff, $secondary-color, transparent);
 	        @include button-size(0.7em, 2em, 15px, 1, 3px);
 	        background-image: linear-gradient(lighten(saturate($secondary-color, 6%),6%), $secondary-color);
@@ -1078,12 +1215,24 @@
 	        text-transform: uppercase;
 	        display: block;
 	        box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
-			font-family: $primary-font-bold;
+			font-family: $primary-font-semi;
 			font-size: ms(1);
 	        &:hover{
 	            background-image: linear-gradient(lighten(saturate($secondary-color, 12%),12%), lighten(saturate($secondary-color, 6%),6%));
 	            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.1);
 	        }
+	        width: 100%;
+	        @include respond-to(regular){
+        		width: auto;
+        	}
+        }
+        &.add-btn{
+        	input{
+        		background-image: linear-gradient(lighten(saturate($primary-color, 6%),6%), $primary-color);
+        		&:hover{
+					background-image: linear-gradient(lighten(saturate($primary-color, 12%),12%), lighten(saturate($primary-color, 6%),6%));
+        		}
+        	}
         }
     }
 }

@@ -222,6 +222,12 @@
             fill: $primary-color;
         }
     }
+    &.mail{
+        bottom: 20px;
+        @include respond-to(marge){
+            bottom: 22px;
+        }
+    }
 }
 
 .login-form__content{
