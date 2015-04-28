@@ -1,6 +1,6 @@
 .inner-hero{
 	padding-top: 98px;
-	@include cover-background('about-hero.jpg');
+	
 	&__text{
 		max-width: 50em;
 		padding: 10em 0;
@@ -19,9 +19,28 @@
 		}
 	}
 }
-
+.about-hero{
+	@include cover-background('about-hero.jpg');
+}
+.services-hero{
+	@include cover-background('services-hero.jpg');
+}
+.inner-hero__text{
+	font-size: 14px;
+	h1{
+		font-size: ms(5);
+		@include respond-to(medium){
+			font-size: ms(6);
+		}
+	}
+	@include respond-to(medium){
+		font-size: 16px;
+	}
+}
 .intro__title{
-	@include span(3 of 11);
+	@include respond-to(large){
+		@include span(3 of 11);
+	}
 	h3{
 		text-transform: uppercase;
 		//font-family: $primary-font-semi;
@@ -37,41 +56,85 @@
 	}
 }
 .intro__content{
-	@include span(8 of 11 last);
-	column-count: 2;
-	column-gap: 3em;
+	@include respond-to(large){
+		@include span(8 of 11 last);
+		column-count: 2;
+		column-gap: 3em;
+	}
 }
 
 .info-band{
 	// display: table;
-	height: 25em;
-	padding: 0;
+	padding: 2em 2em 1em;
+	@include clearfix;
+	@include respond-to(small){
+		padding: 3em 3em 0;  
+	}
+	@include respond-to(regular){
+		height: 28em;
+		padding: 0;
+	}
+	@include respond-to(medium){
+		height: 25em;
+	}
+	&.responsibility{
+		padding-bottom: 3em;
+		@include respond-to(regular){
+			padding-bottom: 0;
+		}
 
+	}
 	&__content{
 		background-color: #fff;
-		// display: table-cell;
-		display: table;
 		vertical-align: middle;
-		width: 45%;
-		padding: 2em 7em;
+		padding: 1.5em 1em 0;
 		height: 100%;
 		position: relative;
+		p{
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		@include respond-to(regular){
+			display: table;
+			width: 50%;
+			padding: 2em 3em;
+		}
+		@include respond-to(medium){
+			width: 45%;
+		}
+		@include respond-to(info-band-padding){
+			padding: 2em 7em;
+		}
 	}
 	&__image{
 		// display: table-cell;
-		height: 100%;
-		width: 55%;
+		height: 15em;
+		@include respond-to(regular){
+			width: 50%;
+			height: 100%;
+		}
+		@include respond-to(medium){
+			width: 55%;
+		}
 	}
 	&__text{
 		display: table-cell;
 		vertical-align: middle;
+		p{
+			line-height: 1.6;
+		}
 	}
 
 	.left{
-		float: left;
+		@include respond-to(regular){
+			float: left;
+		}	
 	}
 	.right{
-		float: right;
+		@include respond-to(regular){
+			float: right;
+		}	
 	}
 	h4{
 		text-transform: uppercase;
@@ -99,3 +162,11 @@
 		@include cover-background('responsibility.jpg');
 	}
 }
+
+/*
+
+Services
+
+*/
+
+

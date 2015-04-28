@@ -114,6 +114,10 @@
 .promo__block{
     padding: 0 2em 3em;
     margin-bottom: 1em;;
+    &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     @include respond-to(marge){
         padding: 0 1.4em 3em;
         margin-bottom: 0;
