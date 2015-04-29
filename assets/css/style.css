@@ -612,6 +612,10 @@ h6 a,
   }
 }
 
+.container.narrow {
+  max-width: 940px;
+}
+
 .band {
   padding: 4em 0;
 }
@@ -2886,13 +2890,19 @@ footer.dashboard-footer a {
 }
 
 .promo__block {
-  padding: 0 2em 3em;
+  padding: 0 1em 3em;
   margin-bottom: 1em;
 }
 
 .promo__block:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .promo__block {
+    padding: 0 2em 3em;
+  }
 }
 
 @media (min-width: 900px) {
@@ -10329,7 +10339,13 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
 
 .inner-hero__text {
   max-width: 50em;
-  padding: 10em 0;
+  padding: 6em 0;
+}
+
+@media (min-width: 575px) {
+  .inner-hero__text {
+    padding: 10em 0;
+  }
 }
 
 .inner-hero__text h1,
@@ -10364,6 +10380,12 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
 
 .services-hero {
   background: url("../../assets/images/services-hero.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.projects-hero {
+  background: url("../../assets/images/projects-hero.jpg") center center #fff no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -10572,5 +10594,176 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
 /*
 
 Services
+
+*/
+
+.inner-intro {
+  padding: 2em 1em;
+  font-size: 14px;
+}
+
+@media (min-width: 575px) {
+  .inner-intro {
+    font-size: 16px;
+    padding: 2em;
+  }
+}
+
+.inner-intro:after {
+  content: "";
+  width: 4em;
+  height: 4px;
+  background-color: #34a237;
+  display: block;
+  margin: 1em auto auto;
+}
+
+@media (min-width: 575px) {
+  .inner-intro:after {
+    margin-top: 2em;
+  }
+}
+
+.inner-band {
+  padding: 0;
+}
+
+.inner-band__image {
+  position: relative;
+  width: 100%;
+  height: 20em;
+}
+
+.matching .inner-band__image {
+  background: url("../../assets/images/matching-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.recycling .inner-band__image {
+  background: url("../../assets/images/reuse-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.re-engineering .inner-band__image {
+  background: url("../../assets/images/re-engineering-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.rbs .inner-band__image {
+  background: url("../../assets/images/rbs-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.tpt .inner-band__image {
+  background: url("../../assets/images/tpt-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.dunbar .inner-band__image {
+  background: url("../../assets/images/dunbar-bg.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.inner-band__image .container {
+  height: 100%;
+}
+
+@media (min-width: 575px) {
+  .inner-band__image {
+    height: 32em;
+  }
+}
+
+.title__wrap {
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.95), transparent 60%);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.95), transparent 60%);
+}
+
+.service__title {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .service__title {
+    right: auto;
+    left: auto;
+  }
+}
+
+.service__title h1,
+.service__title h6 {
+  color: #fff;
+  text-shadow: 0 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.service__title h1 {
+  text-transform: uppercase;
+  font-size: 2.2888183594em;
+}
+
+@media (min-width: 768px) {
+  .service__title h1 {
+    font-size: 3.5762786865em;
+  }
+}
+
+.inner-band__content {
+  padding: 2.5em 0;
+  line-height: 1.6;
+  position: relative;
+}
+
+@media (min-width: 575px) {
+  .inner-band__content {
+    padding: 4em 0;
+  }
+}
+
+.inner-band__content h4 {
+  text-transform: uppercase;
+  font-family: 'source-semibold', Helvetica, Arial, sans-serif;
+}
+
+.inner-band__content h4:after {
+  background-color: #888;
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 0.5em;
+  width: 2em;
+}
+
+.inner-band__content:before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+  border-bottom-color: #fff;
+  content: "";
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/*
+
+Projects
 
 */

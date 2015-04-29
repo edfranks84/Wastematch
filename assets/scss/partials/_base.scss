@@ -134,6 +134,9 @@
 		@include respond-to(regular){
 			width: 92%;
 		}
+		&.narrow{
+			max-width: 940px;
+		}
 	}
 	.band{
 		padding: 4em 0;
