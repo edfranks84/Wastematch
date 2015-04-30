@@ -154,8 +154,27 @@
     top: -10px;
     width: 2em;
 }
+// .promo-wrap{
+//     .services, .talk{
+//         svg{
+//             fill: $primary-color;
+//         }
+//         h5{
+//             color: $primary-color;
+//         }
+//     }
+//     .projects{
+//         svg{
+//             fill: $secondary-color;
+//         }
+//         h5{
+//             color: $secondary-color;
+//         }
+//     }
+// }
+
 .promo-wrap{
-    .services, .talk{
+    .promo-blue{
         svg{
             fill: $primary-color;
         }
@@ -163,7 +182,7 @@
             color: $primary-color;
         }
     }
-    .projects{
+    .promo-green{
         svg{
             fill: $secondary-color;
         }
@@ -217,6 +236,25 @@
         padding-bottom: 50%;
     }
 }
+
+@keyframes pulse{
+    0%{
+        transform: scale(1) rotate(0);
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    75%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: scale(1) rotate(0);
+    }
+}
+
 .video-band__link{
     text-align: center;
     position: relative;
@@ -233,6 +271,9 @@
         display: table;
         @include vertical-center;
         text-align: center;
+        &:hover{
+            animation: pulse .3s ease-in-out infinite;
+        }
     }
     svg{
         fill: #fff;
@@ -305,11 +346,11 @@
         font-size: 16px;
     }
     &:hover{
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 4px 10px 0 rgba(0,0,0,0.08), 0 0 0 2px $secondary-color;
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15), 0 6px 12px 0 rgba(0,0,0,0.2), 0 0 0 2px $secondary-color;
     }
     .ending__carousel &{
         &:hover{
-            box-shadow: 0 0 0 2px #ff7300, 0 1px 3px 0 rgba(0,0,0,0.15), 0 6px 12px 0 rgba(0,0,0,0.25);
+            box-shadow: 0 0 0 2px #ff7300, 0 3px 3px 0 rgba(0,0,0,0.15), 0 6px 12px 0 rgba(0,0,0,0.25);
         }
     }
 }
@@ -365,17 +406,24 @@
         color: $grey;
     }
 }
-.listing__button{
-    width: 100%;
-    text-align: center;
-    display: inline-block;
-    a{
-        @include button-variant(#fff, $secondary-color, transparent);
-        @include button-size(0.8em, 2em, 15px, 1, 2px);
-        display: block;
-        font-family: $primary-font-bold;
-        text-transform: uppercase;
-        border-radius: 0;
+.listing__info{
+    .listing__button{
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        a{
+            @include button-variant(#fff, $secondary-color, transparent);
+            @include button-size(0.8em, 2em, 15px, 1, 2px);
+            display: block;
+            font-family: $primary-font-bold;
+            text-transform: uppercase;
+            border-radius: 0;
+            box-shadow: none;
+            border-radius: 0;
+            &:hover{
+                box-shadow: none;
+            }
+        }
     }
 }
 .listing__time-remaining{

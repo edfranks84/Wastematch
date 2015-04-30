@@ -13,6 +13,9 @@
 		h1{
 			margin-bottom: 0.5em;
 			line-height: 1;
+			&.no-marg{
+				margin-bottom: 0;
+			}
 		}
 		h6{
 			line-height: 1.4;
@@ -31,6 +34,12 @@
 .projects-hero{
 	@include cover-background('projects-hero.jpg');
 }
+.contact-hero{
+	@include cover-background('contact-hero.jpg');
+	h6{
+		font-family: $primary-font;
+	}
+}
 .inner-hero__text{
 	font-size: 14px;
 	h1{
@@ -38,6 +47,9 @@
 		@include respond-to(medium){
 			font-size: ms(6);
 		}
+	}
+	h5,h6{
+		font-family: $primary-font;
 	}
 	@include respond-to(medium){
 		font-size: 16px;
@@ -156,6 +168,38 @@
 		}
 	}
 }
+.info-band__content{
+	@include respond-to(regular){
+		&:after{
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border: 17px solid transparent;
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+.info-band__content.right{
+	@include respond-to(regular){
+		&:after{
+			border-right-color: #fff;
+			left: -32px;
+
+		}
+	}
+}
+.info-band__content.left{
+	@include respond-to(regular){
+		&:after{
+			border-left-color: #fff;
+			right: -32px;
+
+		}
+	}
+}
 
 .info-band__image{
 	.reuse &{
@@ -181,6 +225,9 @@ Services
 	@include respond-to(regular){
 		font-size: 16px;
 		padding: 2em;
+	}
+	@include respond-to(marge){
+		padding: 4em;
 	}
 	&:after{
 		content: "";
@@ -226,7 +273,7 @@ Services
 		height: 100%;
 	}
 	@include respond-to(regular){
-		height: 32em;
+		height: 34em;
 	}
 }
 
@@ -238,7 +285,7 @@ Services
 
 .service__title{
 	position: absolute;
-	bottom: 0;
+	bottom: 1.5em;
 	left: 5%;
 	right: 5%;
 	transform: translateY(-50%);
@@ -265,8 +312,12 @@ Services
 	@include respond-to(regular){
 		padding: 4em 0;
 	}
-	h4{
+	@include respond-to(large){
+		font-size: 17px;
+	}
+	h3,h4{
 		text-transform: uppercase;
+		color: #111;
 		font-family: $primary-font-semi;
 		&:after{
 			background-color: #888;
@@ -276,6 +327,9 @@ Services
 		    margin-top: 0.5em;
 		    width: 2em;
 		}
+	}
+	h5{
+		margin-bottom: 0.7em;
 	}
 	&:before{
 		display: inline-block;
@@ -296,3 +350,152 @@ Services
 Projects
 
 */
+
+.project__logo{
+	@include vertical-center; 
+	display: inline-block;
+	width: 20em;
+	top: 60%;
+	max-width: 10em;
+	@include respond-to(regular){
+		max-width: 100%;
+	}
+}
+
+/*
+
+Contact
+
+*/
+
+.contact-list{
+	@include clearfix;
+	margin-bottom: 2em;
+	li{
+		width: 49%;
+		float: left;
+		margin-right: 1%;
+		font-size: ms(2);
+	}
+}
+.contact__content{
+	margin-bottom: 2em;
+	@include respond-to(medium){
+		@include span(6 of 12 1);
+	}
+	@include respond-to(large){
+		@include span(6 of 12 0.333);
+		font-size: 17px;
+	}
+	p{
+		color: #111;
+	}
+	em{
+		@include p;
+		display: block;
+		margin-bottom: 0.5em;
+		font-family: $primary-font-bold;
+		&:last-of-type{
+			margin-bottom: 1em;
+		}
+	}
+}
+.contact__info{
+	@include respond-to(medium){
+		@include span(6 of 12 last 1);
+		margin-top: -8.5em;
+	}
+	@include respond-to(large){
+		@include span(5 of 12 last 0.333);
+		//margin-top: -9.5em;
+		font-size: 17px;
+	}
+	.box--white{
+		background: #fff;
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05), 0 4px 9px 0 rgba(0, 0, 0, 0.03); 
+		border-top: 3px solid $primary-color;
+		padding: 2em;
+		@include respond-to(small){
+			padding: 3em;
+		}
+		@include respond-to(medium){
+			padding: 4em 3em;
+		}
+	}
+	h4,h6{
+		margin-bottom: 0.65em;
+	}
+	h4{
+		padding-bottom: 0.65em;
+		border-bottom: 1px solid #ddd;
+		font-family: $primary-font;
+		//color: $primary-color;
+	}
+	a{	
+		color: $text-color;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+	h6{
+		font-size: ms(0);
+		@include respond-to(small){
+			font-size: ms(1);
+		}
+	}
+}
+
+
+.contact-icon{
+	display: inline-block;
+    height: 1em;
+    margin-right: 0.5em;
+    width: 1em;
+	fill: $primary-color;
+	position: relative;
+	top: -1px;
+}
+.contact-social__wrap{
+	margin-top: 1.75em;
+	padding-top: 1.75em;
+	border-top: 1px solid #ddd;
+	font-family: $primary-font;
+	display: table;
+	table-layout: fixed;	
+	width: 100%;
+}
+.contact-social{
+	margin-right: 1em;
+	display: table-cell;
+	@include respond-to(table-fixed){
+		display: inline-block;
+	}
+	@include respond-to(medium){
+		display: table-cell;
+	}
+	&:last-child{
+		margin-right: 0;
+	}
+	svg{
+		height: 3em;
+		width: 3em;
+	}
+}
+.contact-facebook{
+	fill: #555;
+	&:hover{
+		fill: $facebook;
+	}
+}
+.contact-twitter{
+	fill: #555;
+	&:hover{
+		fill: $twitter;
+	}
+}
+.contact-linkedin{
+	fill: #555;
+	&:hover{
+		fill: $linkedin;
+	}
+}

@@ -2951,21 +2951,19 @@ footer.dashboard-footer a {
   width: 2em;
 }
 
-.promo-wrap .services svg,
-.promo-wrap .talk svg {
+.promo-wrap .promo-blue svg {
   fill: #2287d3;
 }
 
-.promo-wrap .services h5,
-.promo-wrap .talk h5 {
+.promo-wrap .promo-blue h5 {
   color: #2287d3;
 }
 
-.promo-wrap .projects svg {
+.promo-wrap .promo-green svg {
   fill: #34a237;
 }
 
-.promo-wrap .projects h5 {
+.promo-wrap .promo-green h5 {
   color: #34a237;
 }
 
@@ -3166,13 +3164,13 @@ footer.dashboard-footer a {
 }
 
 .listing__item:hover {
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.08), 0 0 0 2px #34a237;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.08), 0 0 0 2px #34a237;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #34a237;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #34a237;
 }
 
 .ending__carousel .listing__item:hover {
-  -webkit-box-shadow: 0 0 0 2px #ff7300, 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0 0 2px #ff7300, 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0 2px #ff7300, 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px #ff7300, 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 6px 12px 0 rgba(0, 0, 0, 0.25);
 }
 
 .listing__image {
@@ -3263,13 +3261,13 @@ footer.dashboard-footer a {
   color: #999;
 }
 
-.listing__button {
+.listing__info .listing__button {
   width: 100%;
   text-align: center;
   display: inline-block;
 }
 
-.listing__button a {
+.listing__info .listing__button a {
   color: #fff;
   background-color: #34a237;
   border-color: transparent;
@@ -3281,46 +3279,54 @@ footer.dashboard-footer a {
   font-family: 'source-bold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-.listing__button a:hover,
-.listing__button a:focus,
-.listing__button a:active,
-.listing__button a.active,
-.open > .listing__button a.dropdown-toggle {
+.listing__info .listing__button a:hover,
+.listing__info .listing__button a:focus,
+.listing__info .listing__button a:active,
+.listing__info .listing__button a.active,
+.open > .listing__info .listing__button a.dropdown-toggle {
   color: #fff;
   background-color: #287b2a;
   border-color: transparent;
 }
 
-.listing__button a:active,
-.listing__button a.active,
-.open > .listing__button a.dropdown-toggle {
+.listing__info .listing__button a:active,
+.listing__info .listing__button a.active,
+.open > .listing__info .listing__button a.dropdown-toggle {
   background-image: none;
 }
 
-.listing__button a.disabled,
-.listing__button a.disabled:hover,
-.listing__button a.disabled:focus,
-.listing__button a.disabled:active,
-.listing__button a.disabled.active,
-.listing__button a[disabled],
-.listing__button a[disabled]:hover,
-.listing__button a[disabled]:focus,
-.listing__button a[disabled]:active,
-.listing__button a[disabled].active,
-fieldset[disabled] .listing__button a,
-fieldset[disabled] .listing__button a:hover,
-fieldset[disabled] .listing__button a:focus,
-fieldset[disabled] .listing__button a:active,
-fieldset[disabled] .listing__button a.active {
+.listing__info .listing__button a.disabled,
+.listing__info .listing__button a.disabled:hover,
+.listing__info .listing__button a.disabled:focus,
+.listing__info .listing__button a.disabled:active,
+.listing__info .listing__button a.disabled.active,
+.listing__info .listing__button a[disabled],
+.listing__info .listing__button a[disabled]:hover,
+.listing__info .listing__button a[disabled]:focus,
+.listing__info .listing__button a[disabled]:active,
+.listing__info .listing__button a[disabled].active,
+fieldset[disabled] .listing__info .listing__button a,
+fieldset[disabled] .listing__info .listing__button a:hover,
+fieldset[disabled] .listing__info .listing__button a:focus,
+fieldset[disabled] .listing__info .listing__button a:active,
+fieldset[disabled] .listing__info .listing__button a.active {
   background-color: #34a237;
   border-color: transparent;
 }
 
-.listing__button a .badge {
+.listing__info .listing__button a .badge {
   color: #34a237;
   background-color: #fff;
+}
+
+.listing__info .listing__button a:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .listing__time-remaining {
@@ -3761,7 +3767,8 @@ fieldset[disabled] .profile-btn a.active {
 .button--solid-green a,
 .add-data__submit a,
 .form__button a,
-.dash-item__button a {
+.dash-item__button a,
+.listing__button a {
   color: #fff;
   background-color: #34a237;
   border-color: transparent;
@@ -3799,7 +3806,12 @@ fieldset[disabled] .profile-btn a.active {
 .dash-item__button a:focus,
 .dash-item__button a:active,
 .dash-item__button a.active,
-.open > .dash-item__button a.dropdown-toggle {
+.open > .dash-item__button a.dropdown-toggle,
+.listing__button a:hover,
+.listing__button a:focus,
+.listing__button a:active,
+.listing__button a.active,
+.open > .listing__button a.dropdown-toggle {
   color: #fff;
   background-color: #287b2a;
   border-color: transparent;
@@ -3816,7 +3828,10 @@ fieldset[disabled] .profile-btn a.active {
 .open > .form__button a.dropdown-toggle,
 .dash-item__button a:active,
 .dash-item__button a.active,
-.open > .dash-item__button a.dropdown-toggle {
+.open > .dash-item__button a.dropdown-toggle,
+.listing__button a:active,
+.listing__button a.active,
+.open > .listing__button a.dropdown-toggle {
   background-image: none;
 }
 
@@ -3879,7 +3894,22 @@ fieldset[disabled] .dash-item__button a,
 fieldset[disabled] .dash-item__button a:hover,
 fieldset[disabled] .dash-item__button a:focus,
 fieldset[disabled] .dash-item__button a:active,
-fieldset[disabled] .dash-item__button a.active {
+fieldset[disabled] .dash-item__button a.active,
+.listing__button a.disabled,
+.listing__button a.disabled:hover,
+.listing__button a.disabled:focus,
+.listing__button a.disabled:active,
+.listing__button a.disabled.active,
+.listing__button a[disabled],
+.listing__button a[disabled]:hover,
+.listing__button a[disabled]:focus,
+.listing__button a[disabled]:active,
+.listing__button a[disabled].active,
+fieldset[disabled] .listing__button a,
+fieldset[disabled] .listing__button a:hover,
+fieldset[disabled] .listing__button a:focus,
+fieldset[disabled] .listing__button a:active,
+fieldset[disabled] .listing__button a.active {
   background-color: #34a237;
   border-color: transparent;
 }
@@ -3887,7 +3917,8 @@ fieldset[disabled] .dash-item__button a.active {
 .button--solid-green a .badge,
 .add-data__submit a .badge,
 .form__button a .badge,
-.dash-item__button a .badge {
+.dash-item__button a .badge,
+.listing__button a .badge {
   color: #34a237;
   background-color: #fff;
 }
@@ -3895,7 +3926,8 @@ fieldset[disabled] .dash-item__button a.active {
 .button--solid-green a:hover,
 .add-data__submit a:hover,
 .form__button a:hover,
-.dash-item__button a:hover {
+.dash-item__button a:hover,
+.listing__button a:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#3fd443), to(#34c138));
   background-image: -webkit-linear-gradient(#3fd443, #34c138);
   background-image: linear-gradient(#3fd443, #34c138);
@@ -10363,6 +10395,10 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
   line-height: 1;
 }
 
+.inner-hero__text h1.no-marg {
+  margin-bottom: 0;
+}
+
 .inner-hero__text h6 {
   line-height: 1.4;
 }
@@ -10390,6 +10426,16 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
   background-size: cover;
 }
 
+.contact-hero {
+  background: url("../../assets/images/contact-hero.jpg") center center #fff no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.contact-hero h6 {
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
+}
+
 .inner-hero__text {
   font-size: 14px;
 }
@@ -10402,6 +10448,11 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
   .inner-hero__text h1 {
     font-size: 3.5762786865em;
   }
+}
+
+.inner-hero__text h5,
+.inner-hero__text h6 {
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -10573,6 +10624,35 @@ fieldset[disabled] .add-requirements-wrap .form__button__half input.active {
   margin-top: 0.5em;
 }
 
+@media (min-width: 575px) {
+  .info-band__content:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 17px solid transparent;
+    content: "";
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 575px) {
+  .info-band__content.right:after {
+    border-right-color: #fff;
+    left: -32px;
+  }
+}
+
+@media (min-width: 575px) {
+  .info-band__content.left:after {
+    border-left-color: #fff;
+    right: -32px;
+  }
+}
+
 .reuse .info-band__image {
   background: url("../../assets/images/internal-reuse.jpg") center center #fff no-repeat;
   -webkit-background-size: cover;
@@ -10606,6 +10686,12 @@ Services
   .inner-intro {
     font-size: 16px;
     padding: 2em;
+  }
+}
+
+@media (min-width: 900px) {
+  .inner-intro {
+    padding: 4em;
   }
 }
 
@@ -10676,7 +10762,7 @@ Services
 
 @media (min-width: 575px) {
   .inner-band__image {
-    height: 32em;
+    height: 34em;
   }
 }
 
@@ -10689,7 +10775,7 @@ Services
 
 .service__title {
   position: absolute;
-  bottom: 0;
+  bottom: 1.5em;
   left: 5%;
   right: 5%;
   -webkit-transform: translateY(-50%);
@@ -10733,11 +10819,20 @@ Services
   }
 }
 
+@media (min-width: 1025px) {
+  .inner-band__content {
+    font-size: 17px;
+  }
+}
+
+.inner-band__content h3,
 .inner-band__content h4 {
   text-transform: uppercase;
+  color: #111;
   font-family: 'source-semibold', Helvetica, Arial, sans-serif;
 }
 
+.inner-band__content h3:after,
 .inner-band__content h4:after {
   background-color: #888;
   content: "";
@@ -10745,6 +10840,10 @@ Services
   height: 1px;
   margin-top: 0.5em;
   width: 2em;
+}
+
+.inner-band__content h5 {
+  margin-bottom: 0.7em;
 }
 
 .inner-band__content:before {
@@ -10767,3 +10866,231 @@ Services
 Projects
 
 */
+
+.project__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  display: inline-block;
+  width: 20em;
+  top: 60%;
+  max-width: 10em;
+}
+
+@media (min-width: 575px) {
+  .project__logo {
+    max-width: 100%;
+  }
+}
+
+/*
+
+Contact
+
+*/
+
+.contact-list {
+  margin-bottom: 2em;
+}
+
+.contact-list:before,
+.contact-list:after {
+  content: "";
+  display: table;
+}
+
+.contact-list:after {
+  clear: both;
+}
+
+.contact-list li {
+  width: 49%;
+  float: left;
+  margin-right: 1%;
+  font-size: 1.46484375em;
+}
+
+.contact__content {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 768px) {
+  .contact__content {
+    width: 47.8260869565%;
+    float: left;
+    margin-right: 4.347826087%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact__content {
+    width: 48.9369852519%;
+    float: left;
+    margin-right: 2.1260294963%;
+    font-size: 17px;
+  }
+}
+
+.contact__content p {
+  color: #111;
+}
+
+.contact__content em {
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 0.5em;
+  font-family: 'source-bold', Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 482px) {
+  .contact__content em {
+    font-size: 0.9375em;
+  }
+}
+
+.contact__content em:last-of-type {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .contact__info {
+    width: 47.8260869565%;
+    float: right;
+    margin-right: 0;
+    margin-top: -8.5em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact__info {
+    width: 40.4264827938%;
+    float: right;
+    margin-right: 0;
+    font-size: 17px;
+  }
+}
+
+.contact__info .box--white {
+  background: #fff;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05), 0 4px 9px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05), 0 4px 9px 0 rgba(0, 0, 0, 0.03);
+  border-top: 3px solid #2287d3;
+  padding: 2em;
+}
+
+@media (min-width: 482px) {
+  .contact__info .box--white {
+    padding: 3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact__info .box--white {
+    padding: 4em 3em;
+  }
+}
+
+.contact__info h4,
+.contact__info h6 {
+  margin-bottom: 0.65em;
+}
+
+.contact__info h4 {
+  padding-bottom: 0.65em;
+  border-bottom: 1px solid #ddd;
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
+}
+
+.contact__info a {
+  color: #444;
+}
+
+.contact__info a:hover {
+  color: #2287d3;
+}
+
+.contact__info h6 {
+  font-size: 0.9375em;
+}
+
+@media (min-width: 482px) {
+  .contact__info h6 {
+    font-size: 1.171875em;
+  }
+}
+
+.contact-icon {
+  display: inline-block;
+  height: 1em;
+  margin-right: 0.5em;
+  width: 1em;
+  fill: #2287d3;
+  position: relative;
+  top: -1px;
+}
+
+.contact-social__wrap {
+  margin-top: 1.75em;
+  padding-top: 1.75em;
+  border-top: 1px solid #ddd;
+  font-family: 'source-regular', Helvetica, Arial, sans-serif;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.contact-social {
+  margin-right: 1em;
+  display: table-cell;
+}
+
+@media (min-width: 400px) {
+  .contact-social {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-social {
+    display: table-cell;
+  }
+}
+
+.contact-social:last-child {
+  margin-right: 0;
+}
+
+.contact-social svg {
+  height: 3em;
+  width: 3em;
+}
+
+.contact-facebook {
+  fill: #555;
+}
+
+.contact-facebook:hover {
+  fill: #3b5998;
+}
+
+.contact-twitter {
+  fill: #555;
+}
+
+.contact-twitter:hover {
+  fill: #55acee;
+}
+
+.contact-linkedin {
+  fill: #555;
+}
+
+.contact-linkedin:hover {
+  fill: #0976b4;
+}
