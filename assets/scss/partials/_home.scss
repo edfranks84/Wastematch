@@ -239,19 +239,16 @@
 
 @keyframes pulse{
     0%{
-        transform: scale(1) rotate(0);
-    }
-    25%{
-        transform: rotate(20deg);
+        transform: scale(1) rotate(0) translateY(-50%) translateX(-50%);
+        transform-origin: center center;
     }
     50%{
-        transform: scale(1.05);
-    }
-    75%{
-        transform: rotate(-20deg);
+        transform: scale(1.03) translateY(-50%) translateX(-50%);
+        transform-origin: center center;
     }
     100%{
-        transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0) translateY(-50%) translateX(-50%);
+        transform-origin: center center;
     }
 }
 
@@ -272,7 +269,7 @@
         @include vertical-center;
         text-align: center;
         &:hover{
-            animation: pulse .3s ease-in-out infinite;
+            animation: pulse 1.2s ease-in-out infinite;
         }
     }
     svg{
@@ -308,7 +305,14 @@
         }
 
     }
+    .owl-wrapper{
+        cursor: grab;
+        &.grabbing{
+            cursor: grabbing;
+        }
+    }
 }
+
 
 .dust-band{
     background: url("../../assets/images/dust-pattern.jpg") repeat #f3f3f3;
@@ -583,6 +587,12 @@
     }
 }
 .testimonials-carousel{
+    .owl-wrapper{
+        cursor: grab;
+        &.grabbing{
+            cursor: grabbing;
+        }
+    }
     .owl-buttons{
         display: none;
     }

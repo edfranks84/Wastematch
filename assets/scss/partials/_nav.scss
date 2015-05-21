@@ -281,6 +281,9 @@
                 }
                 &:hover{
                     color: lighten(saturate($secondary-color, 10%),10%);
+                    @include respond-to(nav-responsive){
+                        color: #fff;
+                    }
                 }
                 &:before{
                     height: 3px;
@@ -290,12 +293,12 @@
             &.liLinkActive{
                 border-color: #ccc;
                 @include respond-to(nav-responsive){
-                    border-color: #fff;
+                    border-color: lighten(saturate($secondary-color, 10%),10%);
                 }
                 >a{
                     color: $primary-color;
                     @include respond-to(nav-responsive){
-                        color: $white;
+                        color: #fff;
                     }
                     &:hover{
                         &:before{

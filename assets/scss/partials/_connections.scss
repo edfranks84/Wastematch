@@ -183,3 +183,11 @@
     font-family: $primary-font-semi;
 
 }
+.connections-content{
+    input#txtProfileLocation{
+        padding: 0.5em 1em;
+        @include respond-to(small){
+            padding: 0.7em 1em;
+        }
+    }
+}

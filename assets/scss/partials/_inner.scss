@@ -330,6 +330,7 @@ Services
 	}
 	h5{
 		margin-bottom: 0.7em;
+		text-transform: uppercase;
 	}
 	&:before{
 		display: inline-block;
@@ -367,6 +368,9 @@ Projects
 Contact
 
 */
+.container.contact{
+	max-width: 1000px;
+}
 
 .contact-list{
 	@include clearfix;
