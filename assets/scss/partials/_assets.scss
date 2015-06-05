@@ -781,11 +781,11 @@
 // 		@include span(6 of 12);
 // 	}
 // }
-.report-buttons{
-	@include respond-to(small){
-		@include span(6 of 12 last);
-	}
-}
+// .report-buttons{
+// 	@include respond-to(small){
+// 		@include span(6 of 12 last);
+// 	}
+// }
 .edit-buttons, .report-buttons{
 	// @include respond-to(small){
 	// 	min-height: 207px;
@@ -1280,6 +1280,7 @@ Override Calender Styles
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
 	background: $secondary-color!important;
     border: 1px solid darken($secondary-color, 10%)!important;
+    border: none!important;
     color: #fff!important;
     font-weight: bold!important;	
 }
@@ -1288,6 +1289,7 @@ Override Calender Styles
 	border: 1px solid darken($primary-color, 10%)!important;
 	color: #fff!important;
 }
+
 .ui-icon-circle-triangle-w{
 	background-image: url("../../assets/images/previous-white.svg")!important;
 	background-position: 0 0!important;
@@ -1308,5 +1310,60 @@ Override Calender Styles
 		opacity: 1!important;
 		background-position: 0 0!important;
 		border: none!important;
+	}
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
+	margin-top: -6px!important;
+}
+
+
+
+/* Bulk Upload  */
+
+.bulk-upload-wrap{
+	.small-only{
+		display: none;
+	}
+	.large-only{
+		display: table;
+	}
+	.table-content .tableheading{
+		display: table-row;
+		background-image: linear-gradient(#34c138, #34a237);
+		color: #fff;
+		a{
+			color: #fff;
+		}
+	}
+	td,th {
+    	font-size: 14px;
+    	padding: 0.4em;
+    	@include respond-to(small){
+    		padding: 0.5em 0.65em;
+    	}
+	}
+	td{
+		line-height: 1.1;
+		@include respond-to(small){
+    		line-height: 1.6;
+    	}
+	}
+	.disc{
+		li{
+			margin: 0.25em 0.75em;
+		}
+	}
+	.form__success{
+		max-width: 55em;
+	}
+}
+.csv-values{
+	h5{
+		margin: 1em 0 0.35em;
+	}
+}
+.bulk-values{
+	td{
+		border-right: 1px solid #ddd;
 	}
 }

@@ -166,6 +166,13 @@
     }
 }
 .all-widgets{
+    >div{
+        &:nth-child(even){
+            .widget{
+                background-color: #444a52;
+            }
+        }
+    }
     .widget{
         margin-bottom: 1em;
         @include respond-to(regular){

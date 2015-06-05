@@ -42,6 +42,16 @@
 		list-style: none;
 	}
 
+	ul.disc{
+		margin-bottom: 1em;
+		li{
+			list-style: disc;
+			margin: 0.75em;
+			font-size: ms(0);
+			color: #555;
+		}
+	}
+
 	img, object, embed {
 		height: auto;
 		max-width: 100%;
@@ -154,3 +164,22 @@
 	.content-wrap{
 		overflow-x: hidden;
 	}
+
+
+.box-wrap{
+
+	max-width: 55em;
+	padding: 2em 1em;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: 3px solid $secondary-color;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 3px 12px 0 rgba(0, 0, 0, 0.06);
+	//box-shadow: 0 0 4px rgba(0,0,0,.14),0px 4px 8px rgba(0,0,0,.28);
+	@include clearfix;
+	@include respond-to(tiny){
+		padding: 2em 1.5em;
+	}
+	@include respond-to(small){
+		padding: 3em;
+	}
+}
